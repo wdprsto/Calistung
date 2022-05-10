@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Calistung">
         <activity
+            android:name=".di.daftarisibelajar.DaftarIsiBelajarActivity"
+            android:exported="false" />
+        <activity
             android:name=".di.belajarlatihan.BelajarLatihanActivity"
             android:exported="false" />
         <activity
