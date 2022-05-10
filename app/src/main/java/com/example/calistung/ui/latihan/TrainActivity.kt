@@ -1,14 +1,9 @@
-package com.example.calistung
+package com.example.calistung.ui.latihan
 
-import android.content.res.ColorStateList
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
-import android.widget.ImageView
-import com.bumptech.glide.Glide
-import com.example.calistung.databinding.ActivityLearnBinding
 import com.example.calistung.databinding.ActivityTrainBinding
-import com.example.calistung.model.Learn
 import com.example.calistung.model.Train
 import java.util.*
 

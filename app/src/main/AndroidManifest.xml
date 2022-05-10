@@ -12,13 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Calistung">
         <activity
-            android:name=".TrainActivity"
+            android:name=".ui.latihan.TrainActivity"
             android:exported="false" />
         <activity
-            android:name=".GridActivity"
+            android:name=".ui.gridkarakter.GridActivity"
             android:exported="false" />
         <activity
-            android:name=".LearnActivity"
+            android:name=".ui.belajar.LearnActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -1,9 +1,8 @@
-package com.example.calistung
+package com.example.calistung.ui.gridkarakter
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.calistung.adapter.GridAdapter
 import com.example.calistung.databinding.ActivityGridBinding
 import com.example.calistung.model.Learn
