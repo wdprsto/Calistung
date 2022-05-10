@@ -1,5 +1,6 @@
 package com.example.calistung
 
+import android.content.res.ColorStateList
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.widget.ImageView
@@ -13,6 +14,7 @@ import java.util.*
 class LearnActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLearnBinding
     private lateinit var tts:TextToSpeech
+    private var correctness=true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityLearnBinding.inflate(layoutInflater)
@@ -33,16 +35,18 @@ class LearnActivity : AppCompatActivity() {
             btnClear.setOnClickListener {
                 drawView.clearCanvas()
             }
-            btnUndo.setOnClickListener {
-                drawView.undo()
-            }
-            btnRedo.setOnClickListener {
-                drawView.redo()
-            }
             btnCheck.setOnClickListener {
-                drawView.getBitmap()
-            }
+//                drawView.getBitmap()
+                correctness=!correctness
+                if(correctness){
+                    cvCorrectness.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.light_green))
+                    tvCorrectness.text="BENAR"
+                }else{
+                    cvCorrectness.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.ultra_light_pink))
+                    tvCorrectness.text="SALAH"
+                }
 
+            }
         }
     }
     private fun ImageView.loadImage(url: String?) {

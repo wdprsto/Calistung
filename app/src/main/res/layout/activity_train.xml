@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".LearnActivity">
+    tools:context=".TrainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,13 +22,14 @@
             android:layout_weight="1"
 
             android:backgroundTint="@color/light_yellow">
-
-            <ImageView
-                android:id="@+id/imageView"
+            <TextView
+                android:id="@+id/tv_question"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                tools:src="@tools:sample/backgrounds/scenic" />
+                android:textSize="64sp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                tools:text="A" />
         </androidx.cardview.widget.CardView>
 
         <ImageButton
@@ -79,7 +80,7 @@
             android:layout_margin="4dp"
             android:textColor="@color/black"
             android:textSize="14sp"
-            tools:text="BENAR/SALAH">
+            tools:text="SOAL 1 DARI 10 SOAL">
 
         </TextView>
     </androidx.cardview.widget.CardView>
@@ -99,28 +100,28 @@
             android:backgroundTint="@color/ultra_light_pink"
             android:text="@string/clear"
             android:textColor="@color/black"
-            app:cornerRadius="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/draw_view"
-            app:layout_constraintVertical_bias="0.103" />
+            app:cornerRadius="0dp" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_check"
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/light_blue"
+            android:text="@string/sebelumnya"
+            android:textColor="@color/black"
+            app:cornerRadius="0dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/light_blue"
-            android:text="@string/cek"
+            android:backgroundTint="@color/light_green"
+            android:text="@string/lanjut"
             android:textColor="@color/black"
-            app:cornerRadius="0dp"
-            app:layout_constraintBottom_toBottomOf="@+id/btn_clear"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/btn_clear"
-            app:layout_constraintTop_toTopOf="@+id/btn_clear" />
+            app:cornerRadius="0dp" />
     </LinearLayout>
 
 </LinearLayout>

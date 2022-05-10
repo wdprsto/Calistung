@@ -9,7 +9,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="light_blue">#FF9ADCFF</color>
     <color name="light_yellow">#FFFFF89A</color>
-    <color name="light_pink">#FFFFB2A6</color>
+    <color name="ultra_light_yellow">#FFFFFFCC</color>
+    <color name="ultra_light_pink">#FFFFB2A6</color>
+    <color name="light_pink">#FFFF8AAE</color>
     <color name="light_green">#FF6EE1AB</color>
 
 </resources>

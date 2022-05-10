@@ -94,4 +94,8 @@
     <string name="coba">COBA</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cek">Cek</string>
+    <string name="clear">Clear</string>
+    <string name="lanjut">LANJUT</string>
+    <string name="sebelumnya">SEBELUMNYA</string>
 </resources>
