@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Calistung</string>
+    <string name="calistung">CALISTUNG</string>
+    <string name="belajar_nulis_alfabet">Belajar Menulis Alfabet</string>
+    <string name="huruf">Huruf</string>
+    <string name="angka">ANGKA</string>
+    <string name="menghitung">Menghitung</string>
+    <string name="belajar">BELAJAR</string>
+    <string name="latihan">LATIHAN</string>
 </resources>
