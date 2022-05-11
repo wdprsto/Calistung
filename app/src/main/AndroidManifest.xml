@@ -10,23 +10,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Calistung">
         <activity
-            android:name=".di.daftarisibelajar.DaftarIsiBelajarActivity"
+            android:name=".ui.daftarisibelajar.DaftarIsiBelajarActivity"
             android:exported="false" />
         <activity
-            android:name=".di.belajarlatihan.BelajarLatihanActivity"
+            android:name=".ui.belajarlatihan.BelajarLatihanActivity"
             android:exported="false"
-            android:parentActivityName=".di.menu.menuPageActivity"
+            android:parentActivityName=".ui.menu.menuPageActivity"
             />
         <activity
-            android:name=".di.halamandaftarbelajar.DaftarBelajarActivity"
+            android:name=".ui.halamandaftarbelajar.DaftarBelajarActivity"
             android:exported="false"
-            android:parentActivityName=".di.belajarlatihan.BelajarLatihanActivity"
+            android:parentActivityName=".ui.belajarlatihan.BelajarLatihanActivity"
             />
         <activity
-            android:name=".di.menu.menuPageActivity"
+            android:name=".ui.menu.menuPageActivity"
             android:exported="false" />
         <activity
-            android:name=".di.splashscreen.SplashScreenActivity"
+            android:name=".ui.splashscreen.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

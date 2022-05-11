@@ -1,4 +1,4 @@
-package com.example.calistung.di.daftarisibelajar
+package com.example.calistung.ui.daftarisibelajar
 
 import androidx.lifecycle.ViewModel
 

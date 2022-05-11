@@ -1,4 +1,4 @@
-package com.example.calistung.di.splashscreen
+package com.example.calistung.ui.splashscreen
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.example.calistung.databinding.ActivitySplashScreenBinding
-import com.example.calistung.di.menu.menuPageActivity
+import com.example.calistung.ui.menu.menuPageActivity
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {

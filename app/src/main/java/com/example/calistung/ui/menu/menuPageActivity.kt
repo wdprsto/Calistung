@@ -1,10 +1,10 @@
-package com.example.calistung.di.menu
+package com.example.calistung.ui.menu
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.calistung.databinding.ActivityMenuBinding
-import com.example.calistung.di.belajarlatihan.BelajarLatihanActivity
+import com.example.calistung.ui.belajarlatihan.BelajarLatihanActivity
 
 class menuPageActivity : AppCompatActivity() {
     private lateinit var menuBinding: ActivityMenuBinding

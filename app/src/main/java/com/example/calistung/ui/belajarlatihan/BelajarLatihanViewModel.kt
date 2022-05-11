@@ -1,4 +1,4 @@
-package com.example.calistung.di.belajarlatihan
+package com.example.calistung.ui.belajarlatihan
 
 import androidx.lifecycle.ViewModel
 

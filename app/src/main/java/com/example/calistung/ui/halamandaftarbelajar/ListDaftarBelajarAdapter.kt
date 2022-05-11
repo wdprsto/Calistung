@@ -1,10 +1,4 @@
-package com.example.calistung.di.halamandaftarbelajar
-
-
-import android.view.LayoutInflater
-import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
-import com.example.calistung.databinding.ItemIsiBelajarBinding
+package com.example.calistung.ui.halamandaftarbelajar
 
 
 /*

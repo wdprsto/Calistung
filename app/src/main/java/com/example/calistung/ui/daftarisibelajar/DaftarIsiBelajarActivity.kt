@@ -1,8 +1,7 @@
-package com.example.calistung.di.daftarisibelajar
+package com.example.calistung.ui.daftarisibelajar
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.calistung.databinding.ActivityDaftarBelajarBinding
 
 class DaftarIsiBelajarActivity : AppCompatActivity() {
