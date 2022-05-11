@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Calistung</string>
-<<<<<<< HEAD
+
     <string name="calistung">CALISTUNG</string>
     <string name="belajar_nulis_alfabet">Belajar Menulis Alfabet</string>
     <string name="huruf">Huruf</string>
@@ -8,8 +8,6 @@
     <string name="menghitung">Menghitung</string>
     <string name="belajar">BELAJAR</string>
     <string name="latihan">LATIHAN</string>
-    <string name="coba">Coba</string>
-=======
     <string name="title_activity_grid">GridActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
@@ -108,5 +106,5 @@
     <string name="clear">Clear</string>
     <string name="lanjut">LANJUT</string>
     <string name="sebelumnya">SEBELUMNYA</string>
->>>>>>> ziyad
+
 </resources>
