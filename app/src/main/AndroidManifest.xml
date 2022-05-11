@@ -14,18 +14,19 @@
             android:exported="false" />
         <activity
             android:name=".di.belajarlatihan.BelajarLatihanActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".di.menu.menuPageActivity"
+            />
         <activity
             android:name=".di.halamandaftarbelajar.DaftarBelajarActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".di.belajarlatihan.BelajarLatihanActivity"
+            />
         <activity
             android:name=".di.menu.menuPageActivity"
             android:exported="false" />
         <activity
             android:name=".di.splashscreen.SplashScreenActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,6 +34,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
     </application>
 
 </manifest>
