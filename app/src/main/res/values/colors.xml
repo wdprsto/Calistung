@@ -7,6 +7,16 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+<<<<<<< HEAD
     <color name="biruMuda">#9ADCFF</color>
     <color name="kuningMuda">#FFF89A</color>
+=======
+    <color name="light_blue">#FF9ADCFF</color>
+    <color name="light_yellow">#FFFFF89A</color>
+    <color name="ultra_light_yellow">#FFFFFFCC</color>
+    <color name="ultra_light_pink">#FFFFB2A6</color>
+    <color name="light_pink">#FFFF8AAE</color>
+    <color name="light_green">#FF6EE1AB</color>
+
+>>>>>>> ziyad
 </resources>

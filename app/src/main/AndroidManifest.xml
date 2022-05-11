@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.calistung">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -24,6 +24,16 @@
             />
         <activity
             android:name=".ui.menu.menuPageActivity"
+            android:exported="false"
+            />
+        <activity
+            android:name=".ui.latihan.TrainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.gridkarakter.GridActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.belajar.LearnActivity"
             android:exported="false" />
         <activity
             android:name=".ui.splashscreen.SplashScreenActivity"
