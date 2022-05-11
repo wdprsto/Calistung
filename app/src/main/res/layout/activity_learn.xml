@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.belajar.LearnActivity">
+    tools:context=".ui.belajar.belajar_draw.LearnActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -96,6 +96,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
+            android:textSize="12sp"
             android:layout_weight="1"
             android:backgroundTint="@color/ultra_light_pink"
             android:text="@string/clear"
@@ -114,6 +115,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
+            android:textSize="12sp"
             android:backgroundTint="@color/light_blue"
             android:text="@string/cek"
             android:textColor="@color/black"

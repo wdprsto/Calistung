@@ -4,7 +4,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.calistung.ui.belajar.LearnActivity
+import com.example.calistung.ui.belajar.belajar_draw.LearnActivity
 import com.example.calistung.databinding.ItemGridBinding
 import com.example.calistung.model.Learn
 

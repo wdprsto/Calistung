@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.calistung">
+
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,30 +12,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Calistung">
         <activity
-            android:name=".ui.daftarisibelajar.DaftarIsiBelajarActivity"
+            android:name=".ui.latihan.daftar_isi_latihan.DaftarIsiLatihanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.latihan.daftar_latihan.DaftarLatihanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.belajar.daftar_isi_belajar.DaftarIsiBelajarActivity"
             android:exported="false" />
         <activity
             android:name=".ui.belajarlatihan.BelajarLatihanActivity"
             android:exported="false"
-            android:parentActivityName=".ui.menu.menuPageActivity"
-            />
+            android:parentActivityName=".ui.menu.menuPageActivity" />
         <activity
-            android:name=".ui.halamandaftarbelajar.DaftarBelajarActivity"
+            android:name=".ui.belajar.daftar_belajar.DaftarBelajarActivity"
             android:exported="false"
-            android:parentActivityName=".ui.belajarlatihan.BelajarLatihanActivity"
-            />
+            android:parentActivityName=".ui.belajarlatihan.BelajarLatihanActivity" />
         <activity
             android:name=".ui.menu.menuPageActivity"
-            android:exported="false"
-            />
-        <activity
-            android:name=".ui.latihan.TrainActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.gridkarakter.GridActivity"
+            android:name=".ui.latihan.latihan_draw.TrainActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.belajar.LearnActivity"
+            android:name=".ui.belajar.daftar_isi_belajar_grid.GridActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.belajar.belajar_draw.LearnActivity"
             android:exported="false" />
         <activity
             android:name=".ui.splashscreen.SplashScreenActivity"
@@ -44,8 +49,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.calistung.ui.daftarisibelajar
+package com.example.calistung.ui.belajar.daftar_belajar
 
 
 /*

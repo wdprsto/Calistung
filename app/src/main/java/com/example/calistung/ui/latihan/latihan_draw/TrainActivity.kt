@@ -1,4 +1,4 @@
-package com.example.calistung.ui.latihan
+package com.example.calistung.ui.latihan.latihan_draw
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,6 +16,7 @@ class TrainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ActivityTrainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         val item=intent.getParcelableExtra<Train>(ITEM_SELECTED)
         tts = TextToSpeech(
             applicationContext

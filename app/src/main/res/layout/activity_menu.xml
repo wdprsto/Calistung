@@ -1,93 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
     tools:context=".ui.menu.menuPageActivity">
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="120dp"
+        android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:layout_marginStart="145dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="146dp"
+        android:layout_weight="3"
         android:elevation="2dp"
-        android:src="@drawable/calistung"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:src="@drawable/logo" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+<!--    <TextView-->
+<!--        android:id="@+id/textView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="2"-->
+<!--        android:elevation="2dp"-->
+<!--        android:fontFamily="@font/ubuntu"-->
+<!--        android:text="@string/calistung"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="24sp" />-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="145dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="136dp"
-        android:elevation="2dp"
-        android:fontFamily="@font/ubuntu"
-        android:text="@string/calistung"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        android:layout_weight="5"
+        android:orientation="vertical"
+        android:padding="8dp">
 
-    <Button
-        android:id="@+id/huruf"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginStart="51dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="15dp"
-        android:backgroundTint="@color/biruMuda"
-        android:drawableTop="@drawable/huruf"
-        android:elevation="2dp"
-        android:fontFamily="@font/ubuntu"
-        android:text="@string/huruf"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/menghitung"
-        app:layout_constraintEnd_toStartOf="@+id/angka"
-        app:layout_constraintStart_toStartOf="parent" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/huruf"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                app:cornerRadius="0dp"
+                android:backgroundTint="@color/biruMuda"
+                android:drawableTop="@drawable/ic_baseline_sort_by_alpha_24"
+                android:elevation="2dp"
+                android:fontFamily="@font/ubuntu"
+                android:padding="16dp"
+                android:text="@string/huruf"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
 
-    <Button
-        android:id="@+id/angka"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="15dp"
-        android:backgroundTint="@color/biruMuda"
-        android:drawableTop="@drawable/angka"
-        android:elevation="2dp"
-        android:fontFamily="@font/ubuntu"
-        android:text="@string/angka"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/menghitung"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/belajar" />
+            <com.google.android.material.button.MaterialButton
+                app:cornerRadius="0dp"
+                android:id="@+id/angka"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/biruMuda"
+                android:drawableTop="@drawable/ic_baseline_number_4_24"
+                android:elevation="2dp"
+                android:fontFamily="@font/ubuntu"
+                android:padding="16dp"
+                android:text="@string/angka"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/menghitung"
-        android:layout_width="328dp"
-        android:layout_height="160dp"
-        android:layout_marginStart="51dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="111dp"
-        android:backgroundTint="@color/biruMuda"
-        android:drawableTop="@drawable/menghitung"
-        android:elevation="2dp"
-        android:fontFamily="@font/ubuntu"
-        android:text="@string/menghitung"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.button.MaterialButton
+            app:cornerRadius="0dp"
+            android:id="@+id/menghitung"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginHorizontal="8dp"
+            android:backgroundTint="@color/biruMuda"
+            android:drawableTop="@drawable/ic_plus_minus"
+            android:elevation="2dp"
+            android:fontFamily="@font/ubuntu"
+            android:padding="16dp"
+            android:text="@string/menghitung"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+</LinearLayout>

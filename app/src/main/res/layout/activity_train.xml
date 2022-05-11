@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.latihan.TrainActivity">
+    tools:context=".ui.latihan.latihan_draw.TrainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -94,30 +94,33 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_clear"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
             android:backgroundTint="@color/ultra_light_pink"
             android:text="@string/clear"
+            android:textSize="12sp"
             android:textColor="@color/black"
             app:cornerRadius="0dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_back"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginHorizontal="8dp"
             android:layout_weight="1"
             android:backgroundTint="@color/light_blue"
             android:text="@string/sebelumnya"
+            android:textSize="12sp"
             android:textColor="@color/black"
             app:cornerRadius="0dp" />
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_next"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
+            android:textSize="12sp"
             android:backgroundTint="@color/light_green"
             android:text="@string/lanjut"
             android:textColor="@color/black"

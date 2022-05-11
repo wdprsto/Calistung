@@ -1,0 +1,67 @@
+package com.example.calistung.ui.belajar.belajar_draw
+
+import android.content.res.ColorStateList
+import android.os.Bundle
+import android.speech.tts.TextToSpeech
+import android.widget.ImageView
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
+import com.example.calistung.R
+import com.example.calistung.databinding.ActivityLearnBinding
+import com.example.calistung.model.Learn
+import com.example.calistung.utils.loadImage
+import java.util.*
+
+
+class LearnActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityLearnBinding
+    private val model:LearnViewModel by viewModels()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityLearnBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        val item = intent.getParcelableExtra<Learn>(ITEM_SELECTED)
+        model.apply {
+            setLearn(item!!)
+            setTts(this@LearnActivity)
+            learn.observe(this@LearnActivity) {
+                binding.apply {
+                    imageView.loadImage(it.gifLink)
+                    btnSpeak.setOnClickListener {
+                        model.tts.observe(this@LearnActivity){
+                            it.speak(item?.answer, TextToSpeech.QUEUE_FLUSH, null)
+                        }
+                    }
+                    btnClear.setOnClickListener {
+                        drawView.clearCanvas()
+                    }
+                    btnCheck.setOnClickListener {
+//                drawView.getBitmap()
+                        model.setCorrectness(!model.correctness.value!!)
+                        model.setIsStartedTrue()
+                    }
+                }
+            }
+            correctnessText.observe(this@LearnActivity){
+                binding.tvCorrectness.text = model.correctnessText.value.toString()
+            }
+            isStarted.observe(this@LearnActivity){ isStarted ->
+                if(isStarted){
+                    model.correctness.observe(this@LearnActivity){
+                        if (it) {
+                            binding.cvCorrectness.backgroundTintList =model.lightGreen(resources)
+                        } else {
+                            binding.cvCorrectness.backgroundTintList =model.ultraLightPink(resources)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    companion object {
+        const val ITEM_SELECTED = "item_selected"
+    }
+}
