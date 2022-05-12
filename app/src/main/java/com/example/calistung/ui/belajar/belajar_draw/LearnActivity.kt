@@ -26,7 +26,7 @@ class LearnActivity : AppCompatActivity() {
             learn.observe(this@LearnActivity) {mLearn->
                 binding.apply {
                     // takes input as Int
-                    drawView.setStrokeWidth(100F)
+                    drawView.setStrokeWidth(120F)
                     imageView.loadImage(mLearn.gifLink)
                     btnSpeak.setOnClickListener {
                         model.tts.observe(this@LearnActivity){

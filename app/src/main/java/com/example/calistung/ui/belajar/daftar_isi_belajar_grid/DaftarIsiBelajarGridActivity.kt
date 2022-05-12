@@ -29,7 +29,7 @@ class DaftarIsiBelajarGridActivity : AppCompatActivity() {
         model.learnCourses.observe(this) {
             binding.recyclerView.apply {
                 layoutManager = GridLayoutManager(this@DaftarIsiBelajarGridActivity, 3)
-                adapter = ListLearnCourseAdapter(it.learns!!)
+                adapter = GridAdapter(it.learns!!)
             }
         }
     }

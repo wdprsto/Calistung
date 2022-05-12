@@ -13,7 +13,7 @@ class ListLearnAdapter(items: ArrayList<LearnCourse>) : ListAdapter<LearnCourse>
     }
 
     override fun clicked(item: LearnCourse, context: Context) {
-        if(item.name=="Belajar Alfabet"||item.name=="Belajar Angka") {
+        if(item.name=="Belajar Alfabet"||item.name=="Belajar Angka Dasar") {
             val intent = Intent(context, DaftarIsiBelajarGridActivity::class.java)
             intent.putExtra(DaftarIsiBelajarGridActivity.LEARN_COURSE_SELECTED, item)
             context.startActivity(intent)

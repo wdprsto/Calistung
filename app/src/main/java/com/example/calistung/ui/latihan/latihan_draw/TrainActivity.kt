@@ -27,8 +27,11 @@ class TrainActivity : AppCompatActivity() {
                 binding.tvCorrectness.text = it
             }
             trainSelected.observe(this@TrainActivity) { mTrain ->
+
                 binding.apply {
+                    drawView.setStrokeWidth(120F)
                     tvQuestion.text = mTrain.question
+//                    model.setBitmapSelected( drawView.getBitmap())
                     btnSpeak.setOnClickListener {
                         model.tts.observe(this@TrainActivity) {
                             it.speak(mTrain.question, TextToSpeech.QUEUE_FLUSH, null)
@@ -40,10 +43,14 @@ class TrainActivity : AppCompatActivity() {
                     btnBack.setOnClickListener {
 //                drawView.getBitmap()
 //                        setNumber(model.number.value!!.minus(1))
+                        model.updateAnswer(drawView.getBitmap())
+                        model.setBitmapSelected(drawView.getBitmap())
                         prev()
                     }
                     btnNext.setOnClickListener {
 //                drawView.getBitmap()
+                        model.updateAnswer(drawView.getBitmap())
+                        model.setBitmapSelected(drawView.getBitmap())
                         next()
                     }
                 }

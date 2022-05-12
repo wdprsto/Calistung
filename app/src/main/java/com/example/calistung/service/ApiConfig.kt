@@ -13,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiConfig {
 
-    var BASE_URL = "https://gist.githubusercontent.com/mziyadam/5b0796a7734b730d41cd4064ce382ad8/raw/eadd33686cc169ecb1d543ec6f933a9f90b52ed6/"
+    var BASE_URL = "https://gist.githubusercontent.com/mziyadam/5b0796a7734b730d41cd4064ce382ad8/"
     fun getApiService(): ApiService {
         val loggingInterceptor = if (BuildConfig.DEBUG) {
             HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
