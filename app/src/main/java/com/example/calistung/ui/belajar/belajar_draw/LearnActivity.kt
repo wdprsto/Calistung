@@ -25,6 +25,8 @@ class LearnActivity : AppCompatActivity() {
             setTts(this@LearnActivity)
             learn.observe(this@LearnActivity) {mLearn->
                 binding.apply {
+                    // takes input as Int
+                    drawView.setStrokeWidth(100F)
                     imageView.loadImage(mLearn.gifLink)
                     btnSpeak.setOnClickListener {
                         model.tts.observe(this@LearnActivity){
@@ -36,7 +38,7 @@ class LearnActivity : AppCompatActivity() {
                     }
                     btnCheck.setOnClickListener {
 //                drawView.getBitmap()
-                        model.setCorrectness(!model.correctness.value!!)
+                        model.setCorrectness(drawView.getBitmap())
                         model.setIsStartedTrue()
                     }
                 }

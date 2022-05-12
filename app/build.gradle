@@ -69,4 +69,7 @@ dependencies {
 
     //androidDraw
     implementation 'com.github.divyanshub024:AndroidDraw:v0.1'
+
+    //Test Offline Vision API
+    implementation 'com.google.android.gms:play-services-mlkit-text-recognition:18.0.0'
 }
