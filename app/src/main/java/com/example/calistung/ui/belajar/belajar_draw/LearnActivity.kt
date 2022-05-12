@@ -1,17 +1,13 @@
 package com.example.calistung.ui.belajar.belajar_draw
 
-import android.content.res.ColorStateList
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
-import android.widget.ImageView
+import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.bumptech.glide.Glide
-import com.example.calistung.R
 import com.example.calistung.databinding.ActivityLearnBinding
 import com.example.calistung.model.Learn
 import com.example.calistung.utils.loadImage
-import java.util.*
 
 
 class LearnActivity : AppCompatActivity() {
@@ -27,12 +23,12 @@ class LearnActivity : AppCompatActivity() {
         model.apply {
             setLearn(item!!)
             setTts(this@LearnActivity)
-            learn.observe(this@LearnActivity) {
+            learn.observe(this@LearnActivity) {mLearn->
                 binding.apply {
-                    imageView.loadImage(it.gifLink)
+                    imageView.loadImage(mLearn.gifLink)
                     btnSpeak.setOnClickListener {
                         model.tts.observe(this@LearnActivity){
-                            it.speak(item?.answer, TextToSpeech.QUEUE_FLUSH, null)
+                            it.speak(mLearn.answer, TextToSpeech.QUEUE_FLUSH, null)
                         }
                     }
                     btnClear.setOnClickListener {
@@ -61,6 +57,17 @@ class LearnActivity : AppCompatActivity() {
             }
         }
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
     companion object {
         const val ITEM_SELECTED = "item_selected"
     }

@@ -5,11 +5,9 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Category(
+data class TrainQuestion(
     @field:SerializedName("name")
     val name:String?=null,
-    @field:SerializedName("learnCategories")
-    val learnCategories: LearnCategory?=null,
-    @field:SerializedName("trainCategories")
-    val trainCategories: TrainCategory?=null,
+    @field:SerializedName("trains")
+    val trains: ArrayList<Train>?=null
 ):Parcelable

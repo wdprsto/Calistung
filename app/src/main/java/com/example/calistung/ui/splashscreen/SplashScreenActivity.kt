@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.example.calistung.databinding.ActivitySplashScreenBinding
-import com.example.calistung.ui.menu.menuPageActivity
+import com.example.calistung.ui.menu.MenuPageActivity
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {
@@ -17,9 +17,8 @@ class SplashScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         splashScreenBinding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(splashScreenBinding.root)
-
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this@SplashScreenActivity, menuPageActivity::class.java)
+            val intent = Intent(this@SplashScreenActivity, MenuPageActivity::class.java)
             startActivity(intent)
             finish()
         }, delay)

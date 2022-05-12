@@ -11,17 +11,15 @@ import com.example.calistung.model.Learn
 import java.util.*
 
 class LearnViewModel : ViewModel() {
-    fun lightGreen(resources: Resources): ColorStateList =
-        ColorStateList.valueOf(resources.getColor(R.color.light_green))
-    fun ultraLightPink(resources: Resources): ColorStateList =
-        ColorStateList.valueOf(resources.getColor(R.color.ultra_light_pink))
 
     private val _learn = MutableLiveData<Learn>()
     val learn
         get() = _learn
+
     private val _correctness = MutableLiveData<Boolean>()
     val correctness
         get() = _correctness
+
     private val _isStarted = MutableLiveData<Boolean>()
     val isStarted
         get() = _isStarted
@@ -30,23 +28,24 @@ class LearnViewModel : ViewModel() {
     val correctnessText
         get() = _correctnessText
 
-    init {
-        _correctness.value = false
-        _isStarted.value=false
-    }
-
     private val _tts = MutableLiveData<TextToSpeech>()
     val tts
         get() = _tts
 
+    init {
+        _correctness.value = false
+        _isStarted.value = false
+    }
+
     fun setCorrectness(correctness: Boolean) {
         _correctness.value = correctness
-        if(correctness){
-            _correctnessText.value="BENAR"
-        }else{
-            _correctnessText.value="SALAH"
+        if (correctness) {
+            _correctnessText.value = "BENAR"
+        } else {
+            _correctnessText.value = "SALAH"
         }
     }
+
     fun setIsStartedTrue() {
         _isStarted.value = true
     }
@@ -65,5 +64,10 @@ class LearnViewModel : ViewModel() {
         }
     }
 
-    val ttsValue = _tts.value
+    fun lightGreen(resources: Resources): ColorStateList =
+        ColorStateList.valueOf(resources.getColor(R.color.light_green))
+
+    fun ultraLightPink(resources: Resources): ColorStateList =
+        ColorStateList.valueOf(resources.getColor(R.color.ultra_light_pink))
+
 }

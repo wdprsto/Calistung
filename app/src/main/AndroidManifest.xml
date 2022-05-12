@@ -19,24 +19,23 @@
             android:exported="false" />
         <activity
             android:name=".ui.belajar.daftar_isi_belajar.DaftarIsiBelajarActivity"
-            android:exported="false" />
+            android:exported="false"
+             />
         <activity
             android:name=".ui.belajarlatihan.BelajarLatihanActivity"
-            android:exported="false"
-            android:parentActivityName=".ui.menu.menuPageActivity" />
+            android:exported="false" />
         <activity
             android:name=".ui.belajar.daftar_belajar.DaftarBelajarActivity"
-            android:exported="false"
-            android:parentActivityName=".ui.belajarlatihan.BelajarLatihanActivity" />
+            android:exported="false" />
         <activity
-            android:name=".ui.menu.menuPageActivity"
+            android:name=".ui.menu.MenuPageActivity"
             android:exported="false" />
         <activity
             android:name=".ui.latihan.latihan_draw.TrainActivity"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
-            android:name=".ui.belajar.daftar_isi_belajar_grid.GridActivity"
-            android:exported="false" />
+            android:name=".ui.belajar.daftar_isi_belajar_grid.DaftarIsiBelajarGridActivity"
+            android:exported="false"/>
         <activity
             android:name=".ui.belajar.belajar_draw.LearnActivity"
             android:exported="false" />

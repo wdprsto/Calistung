@@ -2,30 +2,46 @@ package com.example.calistung.ui.belajar.daftar_belajar
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
+import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.calistung.adapter.ListLearnAdapter
 import com.example.calistung.databinding.ActivityDaftarBelajarBinding
-import com.example.calistung.model.Learn
-import com.example.calistung.model.LearnCourse
+import com.example.calistung.model.LearnCategory
 
 class DaftarBelajarActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDaftarBelajarBinding
-    private val learnCourse=LearnCourse("Belajar Alphabet", arrayListOf(
-        Learn("belajar huruf A", "https://i.makeagif.com/media/8-16-2020/mDO6C4.gif", "A"),
-        Learn("belajar huruf A", "https://i.makeagif.com/media/8-16-2020/mDO6C4.gif", "A"),
-        Learn("belajar huruf A", "https://i.makeagif.com/media/8-16-2020/mDO6C4.gif", "A"),
-    ))
+    private val model: DaftarBelajarViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDaftarBelajarBinding.inflate(layoutInflater)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setContentView(binding.root)
-        binding.rvGithub.apply {
-            layoutManager = LinearLayoutManager(this@DaftarBelajarActivity)
-            adapter = ListLearnAdapter(arrayListOf(learnCourse))
+        val item =
+            intent.getParcelableExtra<LearnCategory>(LEARN_COURSE_SELECTED)
+        if(item!=null)
+            model.setLearnCategories(item)
+        model.learnCategory.observe(this) {
+            binding.rvGithub.apply {
+                layoutManager = LinearLayoutManager(this@DaftarBelajarActivity)
+                adapter = ListLearnAdapter(it.learnCourse!!)
+            }
         }
-    }
 
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+    companion object {
+        const val LEARN_COURSE_SELECTED = "learn_course_selected"
+    }
     /*private fun setUserData(userData: List<ItemsItem>) {
        val listReview = ArrayList<ItemsItem>()
        for (review in userData) {

@@ -5,9 +5,9 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class TrainCourse(
+data class TrainCategory(
     @field:SerializedName("name")
     val name:String?=null,
-    @field:SerializedName("trainQuestion")
-    val trainQuestion: ArrayList<TrainQuestion>?=null
+    @field:SerializedName("trainCourse")
+    val trainCourse: ArrayList<TrainCourse>?=null
 ): Parcelable
