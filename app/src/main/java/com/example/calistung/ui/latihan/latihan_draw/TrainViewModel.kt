@@ -1,11 +1,15 @@
 package com.example.calistung.ui.latihan.latihan_draw
 
 import android.content.Context
+import android.content.res.ColorStateList
+import android.content.res.Resources
 import android.graphics.Bitmap
 import android.speech.tts.TextToSpeech
 import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.calistung.R
 import com.example.calistung.model.Train
 import com.example.calistung.model.TrainQuestion
 import com.google.mlkit.vision.common.InputImage
@@ -23,9 +27,9 @@ class TrainViewModel : ViewModel() {
     private val _bitmapSelected = MutableLiveData<Bitmap>()
     val bitmapSelected
         get() = _bitmapSelected
-//    private val _correctness = MutableLiveData<Boolean>()
-//    val correctness
-//        get() = _correctness
+    private val _correctness = MutableLiveData<String>()
+    val correctness
+        get() = _correctness
 //
 //    private val _isStarted = MutableLiveData<Boolean>()
 //    val isStarted
@@ -47,15 +51,29 @@ class TrainViewModel : ViewModel() {
     val score
         get() = _score
 
+    private val _keepBitmaps = MutableLiveData<Bitmap>()
+    val keepBitmaps
+        get() = _keepBitmaps
+
+    private val _next = MutableLiveData<Boolean>()
+    val next: LiveData<Boolean> = _next
+    private val _finish = MutableLiveData<Boolean>()
+    val finish: LiveData<Boolean> = _finish
+
     var map = mutableMapOf<Int, Train>()
     var numberAndScore = mutableMapOf<Int, Int>()
     var a = mutableMapOf<Int, String>()
     var myA = mutableMapOf<Int, String>()
     var bitmaps = mutableMapOf<Int, Bitmap>()
+    var temp = 0
+
 
     init {
         _number.value = 12345
         _score.value = 0
+
+
+
     }
 
     fun setTrainQuestion(trainQuestion: TrainQuestion) {
@@ -92,26 +110,29 @@ class TrainViewModel : ViewModel() {
 //        _correctnessText.value = "SOAL $number DARI ${map.size} SOAL || nilai anda ${_score.value}"
         _correctnessText.value = "SOAL $number DARI ${map.size} SOAL"
     }
-    fun setBitmapSelected(bitmap: Bitmap){
-        _bitmapSelected.value=bitmap
+
+    fun setBitmapSelected(bitmap: Bitmap) {
+        _bitmapSelected.value = bitmap
     }
+
     fun next() {
+
         if (_number.value!! < map.size) {
             setNumber(_number.value!!.plus(1))
             setTrainSelected(map[_number.value]!!)
-            if(bitmaps[_number.value!!]!=null)
-                setBitmapSelected(bitmaps[_number.value!!]!!)
+        }
+        if(_number.value!! >= map.size){
+            _finish.value = true
         }
     }
 
-    fun prev() {
+    /*fun prev() {
         if (_number.value!! > 1) {
             setNumber(_number.value!!.minus(1))
             setTrainSelected(map[_number.value]!!)
-            if(bitmaps[_number.value!!]!=null)
-                setBitmapSelected(bitmaps[_number.value!!]!!)
+
         }
-    }
+    }*/
 
     //    fun plusScore() {
 //        setScore(_score.value?.plus(1)!!)
@@ -122,45 +143,63 @@ class TrainViewModel : ViewModel() {
 //    fun setScore(score:Int){
 //        _score.value=score
 //    }
-    fun updateScore() {
-        var temp = 0
-        for (i in 1..myA.size) {
-            if (a[i] == myA[i]) {
-                temp++
+
+
+    fun updateScore(nilai: Int, score: Boolean) {
+        temp = nilai
+
+
+        if (score) {
+
+            temp++
+
+        } else {
+            if (temp > 1) {
+                temp - 1
             }
         }
+
+
         /*for(i in 1..numberAndScore.size){
-                temp+=numberAndScore[i]!!
-            }*/
-        Log.e("TEMPIK", "TEMP : " + temp)
-        Log.e("TEMPIK", "number and score : " + numberAndScore)
+            temp+=numberAndScore[i]!!
+        }*/
         _score.value = temp
+        Log.e("TEMPIK", "TEMP : ${_score.value}")
+        Log.e("TEMPIK", "number and score : " + numberAndScore)
+
 //        _correctnessText.value = "SOAL $number DARI ${map.size} SOAL || nilai anda ${_score.value}"
     }
 
     fun updateAnswer(bitmap: Bitmap) {
         val recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)
         val image = InputImage.fromBitmap(bitmap, 0)
-        bitmaps[_number.value!!] = bitmap
         val result = recognizer.process(image)
             .addOnSuccessListener { visionText ->
                 // Task completed successfully
-                // ...
-                Log.e("TEMPIK", "HASIL : " + visionText.text)
-                Log.e("TEMPIK", "SCORE : " + _score.value)
+                // ..
                 val temp = visionText.text == _trainSelected.value?.answer
                 if (temp) {
+                    updateScore(_score.value!!, temp)
+                    Log.e("TEMPIK", "HASIL : Benar ")
+                    Log.e("TEMPIK", "HASIL : " + visionText.text)
+                    Log.e("TEMPIK", "SCORE : ${_score.value}")
+                    _next.value = true
+                    _correctness.value = "BENAR"
                     myA[_number.value!!] = visionText.text
-//                    numberAndScore[_number.value!!]=1
-//                    plusScore()
-//                    _correctnessText.value = "BENAR"
                 } else {
+                    updateScore(_score.value!!, temp)
+                    Log.e("TEMPIK", "HASIL : Salah ")
+                    Log.e("TEMPIK", "HASIL : " + visionText.text)
+                    Log.e("TEMPIK", "SCORE : ${_score.value}")
+                    _next.value = false
+                    _correctness.value = "SALAH"
                     myA[_number.value!!] = visionText.text
 //                    numberAndScore[_number.value!!]=0
 //                    minusScore()
 //                    _correctnessText.value = "SALAH"
                 }
-                updateScore()
+
+
 //            tempText=visionText.text
 //                Log.e("TEMPIK", "HASIL : " + visionText.text)
 //            Log.e("TEMPIK","HASIL temp : "+tempText)
@@ -171,10 +210,11 @@ class TrainViewModel : ViewModel() {
                 Log.e("TEMPIK", "EXEPTION : $e")
             }
     }
-//    fun lightGreen(resources: Resources): ColorStateList =
-//        ColorStateList.valueOf(resources.getColor(R.color.light_green))
-//
-//    fun ultraLightPink(resources: Resources): ColorStateList =
-//        ColorStateList.valueOf(resources.getColor(R.color.ultra_light_pink))
+    fun lightGreen(resources: Resources): ColorStateList =
+        ColorStateList.valueOf(resources.getColor(R.color.light_green))
+
+    fun ultraLightPink(resources: Resources): ColorStateList =
+        ColorStateList.valueOf(resources.getColor(R.color.ultra_light_pink))
+
 
 }

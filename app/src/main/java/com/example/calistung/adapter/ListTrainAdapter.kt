@@ -15,5 +15,6 @@ class ListTrainAdapter(items: ArrayList<TrainCourse>) : ListAdapter<TrainCourse>
         val intent = Intent(context, DaftarIsiLatihanActivity::class.java)
         intent.putExtra(DaftarIsiLatihanActivity.TRAIN_COURSE_SELECTED, item)
         context.startActivity(intent)
+
     }
 }

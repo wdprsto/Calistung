@@ -70,8 +70,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
         android:layout_marginHorizontal="16dp"
-        android:backgroundTint="@color/light_blue">
+        android:backgroundTint="@color/light_yellow">
 
         <TextView
             android:id="@+id/tv_correctness"
@@ -83,6 +84,30 @@
             tools:text="SOAL 1 DARI 10 SOAL">
 
         </TextView>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_correct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="16dp"
+        android:backgroundTint="@color/light_blue">
+
+        <TextView
+            android:id="@+id/tv_correct"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            tools:text="SOAL 1 DARI 10 SOAL">
+
+        </TextView>
+
+
     </androidx.cardview.widget.CardView>
 
     <LinearLayout
@@ -103,15 +128,16 @@
             android:textColor="@color/black"
             app:cornerRadius="0dp" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_back"
+       <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_check"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="8dp"
             android:layout_weight="1"
             android:backgroundTint="@color/light_blue"
-            android:text="@string/sebelumnya"
+            android:text="@string/cek"
             android:textSize="12sp"
+            android:visibility="visible"
             android:textColor="@color/black"
             app:cornerRadius="0dp" />
         <com.google.android.material.button.MaterialButton
@@ -125,6 +151,19 @@
             android:text="@string/lanjut"
             android:textColor="@color/black"
             app:cornerRadius="0dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_end"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:textSize="12sp"
+            android:backgroundTint="@color/light_green"
+            android:text="belum"
+            android:visibility="gone"
+            android:textColor="@color/black"
+            app:cornerRadius="0dp" />
+
     </LinearLayout>
 
 </LinearLayout>
