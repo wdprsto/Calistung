@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Calistung">
         <activity
+            android:name=".ui.score.ScoreActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.latihan.daftar_isi_latihan.DaftarIsiLatihanActivity"
             android:exported="false" />
         <activity
@@ -19,8 +22,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.belajar.daftar_isi_belajar.DaftarIsiBelajarActivity"
-            android:exported="false"
-             />
+            android:exported="false" />
         <activity
             android:name=".ui.belajarlatihan.BelajarLatihanActivity"
             android:exported="false" />
@@ -32,10 +34,10 @@
             android:exported="false" />
         <activity
             android:name=".ui.latihan.latihan_draw.TrainActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".ui.belajar.daftar_isi_belajar_grid.DaftarIsiBelajarGridActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".ui.belajar.belajar_draw.LearnActivity"
             android:exported="false" />
@@ -48,6 +50,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />

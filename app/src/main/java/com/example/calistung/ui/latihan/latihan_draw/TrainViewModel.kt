@@ -9,12 +9,14 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.calistung.R
 import com.example.calistung.model.Train
 import com.example.calistung.model.TrainQuestion
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.text.TextRecognition
 import com.google.mlkit.vision.text.latin.TextRecognizerOptions
+import kotlinx.coroutines.launch
 import java.util.*
 
 class TrainViewModel : ViewModel() {
@@ -55,8 +57,8 @@ class TrainViewModel : ViewModel() {
     val keepBitmaps
         get() = _keepBitmaps
 
-    private val _next = MutableLiveData<Boolean>()
-    val next: LiveData<Boolean> = _next
+    private val _points = MutableLiveData<String>()
+    val points: LiveData<String> = _points
     private val _finish = MutableLiveData<Boolean>()
     val finish: LiveData<Boolean> = _finish
 
@@ -66,12 +68,12 @@ class TrainViewModel : ViewModel() {
     var myA = mutableMapOf<Int, String>()
     var bitmaps = mutableMapOf<Int, Bitmap>()
     var temp = 0
+    val point = mutableMapOf<Int, Int>()
 
 
     init {
         _number.value = 12345
         _score.value = 0
-
 
 
     }
@@ -113,26 +115,38 @@ class TrainViewModel : ViewModel() {
 
     fun setBitmapSelected(bitmap: Bitmap) {
         _bitmapSelected.value = bitmap
+
     }
 
     fun next() {
 
+
         if (_number.value!! < map.size) {
             setNumber(_number.value!!.plus(1))
             setTrainSelected(map[_number.value]!!)
+
+
         }
-        if(_number.value!! >= map.size){
+        if (_number.value!! >= map.size) {
             _finish.value = true
+            point.values.sum()
+            _points.value = point.values.sum().toString()
+            Log.e("TEMPIK", "POINT : ${point.values.sum()}")
         }
     }
 
-    /*fun prev() {
+    fun prev() {
         if (_number.value!! > 1) {
             setNumber(_number.value!!.minus(1))
             setTrainSelected(map[_number.value]!!)
 
+
+
         }
-    }*/
+        if (_number.value!! <= map.size) {
+            _finish.value = false
+        }
+    }
 
     //    fun plusScore() {
 //        setScore(_score.value?.plus(1)!!)
@@ -145,18 +159,12 @@ class TrainViewModel : ViewModel() {
 //    }
 
 
-    fun updateScore(nilai: Int, score: Boolean) {
-        temp = nilai
+    fun updateScore(isTrue: Boolean, position: Int) {
 
-
-        if (score) {
-
-            temp++
-
+        if (isTrue) {
+            point[position] = 1
         } else {
-            if (temp > 1) {
-                temp - 1
-            }
+            point[position] = 0
         }
 
 
@@ -179,21 +187,21 @@ class TrainViewModel : ViewModel() {
                 // ..
                 val temp = visionText.text == _trainSelected.value?.answer
                 if (temp) {
-                    updateScore(_score.value!!, temp)
+                    updateScore(temp, _number.value!!)
                     Log.e("TEMPIK", "HASIL : Benar ")
                     Log.e("TEMPIK", "HASIL : " + visionText.text)
                     Log.e("TEMPIK", "SCORE : ${_score.value}")
-                    _next.value = true
-                    _correctness.value = "BENAR"
                     myA[_number.value!!] = visionText.text
+
+
                 } else {
-                    updateScore(_score.value!!, temp)
+                    updateScore(temp, _number.value!!)
                     Log.e("TEMPIK", "HASIL : Salah ")
                     Log.e("TEMPIK", "HASIL : " + visionText.text)
                     Log.e("TEMPIK", "SCORE : ${_score.value}")
-                    _next.value = false
-                    _correctness.value = "SALAH"
                     myA[_number.value!!] = visionText.text
+
+
 //                    numberAndScore[_number.value!!]=0
 //                    minusScore()
 //                    _correctnessText.value = "SALAH"
@@ -209,12 +217,13 @@ class TrainViewModel : ViewModel() {
                 // ...
                 Log.e("TEMPIK", "EXEPTION : $e")
             }
-    }
-    fun lightGreen(resources: Resources): ColorStateList =
-        ColorStateList.valueOf(resources.getColor(R.color.light_green))
 
-    fun ultraLightPink(resources: Resources): ColorStateList =
-        ColorStateList.valueOf(resources.getColor(R.color.ultra_light_pink))
+    }
+    /* fun lightGreen(resources: Resources): ColorStateList =
+         ColorStateList.valueOf(resources.getColor(R.color.light_green))
+
+     fun ultraLightPink(resources: Resources): ColorStateList =
+         ColorStateList.valueOf(resources.getColor(R.color.ultra_light_pink))*/
 
 
 }

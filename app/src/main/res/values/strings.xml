@@ -107,5 +107,8 @@
     <string name="lanjut">LANJUT</string>
     <string name="sebelumnya">SEBELUMNYA</string>
     <string name="selesai">Selesai</string>
+    <string name="nilai_skor_nya_adalah">Nilai Skor nya Adalah :</string>
+    <string name="_80">80</string>
+    <string name="kembali_ke_halaman_menu">Kembali Ke halaman Menu</string>
 
 </resources>
