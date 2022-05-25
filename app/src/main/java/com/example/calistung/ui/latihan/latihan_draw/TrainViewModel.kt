@@ -6,10 +6,14 @@ import android.content.res.Resources
 import android.graphics.Bitmap
 import android.speech.tts.TextToSpeech
 import android.util.Log
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.divyanshu.draw.widget.DrawView
+import com.divyanshu.draw.widget.MyPath
+import com.divyanshu.draw.widget.PaintOptions
 import com.example.calistung.R
 import com.example.calistung.model.Train
 import com.example.calistung.model.TrainQuestion
@@ -62,11 +66,16 @@ class TrainViewModel : ViewModel() {
     private val _finish = MutableLiveData<Boolean>()
     val finish: LiveData<Boolean> = _finish
 
+    private val _bitmaps = MutableLiveData<MutableMap<Int,Fragment>>()
+    val bitmaps: LiveData<MutableMap<Int,Fragment>> = _bitmaps
+
+
     var map = mutableMapOf<Int, Train>()
     var numberAndScore = mutableMapOf<Int, Int>()
     var a = mutableMapOf<Int, String>()
     var myA = mutableMapOf<Int, String>()
-    var bitmaps = mutableMapOf<Int, Bitmap>()
+//    var bitmaps = MutableLiveData<MutableMap<Int, Fragment>>()
+    var currentFragment=MutableLiveData<Fragment>()
     var temp = 0
     val point = mutableMapOf<Int, Int>()
 
@@ -74,7 +83,7 @@ class TrainViewModel : ViewModel() {
     init {
         _number.value = 12345
         _score.value = 0
-
+        bitmaps.value?.set(1, DrawFragment())
 
     }
 
@@ -177,6 +186,14 @@ class TrainViewModel : ViewModel() {
 
 //        _correctnessText.value = "SOAL $number DARI ${map.size} SOAL || nilai anda ${_score.value}"
     }
+
+    fun saveDrawView(drawFragment: Fragment){
+        bitmaps.value?.set(number.value!!, drawFragment)
+//        Log.e("TEMPIK",number.toString()+"=="+bitmaps.value[number.value!!].toString())
+        Log.e("TEMPIK all",bitmaps.toString())
+//        Log.e("TEMPIK","nomorzz"+number.value.toString())
+    }
+    fun getCurrentF()= bitmaps.value?.get(number.value!!)
 
     fun updateAnswer(bitmap: Bitmap) {
         val recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)
