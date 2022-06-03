@@ -112,7 +112,7 @@ class LearnViewModel : ViewModel() {
 
             //Convert bitmap to byte array
             val bos = ByteArrayOutputStream()
-            bitmap.compress(Bitmap.CompressFormat.PNG, 0, bos) // YOU can also save it in JPEG
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 0, bos) // YOU can also save it in JPEG
             val bitmapdata = bos.toByteArray()
 
             //write the bytes in file
@@ -145,18 +145,20 @@ class LearnViewModel : ViewModel() {
                             if (responseBody?.resultPredict == _learn.value?.answer) {
 
                                 _correctnessText.value = "BENAR"
+                                _correctness.value = true
                               /*  _change.value = true
                                 _isLoading.value = false
                                 _toast.value = Event("berhasil")*/
 
+                            }else {
+                                _correctnessText.value = "SALAH"
+                                _correctness.value = false
+                                /* _toast.value = Event("file_besar")
+                                 _change.value = false
+                                 _isLoading.value = false
+                                 Log.e(TAG, "onResponse: ${response.message()}")*/
                             }
 
-                        } else {
-                            _correctnessText.value = "SALAH"
-                           /* _toast.value = Event("file_besar")
-                            _change.value = false
-                            _isLoading.value = false
-                            Log.e(TAG, "onResponse: ${response.message()}")*/
                         }
                     }
 

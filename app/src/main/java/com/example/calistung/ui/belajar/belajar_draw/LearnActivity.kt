@@ -12,6 +12,7 @@ import androidx.core.app.ActivityCompat
 import com.example.calistung.databinding.ActivityLearnBinding
 import com.example.calistung.model.Learn
 import com.example.calistung.utils.loadImage
+import kotlinx.coroutines.runBlocking
 
 
 class LearnActivity : AppCompatActivity() {
@@ -31,7 +32,7 @@ class LearnActivity : AppCompatActivity() {
             learn.observe(this@LearnActivity) {mLearn->
                 binding.apply {
                     // takes input as Int
-                    drawView.setStrokeWidth(120F)
+                    drawView.setStrokeWidth(50F)
                     imageView.loadImage(mLearn.gifLink)
                     btnSpeak.setOnClickListener {
                         model.tts.observe(this@LearnActivity){
@@ -43,10 +44,12 @@ class LearnActivity : AppCompatActivity() {
                     }
                     btnCheck.setOnClickListener {
 //                drawView.getBitmap()
+                        runBlocking {
+                            model.uploadImage(drawView.getBitmap())
 
-                        model.uploadImage(drawView.getBitmap())
+                            model.setIsStartedTrue()
+                        }
 
-                        model.setIsStartedTrue()
                     }
                 }
             }

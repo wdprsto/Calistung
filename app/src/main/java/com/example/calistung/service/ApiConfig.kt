@@ -33,7 +33,7 @@ object ApiConfig {
     }
 
 
-    var BASE = "https://calistung.uc.r.appspot.com"
+    var BASE = "https://calistung.uc.r.appspot.com/ml/"
     fun getApiCloud(): ApiService {
         val loggingInterceptor = if (BuildConfig.DEBUG) {
             HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)

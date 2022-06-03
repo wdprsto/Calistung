@@ -12,10 +12,14 @@ interface ApiService {
     @GET("raw")
     suspend fun getAllData(): Response<ResponseCategory>
 
+
+
+
     @Multipart
-    @POST("/predict")
+    @Headers("Authorization: bearer bmMMM8iHjrexZYCwJg0FF0z3jQlhuk4I7UYoGEAOcSDkkOLeBMw8cy2z9uhegn82NqAAKzwoLtWTGbizxmIWEYjigP")
+    @POST("predict")
     fun predictHuruf(
-//        @Header("Authorization") bearer: String?,
+        //@Header("Authorization") bearer: String?,
         @Part file: MultipartBody.Part,
     ): Call<Predict>
 }

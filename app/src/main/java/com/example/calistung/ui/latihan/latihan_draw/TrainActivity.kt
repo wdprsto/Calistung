@@ -38,7 +38,7 @@ class TrainActivity : AppCompatActivity() {
             trainSelected.observe(this@TrainActivity) { mTrain ->
 
                 binding.apply {
-                    drawView.setStrokeWidth(120F)
+                    drawView.setStrokeWidth(50F)
 
                     tvQuestion.text = mTrain.question
 //                    model.setBitmapSelected( drawView.getBitmap())
@@ -52,7 +52,7 @@ class TrainActivity : AppCompatActivity() {
                     }
 
                     btnCheck.setOnClickListener {
-                        model.updateAnswer(drawView.getBitmap())
+                        model.uploadImage(drawView.getBitmap())
                     }
 
 
