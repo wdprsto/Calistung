@@ -22,6 +22,7 @@ class DrawFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.drawView.setStrokeWidth(120F)
+
     }
 
     fun getBitmap()=binding.drawView.getBitmap()

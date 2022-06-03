@@ -1,10 +1,14 @@
 package com.example.calistung.ui.belajar.belajar_draw
 
+import android.Manifest
+import android.app.Activity
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import com.example.calistung.databinding.ActivityLearnBinding
 import com.example.calistung.model.Learn
 import com.example.calistung.utils.loadImage
@@ -18,6 +22,7 @@ class LearnActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLearnBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         val item = intent.getParcelableExtra<Learn>(ITEM_SELECTED)
         model.apply {
@@ -38,7 +43,9 @@ class LearnActivity : AppCompatActivity() {
                     }
                     btnCheck.setOnClickListener {
 //                drawView.getBitmap()
-                        model.setCorrectness(drawView.getBitmap())
+
+                        model.bitmapToFile(drawView.getBitmap())
+
                         model.setIsStartedTrue()
                     }
                 }
@@ -59,6 +66,8 @@ class LearnActivity : AppCompatActivity() {
             }
         }
     }
+
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {

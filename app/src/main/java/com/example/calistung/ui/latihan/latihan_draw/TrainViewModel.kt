@@ -4,14 +4,14 @@ import android.content.Context
 import android.content.res.ColorStateList
 import android.content.res.Resources
 import android.graphics.Bitmap
+import android.graphics.Paint
+import android.graphics.Path
 import android.speech.tts.TextToSpeech
 import android.util.Log
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.divyanshu.draw.widget.DrawView
 import com.divyanshu.draw.widget.MyPath
 import com.divyanshu.draw.widget.PaintOptions
 import com.example.calistung.R
@@ -22,6 +22,7 @@ import com.google.mlkit.vision.text.TextRecognition
 import com.google.mlkit.vision.text.latin.TextRecognizerOptions
 import kotlinx.coroutines.launch
 import java.util.*
+import kotlin.collections.LinkedHashMap
 
 class TrainViewModel : ViewModel() {
     private val _trainQuestion = MutableLiveData<TrainQuestion>()
@@ -30,7 +31,7 @@ class TrainViewModel : ViewModel() {
     private val _trainSelected = MutableLiveData<Train>()
     val trainSelected
         get() = _trainSelected
-    private val _bitmapSelected = MutableLiveData<Bitmap>()
+    private val _bitmapSelected = MutableLiveData<Path>()
     val bitmapSelected
         get() = _bitmapSelected
     private val _correctness = MutableLiveData<String>()
@@ -66,16 +67,15 @@ class TrainViewModel : ViewModel() {
     private val _finish = MutableLiveData<Boolean>()
     val finish: LiveData<Boolean> = _finish
 
-    private val _bitmaps = MutableLiveData<MutableMap<Int,Fragment>>()
-    val bitmaps: LiveData<MutableMap<Int,Fragment>> = _bitmaps
+    private val _next = MutableLiveData<Boolean>()
+    val next: LiveData<Boolean> = _next
+
 
 
     var map = mutableMapOf<Int, Train>()
     var numberAndScore = mutableMapOf<Int, Int>()
     var a = mutableMapOf<Int, String>()
     var myA = mutableMapOf<Int, String>()
-//    var bitmaps = MutableLiveData<MutableMap<Int, Fragment>>()
-    var currentFragment=MutableLiveData<Fragment>()
     var temp = 0
     val point = mutableMapOf<Int, Int>()
 
@@ -83,9 +83,10 @@ class TrainViewModel : ViewModel() {
     init {
         _number.value = 12345
         _score.value = 0
-        bitmaps.value?.set(1, DrawFragment())
+        _next.value = false
 
     }
+
 
     fun setTrainQuestion(trainQuestion: TrainQuestion) {
         _trainQuestion.value = trainQuestion
@@ -122,10 +123,7 @@ class TrainViewModel : ViewModel() {
         _correctnessText.value = "SOAL $number DARI ${map.size} SOAL"
     }
 
-    fun setBitmapSelected(bitmap: Bitmap) {
-        _bitmapSelected.value = bitmap
 
-    }
 
     fun next() {
 
@@ -133,6 +131,8 @@ class TrainViewModel : ViewModel() {
         if (_number.value!! < map.size) {
             setNumber(_number.value!!.plus(1))
             setTrainSelected(map[_number.value]!!)
+
+
 
 
         }
@@ -144,18 +144,7 @@ class TrainViewModel : ViewModel() {
         }
     }
 
-    fun prev() {
-        if (_number.value!! > 1) {
-            setNumber(_number.value!!.minus(1))
-            setTrainSelected(map[_number.value]!!)
 
-
-
-        }
-        if (_number.value!! <= map.size) {
-            _finish.value = false
-        }
-    }
 
     //    fun plusScore() {
 //        setScore(_score.value?.plus(1)!!)
@@ -187,15 +176,9 @@ class TrainViewModel : ViewModel() {
 //        _correctnessText.value = "SOAL $number DARI ${map.size} SOAL || nilai anda ${_score.value}"
     }
 
-    fun saveDrawView(drawFragment: Fragment){
-        bitmaps.value?.set(number.value!!, drawFragment)
-//        Log.e("TEMPIK",number.toString()+"=="+bitmaps.value[number.value!!].toString())
-        Log.e("TEMPIK all",bitmaps.toString())
-//        Log.e("TEMPIK","nomorzz"+number.value.toString())
-    }
-    fun getCurrentF()= bitmaps.value?.get(number.value!!)
-
     fun updateAnswer(bitmap: Bitmap) {
+        _next.value = false
+
         val recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)
         val image = InputImage.fromBitmap(bitmap, 0)
         val result = recognizer.process(image)
@@ -204,10 +187,13 @@ class TrainViewModel : ViewModel() {
                 // ..
                 val temp = visionText.text == _trainSelected.value?.answer
                 if (temp) {
+
                     updateScore(temp, _number.value!!)
                     Log.e("TEMPIK", "HASIL : Benar ")
                     Log.e("TEMPIK", "HASIL : " + visionText.text)
                     Log.e("TEMPIK", "SCORE : ${_score.value}")
+                    _next.value = true
+                    _correctness.value = "BENAR"
                     myA[_number.value!!] = visionText.text
 
 
@@ -216,6 +202,8 @@ class TrainViewModel : ViewModel() {
                     Log.e("TEMPIK", "HASIL : Salah ")
                     Log.e("TEMPIK", "HASIL : " + visionText.text)
                     Log.e("TEMPIK", "SCORE : ${_score.value}")
+                    _next.value = false
+                    _correctness.value = "SALAH"
                     myA[_number.value!!] = visionText.text
 
 
@@ -236,11 +224,11 @@ class TrainViewModel : ViewModel() {
             }
 
     }
-    /* fun lightGreen(resources: Resources): ColorStateList =
+    fun lightGreen(resources: Resources): ColorStateList =
          ColorStateList.valueOf(resources.getColor(R.color.light_green))
 
      fun ultraLightPink(resources: Resources): ColorStateList =
-         ColorStateList.valueOf(resources.getColor(R.color.ultra_light_pink))*/
+         ColorStateList.valueOf(resources.getColor(R.color.ultra_light_pink))
 
 
 }
