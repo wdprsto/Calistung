@@ -57,12 +57,11 @@ class LearnViewModel : ViewModel() {
         get() = _tts
 
 
-    var file: File? = null
+
 
     init {
         _correctness.value = false
         _isStarted.value = false
-        uploadImage()
     }
 
     /*fun setCorrectness(bitmap: Bitmap) {
@@ -101,12 +100,15 @@ class LearnViewModel : ViewModel() {
             }
     }*/
 
-    fun bitmapToFile(bitmap: Bitmap, fileNameToSave: String = "image"): File? { // File name like "image.png"
-        //create a file to write bitmap data
 
-        return try {
+
+
+    fun uploadImage(bitmap: Bitmap, fileNameToSave: String = "image") {
+        viewModelScope.launch(Dispatchers.IO) {
+
+            val file: File?
             file = File(Environment.getExternalStorageDirectory().toString() + File.separator + fileNameToSave)
-            file?.createNewFile()
+            file.createNewFile()
 
             //Convert bitmap to byte array
             val bos = ByteArrayOutputStream()
@@ -118,31 +120,15 @@ class LearnViewModel : ViewModel() {
             fos.write(bitmapdata)
             fos.flush()
             fos.close()
-            file
-        } catch (e: Exception) {
-            e.printStackTrace()
-            file // it will return null
-        }
-    }
-
-
-    private fun uploadImage() {
-        viewModelScope.launch(Dispatchers.Default) {
-
-
-                //Convert bitmap to byte array
-
-
-                //write the bytes in file
 
 
 
 
-                val requestImageFile = file?.asRequestBody("image/jpeg".toMediaTypeOrNull())
+                val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
                val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
                     "image",
-                   file?.name,
-                   requestImageFile!!
+                   file.name,
+                   requestImageFile
                 )
 
                 val service = ApiConfig.getApiCloud().predictHuruf(imageMultipart)

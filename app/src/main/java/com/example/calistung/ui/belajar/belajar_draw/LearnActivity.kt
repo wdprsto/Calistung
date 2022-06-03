@@ -44,7 +44,7 @@ class LearnActivity : AppCompatActivity() {
                     btnCheck.setOnClickListener {
 //                drawView.getBitmap()
 
-                        model.bitmapToFile(drawView.getBitmap())
+                        model.uploadImage(drawView.getBitmap())
 
                         model.setIsStartedTrue()
                     }
