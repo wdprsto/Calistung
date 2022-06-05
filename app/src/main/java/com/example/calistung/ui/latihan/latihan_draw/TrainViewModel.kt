@@ -280,7 +280,7 @@ class TrainViewModel : ViewModel() {
                             updateScore(true, _number.value!!)
                             Log.e("TEMPIK", "onResponse: BNEAER")
                            _next.value = true
-//                            _correctness.value = "BENAR"
+                            _correctness.value = "BENAR"
                             myA[_number.value!!] = responseBody?.resultPredict.toString()
                             /*  _change.value = true
                               _isLoading.value = false
@@ -290,7 +290,7 @@ class TrainViewModel : ViewModel() {
                             updateScore(false, _number.value!!)
                             Log.e("TEMPIK", "onResponse: SALAH")
                             _next.value = false
-//                            _correctness.value = "SALAH"
+                            _correctness.value = "SALAH"
                             myA[_number.value!!] = responseBody?.resultPredict.toString()
                             /* _toast.value = Event("file_besar")
                              _change.value = false
@@ -316,11 +316,11 @@ class TrainViewModel : ViewModel() {
         }
 
     }
-   /* fun lightGreen(resources: Resources): ColorStateList =
+   fun lightGreen(resources: Resources): ColorStateList =
          ColorStateList.valueOf(resources.getColor(R.color.light_green))
 
      fun ultraLightPink(resources: Resources): ColorStateList =
-         ColorStateList.valueOf(resources.getColor(R.color.ultra_light_pink))*/
+         ColorStateList.valueOf(resources.getColor(R.color.ultra_light_pink))
 
 
 }

@@ -15,6 +15,7 @@ import com.divyanshu.draw.widget.PaintOptions
 import com.example.calistung.R
 import com.example.calistung.databinding.ActivityTrainBinding
 import com.example.calistung.model.TrainQuestion
+import com.example.calistung.ui.menu.MenuPageActivity
 import com.example.calistung.ui.score.ScoreActivity
 import java.util.*
 
@@ -39,6 +40,10 @@ class TrainActivity : AppCompatActivity() {
 
                 binding.apply {
                     drawView.setStrokeWidth(30F)
+                    btnNext.isEnabled = false
+                    btnNext.isClickable = false
+                    btnNext.background.alpha = 64
+                    btnNext.setTextColor(Color.parseColor("#D3D3D3"))
 
                     tvQuestion.text = mTrain.question
 //                    model.setBitmapSelected( drawView.getBitmap())
@@ -51,23 +56,26 @@ class TrainActivity : AppCompatActivity() {
                         drawView.clearCanvas()
                     }
 
-                    /*btnCheck.setOnClickListener {
+                    btnCheck.setOnClickListener {
                         model.uploadImage(drawView.getBitmap())
-                    }*/
+                    }
 
 
 
                     btnNext.setOnClickListener {
 //                drawView.getBitmap()
 
-
-                        model.uploadImage(drawView.getBitmap())
+                        drawView.clearCanvas()
+                        binding.tvCorrect.text = ""
+                        binding.cvCorrect.backgroundTintList =model.ultraLightPink(resources)
+                        next()
+                        /*model.uploadImage(drawView.getBitmap())
 
                         Handler(Looper.getMainLooper()).postDelayed({
                             drawView.clearCanvas()
                             next()
 
-                        }, 1000)
+                        }, 200)*/
 
                         /*model.next.observe(this@TrainActivity) {
 
@@ -94,24 +102,24 @@ class TrainActivity : AppCompatActivity() {
 
 
 
-            model.points.observe(this@TrainActivity) {
+           /* model.points.observe(this@TrainActivity) {
                 scores(it)
-            }
+            }*/
             model.finish.observe(this@TrainActivity) {
                 finish(it)
             }
 
-            /*model.next.observe(this@TrainActivity){
+            model.next.observe(this@TrainActivity){
                 clear(it)
                 if(it){
                     binding.cvCorrect.backgroundTintList =model.lightGreen(resources)
                 }else{
                     binding.cvCorrect.backgroundTintList =model.ultraLightPink(resources)
                 }
-            }*/
-            /* model.correctness.observe(this@TrainActivity){
+            }
+            model.correctness.observe(this@TrainActivity){
                  binding.tvCorrect.text = it
-             }*/
+             }
 
 
         }
@@ -124,11 +132,11 @@ class TrainActivity : AppCompatActivity() {
     }
 
 
-    private fun scores(score: String) {
+   /* private fun scores(score: String) {
         point = score
-    }
+    }*/
 
-    /* private fun clear(clear: Boolean) {
+    private fun clear(clear: Boolean) {
          if (clear) {
              binding.apply {
                  btnNext.isEnabled = true
@@ -146,7 +154,7 @@ class TrainActivity : AppCompatActivity() {
                  btnNext.setTextColor(Color.parseColor("#D3D3D3"))
              }
          }
-     }*/
+     }
     private fun finish(finish: Boolean) {
 
             if (finish) {
@@ -159,8 +167,8 @@ class TrainActivity : AppCompatActivity() {
                             .setTitle("Akhiri")
                             .setMessage("Apakah anda ingin mengakhiri latihan?")
                             .setPositiveButton("Ya") { _, i ->
-                                val intent = Intent(this@TrainActivity, ScoreActivity::class.java)
-                                intent.putExtra(ScoreActivity.SCORE, point)
+                                val intent = Intent(this@TrainActivity, MenuPageActivity::class.java)
+                                /*intent.putExtra(ScoreActivity.SCORE, point)*/
                                 startActivity(intent)
                                 finish()
 

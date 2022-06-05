@@ -96,7 +96,7 @@
         android:layout_marginHorizontal="16dp"
         android:backgroundTint="@color/light_blue">
 
-        <!--<TextView
+        <TextView
             android:id="@+id/tv_correct"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -105,7 +105,7 @@
             android:textSize="14sp"
             tools:text="SOAL 1 DARI 10 SOAL">
 
-        </TextView>-->
+        </TextView>
 
 
     </androidx.cardview.widget.CardView>
@@ -128,7 +128,7 @@
             android:textColor="@color/black"
             app:cornerRadius="0dp" />
 
-       <!-- <com.google.android.material.button.MaterialButton
+       <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_check"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -139,7 +139,7 @@
             android:textSize="12sp"
             android:visibility="visible"
             android:textColor="@color/black"
-            app:cornerRadius="0dp" />-->
+            app:cornerRadius="0dp" />
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_next"
             android:layout_width="wrap_content"

@@ -21,20 +21,21 @@
             android:exported="false" />
         <activity
             android:name=".ui.latihan.daftar_isi_latihan.DaftarIsiLatihanActivity"
+            android:label="latihan"
             android:exported="false" />
         <activity
             android:name=".ui.latihan.daftar_latihan.DaftarLatihanActivity"
+            android:label="Daftar Jenis latihan"
             android:exported="false" />
         <activity
             android:name=".ui.belajar.daftar_isi_belajar.DaftarIsiBelajarActivity"
             android:exported="false" />
         <activity
             android:name=".ui.belajarlatihan.BelajarLatihanActivity"
-            android:label="Menulis Huruf Kapital"
             android:exported="false" />
         <activity
             android:name=".ui.belajar.daftar_belajar.DaftarBelajarActivity"
-            android:label="Belajar Huruf"
+            android:label="Belajar"
             android:exported="false" />
         <activity
             android:name=".ui.menu.MenuPageActivity"
@@ -44,7 +45,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.belajar.daftar_isi_belajar_grid.DaftarIsiBelajarGridActivity"
-            android:label="Belajar Huruf"
+            android:label="Belajar"
             android:exported="false" />
         <activity
             android:name=".ui.belajar.belajar_draw.LearnActivity"
