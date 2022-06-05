@@ -96,7 +96,6 @@ class TrainViewModel : ViewModel() {
     init {
         _number.value = 12345
         _score.value = 0
-        _next.value = false
 
     }
 
@@ -111,7 +110,7 @@ class TrainViewModel : ViewModel() {
         }
         map = tempMap
         if (_number.value == 12345) {
-            setTrainSelected(trainQuestion.trains!![0])
+            setTrainSelected(trainQuestion.trains[0])
             setNumber(1)
         }
     }
@@ -144,12 +143,8 @@ class TrainViewModel : ViewModel() {
         if (_number.value!! < map.size) {
             setNumber(_number.value!!.plus(1))
             setTrainSelected(map[_number.value]!!)
-            _next.value = false
-            _correctness.value = ""
-
-
-
-
+//            _next.value = false
+//            _correctness.value = ""
         }
         if (_number.value!! >= map.size) {
             _finish.value = true
@@ -172,24 +167,6 @@ class TrainViewModel : ViewModel() {
 //    }
 
 
-    fun updateScore(isTrue: Boolean, position: Int) {
-
-        if (isTrue) {
-            point[position] = 1
-        } else {
-            point[position] = 0
-        }
-
-
-        /*for(i in 1..numberAndScore.size){
-            temp+=numberAndScore[i]!!
-        }*/
-        _score.value = temp
-        Log.e("TEMPIK", "TEMP : ${_score.value}")
-        Log.e("TEMPIK", "number and score : " + numberAndScore)
-
-//        _correctnessText.value = "SOAL $number DARI ${map.size} SOAL || nilai anda ${_score.value}"
-    }
 
     /*fun updateAnswer(bitmap: Bitmap) {
         _next.value = false
@@ -240,6 +217,26 @@ class TrainViewModel : ViewModel() {
 
     }*/
 
+    fun updateScore(isTrue: Boolean, position: Int) {
+
+        if (isTrue) {
+            point[position] = 1
+        } else {
+            point[position] = 0
+        }
+
+
+        /*for(i in 1..numberAndScore.size){
+            temp+=numberAndScore[i]!!
+        }*/
+        _score.value = point[position]
+        Log.e("TEMPIK", "TEMP : ${_score.value}")
+
+
+//        _correctnessText.value = "SOAL $number DARI ${map.size} SOAL || nilai anda ${_score.value}"
+    }
+
+
     fun uploadImage(bitmap: Bitmap, fileNameToSave: String = "image") {
         viewModelScope.launch(Dispatchers.IO) {
 
@@ -281,8 +278,9 @@ class TrainViewModel : ViewModel() {
                         val responseBody = response.body()
                         if (responseBody?.resultPredict == trainSelected.value?.answer) {
                             updateScore(true, _number.value!!)
-                            _next.value = true
-                            _correctness.value = "BENAR"
+                            Log.e("TEMPIK", "onResponse: BNEAER")
+                           _next.value = true
+//                            _correctness.value = "BENAR"
                             myA[_number.value!!] = responseBody?.resultPredict.toString()
                             /*  _change.value = true
                               _isLoading.value = false
@@ -290,8 +288,9 @@ class TrainViewModel : ViewModel() {
 
                         }else {
                             updateScore(false, _number.value!!)
+                            Log.e("TEMPIK", "onResponse: SALAH")
                             _next.value = false
-                            _correctness.value = "SALAH"
+//                            _correctness.value = "SALAH"
                             myA[_number.value!!] = responseBody?.resultPredict.toString()
                             /* _toast.value = Event("file_besar")
                              _change.value = false
@@ -317,11 +316,11 @@ class TrainViewModel : ViewModel() {
         }
 
     }
-    fun lightGreen(resources: Resources): ColorStateList =
+   /* fun lightGreen(resources: Resources): ColorStateList =
          ColorStateList.valueOf(resources.getColor(R.color.light_green))
 
      fun ultraLightPink(resources: Resources): ColorStateList =
-         ColorStateList.valueOf(resources.getColor(R.color.ultra_light_pink))
+         ColorStateList.valueOf(resources.getColor(R.color.ultra_light_pink))*/
 
 
 }

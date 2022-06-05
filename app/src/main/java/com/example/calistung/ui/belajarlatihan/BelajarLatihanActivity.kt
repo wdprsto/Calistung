@@ -20,8 +20,10 @@ class BelajarLatihanActivity : AppCompatActivity() {
         binding = ActivityBelajarLatihanBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         val item = intent.getParcelableExtra<Category>(MenuPageActivity.CATEGORY_SELECTED)
-        if (item != null)
+        supportActionBar?.title = item?.name
+            if (item != null)
             model.setCategory(item)
         model.category.observe(this) { category ->
             binding.apply {

@@ -9,7 +9,7 @@ import retrofit2.Response
 import retrofit2.http.*
 
 interface ApiService {
-    @GET("raw")
+    @GET("dummy")
     suspend fun getAllData(): Response<ResponseCategory>
 
 
