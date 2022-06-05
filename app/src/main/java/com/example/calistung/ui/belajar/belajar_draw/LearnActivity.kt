@@ -17,7 +17,7 @@ import kotlinx.coroutines.runBlocking
 
 class LearnActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLearnBinding
-    private val model:LearnViewModel by viewModels()
+    private val model: LearnViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,13 +29,13 @@ class LearnActivity : AppCompatActivity() {
         model.apply {
             setLearn(item!!)
             setTts(this@LearnActivity)
-            learn.observe(this@LearnActivity) {mLearn->
+            learn.observe(this@LearnActivity) { mLearn ->
                 binding.apply {
                     // takes input as Int
                     drawView.setStrokeWidth(30F)
                     imageView.loadImage(mLearn.gifLink)
                     btnSpeak.setOnClickListener {
-                        model.tts.observe(this@LearnActivity){
+                        model.tts.observe(this@LearnActivity) {
                             it.speak(mLearn.answer, TextToSpeech.QUEUE_FLUSH, null)
                         }
                     }
@@ -43,33 +43,32 @@ class LearnActivity : AppCompatActivity() {
                         drawView.clearCanvas()
                     }
                     btnCheck.setOnClickListener {
-//                drawView.getBitmap()
+                        binding.cvCorrectness.backgroundTintList = model.lightBlue(resources)
                         runBlocking {
                             model.uploadImage(drawView.getBitmap())
-
                             model.setIsStartedTrue()
                         }
 
                     }
                 }
             }
-            correctnessText.observe(this@LearnActivity){
+            correctnessText.observe(this@LearnActivity) {
                 binding.tvCorrectness.text = model.correctnessText.value.toString()
             }
-            isStarted.observe(this@LearnActivity){ isStarted ->
-                if(isStarted){
-                    model.correctness.observe(this@LearnActivity){
+            isStarted.observe(this@LearnActivity) { isStarted ->
+                if (isStarted) {
+                    model.correctness.observe(this@LearnActivity) {
                         if (it) {
-                            binding.cvCorrectness.backgroundTintList =model.lightGreen(resources)
+                            binding.cvCorrectness.backgroundTintList = model.lightGreen(resources)
                         } else {
-                            binding.cvCorrectness.backgroundTintList =model.ultraLightPink(resources)
+                            binding.cvCorrectness.backgroundTintList =
+                                model.ultraLightPink(resources)
                         }
                     }
                 }
             }
         }
     }
-
 
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

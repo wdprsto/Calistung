@@ -7,6 +7,8 @@ import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.ViewModelProvider
@@ -14,6 +16,7 @@ import com.example.calistung.databinding.ActivityMenuBinding
 import com.example.calistung.repository.ResponseRepository
 import com.example.calistung.service.ApiConfig
 import com.example.calistung.ui.belajarlatihan.BelajarLatihanActivity
+import com.example.calistung.ui.splashscreen.SplashScreenActivity
 import com.example.calistung.utils.Dummy
 import com.example.calistung.utils.ViewModelFactory
 import com.google.gson.Gson
@@ -27,8 +30,7 @@ class MenuPageActivity : AppCompatActivity() {
 
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        verifyStoragePermission(this);
-        //model.setResponseCategory(Dummy.response)
+        verifyStoragePermission(this)
         model = ViewModelProvider(
             this,
             ViewModelFactory(
@@ -37,29 +39,39 @@ class MenuPageActivity : AppCompatActivity() {
                 )
             )
         )[MenuPageViewModel::class.java]
-        runBlocking {
-            model.getAllData().observe(this@MenuPageActivity) { response ->
-//            Log.e("TEMPIK",Gson().toJson(response))
-                binding.apply {
-                    huruf.setOnClickListener {
-                        val intent =
-                            Intent(this@MenuPageActivity, BelajarLatihanActivity::class.java)
-                        intent.putExtra(CATEGORY_SELECTED, response.huruf)
-                        startActivity(intent)
-                    }
-                    angka.setOnClickListener {
-                        val intent =
-                            Intent(this@MenuPageActivity, BelajarLatihanActivity::class.java)
-                        intent.putExtra(CATEGORY_SELECTED, response.angka)
-                        startActivity(intent)
-                    }
-                    menghitung.setOnClickListener {
-                        val intent =
-                            Intent(this@MenuPageActivity, BelajarLatihanActivity::class.java)
-                        intent.putExtra(CATEGORY_SELECTED, response.hitung)
-                        startActivity(intent)
+        try {
+            runBlocking {
+                model.getAllData().observe(this@MenuPageActivity) { response ->
+                    binding.apply {
+                        huruf.setOnClickListener {
+                            val intent =
+                                Intent(this@MenuPageActivity, BelajarLatihanActivity::class.java)
+                            intent.putExtra(CATEGORY_SELECTED, response.huruf)
+                            startActivity(intent)
+                        }
+                        angka.setOnClickListener {
+                            val intent =
+                                Intent(this@MenuPageActivity, BelajarLatihanActivity::class.java)
+                            intent.putExtra(CATEGORY_SELECTED, response.angka)
+                            startActivity(intent)
+                        }
+                        menghitung.setOnClickListener {
+                            val intent =
+                                Intent(this@MenuPageActivity, BelajarLatihanActivity::class.java)
+                            intent.putExtra(CATEGORY_SELECTED, response.hitung)
+                            startActivity(intent)
+                        }
                     }
                 }
+            }
+        } catch (e: Exception) {
+            binding.llButtons.visibility = View.GONE
+            binding.llNoInternet.visibility = View.VISIBLE
+//            Toast.makeText(this, "$e", Toast.LENGTH_SHORT).show()
+            binding.btnReopen.setOnClickListener {
+                val thisActivity = Intent(this, SplashScreenActivity::class.java)
+                thisActivity.flags = Intent.FLAG_ACTIVITY_REORDER_TO_FRONT
+                startActivity(thisActivity)
             }
         }
     }

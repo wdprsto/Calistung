@@ -22,7 +22,6 @@ import java.util.*
 class TrainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityTrainBinding
     private val model: TrainViewModel by viewModels()
-    private lateinit var point: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,16 +36,13 @@ class TrainActivity : AppCompatActivity() {
                 binding.tvCorrectness.text = it
             }
             trainSelected.observe(this@TrainActivity) { mTrain ->
-
                 binding.apply {
                     drawView.setStrokeWidth(30F)
                     btnNext.isEnabled = false
                     btnNext.isClickable = false
                     btnNext.background.alpha = 64
                     btnNext.setTextColor(Color.parseColor("#D3D3D3"))
-
                     tvQuestion.text = mTrain.question
-//                    model.setBitmapSelected( drawView.getBitmap())
                     btnSpeak.setOnClickListener {
                         model.tts.observe(this@TrainActivity) {
                             it.speak(mTrain.question, TextToSpeech.QUEUE_FLUSH, null)
@@ -59,132 +55,78 @@ class TrainActivity : AppCompatActivity() {
                     btnCheck.setOnClickListener {
                         model.uploadImage(drawView.getBitmap())
                     }
-
-
-
                     btnNext.setOnClickListener {
-//                drawView.getBitmap()
-
                         drawView.clearCanvas()
                         binding.tvCorrect.text = ""
-                        binding.cvCorrect.backgroundTintList =model.ultraLightPink(resources)
+                        binding.cvCorrect.backgroundTintList = model.ultraLightPink(resources)
                         next()
-                        /*model.uploadImage(drawView.getBitmap())
-
-                        Handler(Looper.getMainLooper()).postDelayed({
-                            drawView.clearCanvas()
-                            next()
-
-                        }, 200)*/
-
-                        /*model.next.observe(this@TrainActivity) {
-
-                            if (it) {
-
-                                next()
-
-                            } else {
-
-                                next()
-
-                            }
-                        }*/
-
-
                     }
-
-
-//                        model.setBitmapSelected(drawView.getBitmap())
-
-
                 }
             }
 
-
-
-           /* model.points.observe(this@TrainActivity) {
-                scores(it)
-            }*/
             model.finish.observe(this@TrainActivity) {
                 finish(it)
             }
 
-            model.next.observe(this@TrainActivity){
+            model.next.observe(this@TrainActivity) {
                 clear(it)
-                if(it){
-                    binding.cvCorrect.backgroundTintList =model.lightGreen(resources)
-                }else{
-                    binding.cvCorrect.backgroundTintList =model.ultraLightPink(resources)
+                if (it) {
+                    binding.cvCorrect.backgroundTintList = model.lightGreen(resources)
+                } else {
+                    binding.cvCorrect.backgroundTintList = model.ultraLightPink(resources)
                 }
             }
-            model.correctness.observe(this@TrainActivity){
-                 binding.tvCorrect.text = it
-             }
+            model.correctness.observe(this@TrainActivity) {
+                binding.tvCorrect.text = it
+            }
 
 
         }
-        /*model.clear.observe(this){
-            showToast(it)
-
-        }*/
-
-
     }
 
-
-   /* private fun scores(score: String) {
-        point = score
-    }*/
-
     private fun clear(clear: Boolean) {
-         if (clear) {
-             binding.apply {
-                 btnNext.isEnabled = true
-                 btnNext.isClickable = true
-                 btnNext.setBackgroundColor(Color.parseColor("#FF6EE1AB"))
-                 btnNext.setTextColor(Color.parseColor("#FF000000"))
-                 btnNext.background.alpha = 255
-
-             }
-         }else{
-             binding.apply {
-                 btnNext.isEnabled = false
-                 btnNext.isClickable = false
-                 btnNext.background.alpha = 64
-                 btnNext.setTextColor(Color.parseColor("#D3D3D3"))
-             }
-         }
-     }
-    private fun finish(finish: Boolean) {
-
-            if (finish) {
-
-                binding.apply {
-                    btnNext.setText(getString(R.string.selesai))
-                    binding.btnNext.setBackgroundColor(Color.parseColor("#FFFFB2A6"))
-                    btnNext.setOnClickListener {
-                        AlertDialog.Builder(it.context)
-                            .setTitle("Akhiri")
-                            .setMessage("Apakah anda ingin mengakhiri latihan?")
-                            .setPositiveButton("Ya") { _, i ->
-                                val intent = Intent(this@TrainActivity, MenuPageActivity::class.java)
-                                /*intent.putExtra(ScoreActivity.SCORE, point)*/
-                                startActivity(intent)
-                                finish()
-
-                            }
-                            .setNegativeButton("No") { _, i ->
-                            }.show()
-
-                    }
-                }
-            } else {
-                binding.btnNext.setText(getString(R.string.lanjut))
-                binding.btnNext.setBackgroundColor(Color.parseColor("#FF6EE1AB"))
+        if (clear) {
+            binding.apply {
+                btnNext.isEnabled = true
+                btnNext.isClickable = true
+                btnNext.setBackgroundColor(Color.parseColor("#FF6EE1AB"))
+                btnNext.setTextColor(Color.parseColor("#FF000000"))
+                btnNext.background.alpha = 255
 
             }
+        } else {
+            binding.apply {
+                btnNext.isEnabled = false
+                btnNext.isClickable = false
+                btnNext.background.alpha = 64
+                btnNext.setTextColor(Color.parseColor("#D3D3D3"))
+            }
+        }
+    }
 
-
+    private fun finish(finish: Boolean) {
+        if (finish) {
+            binding.apply {
+                btnNext.setText(getString(R.string.selesai))
+                binding.btnNext.setBackgroundColor(Color.parseColor("#FFFFB2A6"))
+                btnNext.setOnClickListener {
+                    AlertDialog.Builder(it.context)
+                        .setTitle("Akhiri")
+                        .setMessage("Apakah anda ingin mengakhiri latihan?")
+                        .setPositiveButton("Ya") { _, i ->
+                            val intent = Intent(this@TrainActivity, MenuPageActivity::class.java)
+                            /*intent.putExtra(ScoreActivity.SCORE, point)*/
+                            startActivity(intent)
+                            finish()
+                        }
+                        .setNegativeButton("No") { _, i ->
+                        }.show()
+                }
+            }
+        } else {
+            binding.btnNext.setText(getString(R.string.lanjut))
+            binding.btnNext.setBackgroundColor(Color.parseColor("#FF6EE1AB"))
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

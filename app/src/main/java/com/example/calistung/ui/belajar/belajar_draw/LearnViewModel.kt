@@ -56,58 +56,19 @@ class LearnViewModel : ViewModel() {
     val tts
         get() = _tts
 
-
-
-
     init {
         _correctness.value = false
         _isStarted.value = false
     }
 
-    /*fun setCorrectness(bitmap: Bitmap) {
-        var temp=getTextFromPhoto(bitmap)==_learn.value?.answer
-        _correctness.value = temp
-        if (temp) {
-            _correctnessText.value = "BENAR"
-        } else {
-            _correctnessText.value = "SALAH"
-        }
-    }*/
-    /*fun setCorrectness(bitmap: Bitmap) {
-
-        val recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)
-        val image = InputImage.fromBitmap(bitmap, 0)
-        val result = recognizer.process(image)
-            .addOnSuccessListener { visionText ->
-                // Task completed successfully
-                // ...
-                Log.e("TEMPIK", "HASIL : " + visionText.text)
-                val temp = visionText.text == _learn.value?.answer
-                _correctness.value = temp
-                if (temp) {
-                    _correctnessText.value = "BENAR"
-                } else {
-                    _correctnessText.value = "SALAH"
-                }
-//            tempText=visionText.text
-//                Log.e("TEMPIK", "HASIL : " + visionText.text)
-//            Log.e("TEMPIK","HASIL temp : "+tempText)
-            }
-            .addOnFailureListener { e ->
-                // Task failed with an exception
-                // ...
-                Log.e("TEMPIK", "EXEPTION : $e")
-            }
-    }*/
-
-
-
-
     fun uploadImage(bitmap: Bitmap, fileNameToSave: String = "image") {
+        _correctnessText.value = "PROCESSING..."
         viewModelScope.launch(Dispatchers.IO) {
-
             val file: File?
-            file = File(Environment.getExternalStorageDirectory().toString() + File.separator + fileNameToSave)
+            file = File(
+                Environment.getExternalStorageDirectory()
+                    .toString() + File.separator + fileNameToSave
+            )
             file.createNewFile()
 
             //Convert bitmap to byte array
@@ -121,62 +82,43 @@ class LearnViewModel : ViewModel() {
             fos.flush()
             fos.close()
 
+            val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
+            val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
+                "image",
+                file.name,
+                requestImageFile
+            )
 
+            val service = ApiConfig.getApiCloud().predictHuruf(imageMultipart)
 
-
-                val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
-               val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
-                    "image",
-                   file.name,
-                   requestImageFile
-                )
-
-                val service = ApiConfig.getApiCloud().predictHuruf(imageMultipart)
-
-                service.enqueue(object : Callback<Predict> {
-                    override fun onResponse(
-                        call: Call<Predict>,
-                        response: Response<Predict>
-                    ) {
+            service.enqueue(object : Callback<Predict> {
+                override fun onResponse(
+                    call: Call<Predict>,
+                    response: Response<Predict>
+                ) {
 //                        _isLoading.value = false
-
-                        if (response.isSuccessful) {
-                            val responseBody = response.body()
-                            if (responseBody?.resultPredict == _learn.value?.answer) {
-
-                                _correctnessText.value = "BENAR"
-                                _correctness.value = true
-                              /*  _change.value = true
-                                _isLoading.value = false
-                                _toast.value = Event("berhasil")*/
-
-                            }else {
-                                _correctnessText.value = "SALAH"
-                                _correctness.value = false
-                                /* _toast.value = Event("file_besar")
-                                 _change.value = false
-                                 _isLoading.value = false
-                                 Log.e(TAG, "onResponse: ${response.message()}")*/
-                            }
-
-                        }
-                    }
-
-                    override fun onFailure(call: Call<Predict>, t: Throwable) {
-                      /*  if (t.message.equals("timeout")) {
-                            _toast.value = Event("timeout")
+                    if (response.isSuccessful) {
+                        val responseBody = response.body()
+                        if (responseBody?.resultPredict == _learn.value?.answer) {
+                            _correctnessText.value = "BENAR"
+                            _correctness.value = true
                         } else {
-                            _toast.value = Event("gagal")
+                            _correctnessText.value = "SALAH"
+                            _correctness.value = false
                         }
-                        _change.value = false
-                        _isLoading.value = false*/
-                        Log.e("TEMPIK", "onResponse: ${t.message}")
+
                     }
-                })
+                }
+
+                override fun onFailure(call: Call<Predict>, t: Throwable) {
+                    Log.e("ERROR_LOG", "onResponse: ${t.message}")
+                }
+            })
 
         }
 
     }
+
     fun setIsStartedTrue() {
         _isStarted.value = true
     }
@@ -200,5 +142,8 @@ class LearnViewModel : ViewModel() {
 
     fun ultraLightPink(resources: Resources): ColorStateList =
         ColorStateList.valueOf(resources.getColor(R.color.ultra_light_pink))
+
+    fun lightBlue(resources: Resources): ColorStateList =
+        ColorStateList.valueOf(resources.getColor(R.color.light_blue))
 
 }

@@ -44,9 +44,9 @@ class TrainViewModel : ViewModel() {
     private val _trainSelected = MutableLiveData<Train>()
     val trainSelected
         get() = _trainSelected
-    private val _bitmapSelected = MutableLiveData<Path>()
-    val bitmapSelected
-        get() = _bitmapSelected
+//    private val _bitmapSelected = MutableLiveData<Path>()
+//    val bitmapSelected
+//        get() = _bitmapSelected
     private val _correctness = MutableLiveData<String>()
     val correctness
         get() = _correctness
@@ -74,23 +74,18 @@ class TrainViewModel : ViewModel() {
     private val _keepBitmaps = MutableLiveData<Bitmap>()
     val keepBitmaps
         get() = _keepBitmaps
-
-    private val _points = MutableLiveData<String>()
-    val points: LiveData<String> = _points
+//
+//    private val _points = MutableLiveData<String>()
+//    val points: LiveData<String> = _points
     private val _finish = MutableLiveData<Boolean>()
     val finish: LiveData<Boolean> = _finish
 
     private val _next = MutableLiveData<Boolean>()
     val next: LiveData<Boolean> = _next
-
-
-
     var map = mutableMapOf<Int, Train>()
-    var numberAndScore = mutableMapOf<Int, Int>()
     var a = mutableMapOf<Int, String>()
     var myA = mutableMapOf<Int, String>()
-    var temp = 0
-    val point = mutableMapOf<Int, Int>()
+//    val point = mutableMapOf<Int, Int>()
 
 
     init {
@@ -131,117 +126,44 @@ class TrainViewModel : ViewModel() {
 
     fun setNumber(number: Int) {
         _number.value = number
-//        _correctnessText.value = "SOAL $number DARI ${map.size} SOAL || nilai anda ${_score.value}"
         _correctnessText.value = "SOAL $number DARI ${map.size} SOAL"
     }
 
 
-
     fun next() {
-
-
         if (_number.value!! < map.size) {
             setNumber(_number.value!!.plus(1))
             setTrainSelected(map[_number.value]!!)
-//            _next.value = false
-//            _correctness.value = ""
         }
         if (_number.value!! >= map.size) {
             _finish.value = true
-            point.values.sum()
-            _points.value = point.values.sum().toString()
-            Log.e("TEMPIK", "POINT : ${point.values.sum()}")
+//            point.values.sum()
+//            _points.value = point.values.sum().toString()
+//            Log.e("TEMPIK", "POINT : ${point.values.sum()}")
         }
     }
 
-
-
-    //    fun plusScore() {
-//        setScore(_score.value?.plus(1)!!)
+//    fun updateScore(isTrue: Boolean, position: Int) {
+//
+//        if (isTrue) {
+//            point[position] = 1
+//        } else {
+//            point[position] = 0
+//        }
+//        _score.value = point[position]
+//        Log.e("TEMPIK", "TEMP : ${_score.value}")
 //    }
-//    fun minusScore() {
-//        setScore(_score.value?.minus(1)!!)
-//    }
-//    fun setScore(score:Int){
-//        _score.value=score
-//    }
-
-
-
-    /*fun updateAnswer(bitmap: Bitmap) {
-        _next.value = false
-
-        val recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)
-        val image = InputImage.fromBitmap(bitmap, 0)
-        val result = recognizer.process(image)
-            .addOnSuccessListener { visionText ->
-                // Task completed successfully
-                // ..
-                val temp = visionText.text == _trainSelected.value?.answer
-                if (temp) {
-
-                    updateScore(temp, _number.value!!)
-                    Log.e("TEMPIK", "HASIL : Benar ")
-                    Log.e("TEMPIK", "HASIL : " + visionText.text)
-                    Log.e("TEMPIK", "SCORE : ${_score.value}")
-                    _next.value = true
-                    _correctness.value = "BENAR"
-                    myA[_number.value!!] = visionText.text
-
-
-                } else {
-                    updateScore(temp, _number.value!!)
-                    Log.e("TEMPIK", "HASIL : Salah ")
-                    Log.e("TEMPIK", "HASIL : " + visionText.text)
-                    Log.e("TEMPIK", "SCORE : ${_score.value}")
-                    _next.value = false
-                    _correctness.value = "SALAH"
-                    myA[_number.value!!] = visionText.text
-
-
-//                    numberAndScore[_number.value!!]=0
-//                    minusScore()
-//                    _correctnessText.value = "SALAH"
-                }
-
-
-//            tempText=visionText.text
-//                Log.e("TEMPIK", "HASIL : " + visionText.text)
-//            Log.e("TEMPIK","HASIL temp : "+tempText)
-            }
-            .addOnFailureListener { e ->
-                // Task failed with an exception
-                // ...
-                Log.e("TEMPIK", "EXEPTION : $e")
-            }
-
-    }*/
-
-    fun updateScore(isTrue: Boolean, position: Int) {
-
-        if (isTrue) {
-            point[position] = 1
-        } else {
-            point[position] = 0
-        }
-
-
-        /*for(i in 1..numberAndScore.size){
-            temp+=numberAndScore[i]!!
-        }*/
-        _score.value = point[position]
-        Log.e("TEMPIK", "TEMP : ${_score.value}")
-
-
-//        _correctnessText.value = "SOAL $number DARI ${map.size} SOAL || nilai anda ${_score.value}"
-    }
 
 
     fun uploadImage(bitmap: Bitmap, fileNameToSave: String = "image") {
+        _correctness.value = "PROCESSING..."
         viewModelScope.launch(Dispatchers.IO) {
 
             val file: File?
-            file = File(Environment.getExternalStorageDirectory().toString() + File.separator + fileNameToSave)
+            file = File(
+                Environment.getExternalStorageDirectory()
+                    .toString() + File.separator + fileNameToSave
+            )
             file.createNewFile()
 
             //Convert bitmap to byte array
@@ -254,8 +176,6 @@ class TrainViewModel : ViewModel() {
             fos.write(bitmapdata)
             fos.flush()
             fos.close()
-
-
 
 
             val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
@@ -272,55 +192,40 @@ class TrainViewModel : ViewModel() {
                     call: Call<Predict>,
                     response: Response<Predict>
                 ) {
-//                        _isLoading.value = false
-
                     if (response.isSuccessful) {
                         val responseBody = response.body()
                         if (responseBody?.resultPredict == trainSelected.value?.answer) {
-                            updateScore(true, _number.value!!)
+//                            updateScore(true, _number.value!!)
                             Log.e("TEMPIK", "onResponse: BNEAER")
-                           _next.value = true
+                            _next.value = true
                             _correctness.value = "BENAR"
                             myA[_number.value!!] = responseBody?.resultPredict.toString()
-                            /*  _change.value = true
-                              _isLoading.value = false
-                              _toast.value = Event("berhasil")*/
-
-                        }else {
-                            updateScore(false, _number.value!!)
+                        } else {
+//                            updateScore(false, _number.value!!)
                             Log.e("TEMPIK", "onResponse: SALAH")
                             _next.value = false
                             _correctness.value = "SALAH"
                             myA[_number.value!!] = responseBody?.resultPredict.toString()
-                            /* _toast.value = Event("file_besar")
-                             _change.value = false
-                             _isLoading.value = false
-                             Log.e(TAG, "onResponse: ${response.message()}")*/
                         }
-
                     }
                 }
 
                 override fun onFailure(call: Call<Predict>, t: Throwable) {
-                    /*  if (t.message.equals("timeout")) {
-                          _toast.value = Event("timeout")
-                      } else {
-                          _toast.value = Event("gagal")
-                      }
-                      _change.value = false
-                      _isLoading.value = false*/
-                    Log.e("TEMPIK", "onResponse: ${t.message}")
+                    Log.e("ERROR_LOG", "onResponse: ${t.message}")
                 }
             })
 
         }
 
     }
-   fun lightGreen(resources: Resources): ColorStateList =
-         ColorStateList.valueOf(resources.getColor(R.color.light_green))
 
-     fun ultraLightPink(resources: Resources): ColorStateList =
-         ColorStateList.valueOf(resources.getColor(R.color.ultra_light_pink))
+    fun lightGreen(resources: Resources): ColorStateList =
+        ColorStateList.valueOf(resources.getColor(R.color.light_green))
 
+    fun ultraLightPink(resources: Resources): ColorStateList =
+        ColorStateList.valueOf(resources.getColor(R.color.ultra_light_pink))
+
+    fun lightBlue(resources: Resources): ColorStateList =
+        ColorStateList.valueOf(resources.getColor(R.color.light_blue))
 
 }

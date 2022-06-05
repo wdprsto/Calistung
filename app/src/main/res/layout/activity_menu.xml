@@ -16,19 +16,67 @@
         android:elevation="2dp"
         android:src="@drawable/logo" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/textView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_weight="2"-->
-<!--        android:elevation="2dp"-->
-<!--        android:fontFamily="@font/ubuntu"-->
-<!--        android:text="@string/calistung"-->
-<!--        android:textAlignment="center"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textSize="24sp" />-->
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_weight="2"-->
+    <!--        android:elevation="2dp"-->
+    <!--        android:fontFamily="@font/ubuntu"-->
+    <!--        android:text="@string/calistung"-->
+    <!--        android:textAlignment="center"-->
+    <!--        android:textColor="@color/black"-->
+    <!--        android:textSize="24sp" />-->
+    <LinearLayout
+        android:id="@+id/ll_no_internet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_baseline_signal_wifi_connected_no_internet_4_24">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="PLEASE CONNECT TO THE INTERNET!\n THEN REOPEN"
+            android:textSize="18sp">
+
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_reopen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/light_blue"
+                android:text="REOPEN"
+                android:textColor="@color/black"
+                app:cornerRadius="0dp">
+
+            </com.google.android.material.button.MaterialButton>
+        </LinearLayout>
+    </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/ll_buttons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="5"
@@ -46,7 +94,6 @@
                 android:layout_height="160dp"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
-                app:cornerRadius="0dp"
                 android:backgroundTint="@color/biruMuda"
                 android:drawableTop="@drawable/ic_baseline_sort_by_alpha_24"
                 android:elevation="2dp"
@@ -54,10 +101,10 @@
                 android:padding="16dp"
                 android:text="@string/huruf"
                 android:textColor="@color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:cornerRadius="0dp" />
 
             <com.google.android.material.button.MaterialButton
-                app:cornerRadius="0dp"
                 android:id="@+id/angka"
                 android:layout_width="160dp"
                 android:layout_height="160dp"
@@ -70,12 +117,12 @@
                 android:padding="16dp"
                 android:text="@string/angka"
                 android:textColor="@color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                app:cornerRadius="0dp" />
         </LinearLayout>
 
 
         <com.google.android.material.button.MaterialButton
-            app:cornerRadius="0dp"
             android:id="@+id/menghitung"
             android:layout_width="match_parent"
             android:layout_height="160dp"
@@ -87,7 +134,8 @@
             android:padding="16dp"
             android:text="@string/menghitung"
             android:textColor="@color/black"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            app:cornerRadius="0dp" />
     </LinearLayout>
 
 </LinearLayout>
