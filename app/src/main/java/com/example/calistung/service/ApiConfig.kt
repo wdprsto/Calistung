@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit
 
 object ApiConfig {
 
-    var BASE_URL = "https://gist.githubusercontent.com/mziyadam/5b0796a7734b730d41cd4064ce382ad8/"
+    var BASE_URL = "https://calistung.uc.r.appspot.com/md/"
     fun getApiService(): ApiService {
         val loggingInterceptor = if (BuildConfig.DEBUG) {
             HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
@@ -33,7 +33,7 @@ object ApiConfig {
     }
 
 
-    var BASE = "https://calistung.uc.r.appspot.com"
+    var BASE = "https://calistung.uc.r.appspot.com/ml/"
     fun getApiCloud(): ApiService {
         val loggingInterceptor = if (BuildConfig.DEBUG) {
             HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)

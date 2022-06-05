@@ -57,12 +57,11 @@ class LearnViewModel : ViewModel() {
         get() = _tts
 
 
-    var file: File? = null
+
 
     init {
         _correctness.value = false
         _isStarted.value = false
-        uploadImage()
     }
 
     /*fun setCorrectness(bitmap: Bitmap) {
@@ -101,16 +100,19 @@ class LearnViewModel : ViewModel() {
             }
     }*/
 
-    fun bitmapToFile(bitmap: Bitmap, fileNameToSave: String = "image"): File? { // File name like "image.png"
-        //create a file to write bitmap data
 
-        return try {
+
+
+    fun uploadImage(bitmap: Bitmap, fileNameToSave: String = "image") {
+        viewModelScope.launch(Dispatchers.IO) {
+
+            val file: File?
             file = File(Environment.getExternalStorageDirectory().toString() + File.separator + fileNameToSave)
-            file?.createNewFile()
+            file.createNewFile()
 
             //Convert bitmap to byte array
             val bos = ByteArrayOutputStream()
-            bitmap.compress(Bitmap.CompressFormat.PNG, 0, bos) // YOU can also save it in JPEG
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 0, bos) // YOU can also save it in JPEG
             val bitmapdata = bos.toByteArray()
 
             //write the bytes in file
@@ -118,73 +120,59 @@ class LearnViewModel : ViewModel() {
             fos.write(bitmapdata)
             fos.flush()
             fos.close()
-            file
-        } catch (e: Exception) {
-            e.printStackTrace()
-            file // it will return null
-        }
-    }
-
-
-    private fun uploadImage() {
-        viewModelScope.launch(Dispatchers.Default) {
-
-
-            //Convert bitmap to byte array
-
-
-            //write the bytes in file
 
 
 
 
-            val requestImageFile = file?.asRequestBody("image/jpeg".toMediaTypeOrNull())
-            val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
-                "image",
-                file?.name,
-                requestImageFile!!
-            )
+                val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
+               val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
+                    "image",
+                   file.name,
+                   requestImageFile
+                )
 
-            val service = ApiConfig.getApiCloud().predictHuruf(imageMultipart)
+                val service = ApiConfig.getApiCloud().predictHuruf(imageMultipart)
 
-            service.enqueue(object : Callback<Predict> {
-                override fun onResponse(
-                    call: Call<Predict>,
-                    response: Response<Predict>
-                ) {
+                service.enqueue(object : Callback<Predict> {
+                    override fun onResponse(
+                        call: Call<Predict>,
+                        response: Response<Predict>
+                    ) {
 //                        _isLoading.value = false
 
-                    if (response.isSuccessful) {
-                        val responseBody = response.body()
-                        if (responseBody?.resultPredict == _learn.value?.answer) {
+                        if (response.isSuccessful) {
+                            val responseBody = response.body()
+                            if (responseBody?.resultPredict == _learn.value?.answer) {
 
-                            _correctnessText.value = "BENAR"
-                            /*  _change.value = true
-                              _isLoading.value = false
-                              _toast.value = Event("berhasil")*/
+                                _correctnessText.value = "BENAR"
+                                _correctness.value = true
+                              /*  _change.value = true
+                                _isLoading.value = false
+                                _toast.value = Event("berhasil")*/
+
+                            }else {
+                                _correctnessText.value = "SALAH"
+                                _correctness.value = false
+                                /* _toast.value = Event("file_besar")
+                                 _change.value = false
+                                 _isLoading.value = false
+                                 Log.e(TAG, "onResponse: ${response.message()}")*/
+                            }
 
                         }
-
-                    } else {
-                        _correctnessText.value = "SALAH"
-                        /* _toast.value = Event("file_besar")
-                         _change.value = false
-                         _isLoading.value = false
-                         Log.e(TAG, "onResponse: ${response.message()}")*/
                     }
-                }
 
-                override fun onFailure(call: Call<Predict>, t: Throwable) {
-                    /*  if (t.message.equals("timeout")) {
-                          _toast.value = Event("timeout")
-                      } else {
-                          _toast.value = Event("gagal")
-                      }
-                      _change.value = false
-                      _isLoading.value = false*/
-                    Log.e("TEMPIK", "onResponse: ${t.message}")
-                }
-            })
+                    override fun onFailure(call: Call<Predict>, t: Throwable) {
+                      /*  if (t.message.equals("timeout")) {
+                            _toast.value = Event("timeout")
+                        } else {
+                            _toast.value = Event("gagal")
+                        }
+                        _change.value = false
+                        _isLoading.value = false*/
+                        Log.e("TEMPIK", "onResponse: ${t.message}")
+                    }
+                })
 
         }
 
