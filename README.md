@@ -11,7 +11,6 @@ Applications that provide educational features such as writing, reading and coun
 
 
 ## Built With
-- [BMKG API](https://data.bmkg.go.id/) - BMKG Open Data
 - [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android development.
 - [Android Architecture Components](https://developer.android.com/topic/libraries/architecture) - Collection of libraries that help you design robust, testable, and maintainable apps.
   - [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) - Data objects that notify views when the underlying database changes.
