@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.latihan.latihan_draw.TrainActivity">
+    tools:context=".ui.latihan.latihan_draw.TrainActivity"
+    tools:keep="@layout/activity_train">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,7 +22,8 @@
             android:layout_gravity="center"
             android:layout_weight="1"
 
-            android:backgroundTint="@color/light_yellow">
+            android:backgroundTint="@color/light_yellow"
+            tools:ignore="NestedWeights">
             <TextView
                 android:id="@+id/tv_question"
                 android:layout_width="match_parent"
@@ -40,7 +42,8 @@
             android:layout_marginStart="24dp"
             android:background="@color/white"
             android:src="@drawable/ic_outline_record_voice_over_24"
-            android:text="TextView" />
+            android:text="@string/speak_button"
+            android:contentDescription="@string/speak_button" />
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
@@ -151,18 +154,6 @@
             android:text="@string/lanjut"
             android:textColor="@color/black"
             app:cornerRadius="0dp" />
-       <!-- <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_end"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginStart="8dp"
-            android:layout_weight="1"
-            android:textSize="12sp"
-            android:backgroundTint="@color/light_green"
-            android:text="belum"
-            android:visibility="gone"
-            android:textColor="@color/black"
-            app:cornerRadius="0dp" />-->
 
     </LinearLayout>
 

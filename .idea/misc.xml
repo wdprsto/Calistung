@@ -19,6 +19,7 @@
         <entry key="..\:/Development/Bangkit Dicoding/Capstone/Calistung/app/src/main/res/layout/fragment_train.xml" value="0.19270833333333334" />
         <entry key="..\:/Development/Bangkit Dicoding/Capstone/Calistung/app/src/main/res/layout/item_grid.xml" value="0.19270833333333334" />
         <entry key="..\:/Development/Bangkit Dicoding/Capstone/Calistung/app/src/main/res/layout/item_isi_belajar.xml" value="0.16304347826086957" />
+        <entry key="..\:/Users/ziyad/android_study/Calistung/app/src/main/res/drawable/ic_baseline_model_training_24.xml" value="0.1105" />
         <entry key="..\:/Users/ziyad/android_study/Calistung/app/src/main/res/drawable/ic_baseline_number_4_24.xml" value="0.112" />
         <entry key="..\:/Users/ziyad/android_study/Calistung/app/src/main/res/drawable/ic_baseline_sort_by_alpha_24.xml" value="0.112" />
         <entry key="..\:/Users/ziyad/android_study/Calistung/app/src/main/res/drawable/ic_outline_record_voice_over_24.xml" value="0.185" />
@@ -33,6 +34,7 @@
         <entry key="..\:/Users/ziyad/android_study/Calistung/app/src/main/res/layout/activity_learn.xml" value="0.264" />
         <entry key="..\:/Users/ziyad/android_study/Calistung/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ziyad/android_study/Calistung/app/src/main/res/layout/activity_menu.xml" value="0.264" />
+        <entry key="..\:/Users/ziyad/android_study/Calistung/app/src/main/res/layout/activity_score.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/ziyad/android_study/Calistung/app/src/main/res/layout/activity_splash_screen.xml" value="0.10052083333333334" />
         <entry key="..\:/Users/ziyad/android_study/Calistung/app/src/main/res/layout/activity_train.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ziyad/android_study/Calistung/app/src/main/res/layout/content_scrolling.xml" value="0.25416666666666665" />
@@ -42,6 +44,7 @@
         <entry key="..\:/Users/ziyad/android_study/Calistung/app/src/main/res/layout/item_grid.xml" value="0.264" />
         <entry key="..\:/Users/ziyad/android_study/Calistung/app/src/main/res/layout/item_isi_belajar.xml" value="0.2" />
         <entry key="..\:/Users/ziyad/android_study/Calistung/app/src/main/res/layout/item_row.xml" value="0.264" />
+        <entry key="..\:/Users/ziyad/android_study/Calistung/app/src/main/res/menu/menu_grid.xml" value="0.11302083333333333" />
       </map>
     </option>
   </component>

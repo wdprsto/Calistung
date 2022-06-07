@@ -9,10 +9,6 @@ class DaftarLatihanViewModel : ViewModel() {
     val trainCategory
         get() = _trainCategories
 
-//    init {
-//        _trainCategories.value = dummy.trainCategories
-//    }
-
     fun setTrainCategories(trainCategory: TrainCategory) {
         _trainCategories.value = trainCategory
     }

@@ -14,18 +14,11 @@ import com.example.calistung.R
 import com.example.calistung.model.Learn
 import com.example.calistung.model.Predict
 import com.example.calistung.service.ApiConfig
-import com.example.calistung.utils.getTextFromPhoto
-import com.google.mlkit.vision.common.InputImage
-import com.google.mlkit.vision.text.TextRecognition
-import com.google.mlkit.vision.text.latin.TextRecognizerOptions
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import okhttp3.Dispatcher
-import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
-import okhttp3.RequestBody.Companion.toRequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -41,8 +34,6 @@ class LearnViewModel : ViewModel() {
         get() = _learn
 
     private val _correctness = MutableLiveData<Boolean>()
-    val correctness
-        get() = _correctness
 
     private val _isStarted = MutableLiveData<Boolean>()
     val isStarted
@@ -56,13 +47,18 @@ class LearnViewModel : ViewModel() {
     val tts
         get() = _tts
 
+    private val _labelColor = MutableLiveData<ColorStateList>()
+    val labelColor
+        get() = _labelColor
+
     init {
         _correctness.value = false
         _isStarted.value = false
     }
 
-    fun uploadImage(bitmap: Bitmap, fileNameToSave: String = "image") {
+    fun uploadImage(bitmap: Bitmap, fileNameToSave: String = "image",resources: Resources) {
         _correctnessText.value = "PROCESSING..."
+        setLightBlue(resources)
         viewModelScope.launch(Dispatchers.IO) {
             val file: File?
             file = File(
@@ -102,9 +98,11 @@ class LearnViewModel : ViewModel() {
                         if (responseBody?.resultPredict == _learn.value?.answer) {
                             _correctnessText.value = "BENAR"
                             _correctness.value = true
+                            setLightGreen(resources)
                         } else {
                             _correctnessText.value = "SALAH"
                             _correctness.value = false
+                            setUltraLightPink(resources)
                         }
 
                     }
@@ -137,13 +135,18 @@ class LearnViewModel : ViewModel() {
         }
     }
 
-    fun lightGreen(resources: Resources): ColorStateList =
-        ColorStateList.valueOf(resources.getColor(R.color.light_green))
+    fun setLightGreen(resources: Resources) {
+        _labelColor.value = ColorStateList.valueOf(resources.getColor(R.color.light_green))
+    }
 
-    fun ultraLightPink(resources: Resources): ColorStateList =
-        ColorStateList.valueOf(resources.getColor(R.color.ultra_light_pink))
+    fun setUltraLightPink(resources: Resources) {
+        _labelColor.value = ColorStateList.valueOf(resources.getColor(R.color.ultra_light_pink))
+    }
+
+    private fun setLightBlue(resources: Resources) {
+        _labelColor.value = ColorStateList.valueOf(resources.getColor(R.color.light_blue))
+    }
 
     fun lightBlue(resources: Resources): ColorStateList =
         ColorStateList.valueOf(resources.getColor(R.color.light_blue))
-
 }

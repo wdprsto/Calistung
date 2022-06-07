@@ -27,6 +27,7 @@ class DaftarLatihanActivity : AppCompatActivity() {
                 layoutManager = LinearLayoutManager(this@DaftarLatihanActivity)
                 adapter = ListTrainAdapter(it.trainCourse!!)
             }
+            supportActionBar?.title=it.name
         }
 
     }

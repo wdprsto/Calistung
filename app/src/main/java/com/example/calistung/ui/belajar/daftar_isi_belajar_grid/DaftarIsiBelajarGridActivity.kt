@@ -1,15 +1,12 @@
 package com.example.calistung.ui.belajar.daftar_isi_belajar_grid
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.calistung.adapter.GridAdapter
-import com.example.calistung.adapter.ListLearnCourseAdapter
 import com.example.calistung.databinding.ActivityDaftarIsiBelajarGridBinding
-import com.example.calistung.databinding.ActivityDaftarIsiLatihanBinding
 import com.example.calistung.model.LearnCourse
 import com.example.calistung.ui.belajar.daftar_isi_belajar.DaftarIsiBelajarActivity
 
@@ -31,6 +28,7 @@ class DaftarIsiBelajarGridActivity : AppCompatActivity() {
                 layoutManager = GridLayoutManager(this@DaftarIsiBelajarGridActivity, 3)
                 adapter = GridAdapter(it.learns!!)
             }
+            supportActionBar?.title=it.name
         }
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

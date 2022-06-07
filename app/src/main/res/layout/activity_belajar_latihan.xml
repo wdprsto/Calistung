@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:orientation="vertical"
-    tools:context=".ui.belajarlatihan.BelajarLatihanActivity">
+    tools:context=".ui.belajarlatihan.BelajarLatihanActivity"
+    tools:ignore="UnusedResources">
 
     <Space
         android:layout_width="match_parent"
@@ -37,7 +38,8 @@
             android:padding="16dp"
             android:text="@string/belajar"
             android:textColor="@color/black"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            tools:ignore="NestedWeights" />
 
         <com.google.android.material.button.MaterialButton
             app:cornerRadius="0dp"

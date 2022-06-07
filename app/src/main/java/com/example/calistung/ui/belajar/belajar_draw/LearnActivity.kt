@@ -1,14 +1,10 @@
 package com.example.calistung.ui.belajar.belajar_draw
 
-import android.Manifest
-import android.app.Activity
-import android.content.pm.PackageManager
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
 import com.example.calistung.databinding.ActivityLearnBinding
 import com.example.calistung.model.Learn
 import com.example.calistung.utils.loadImage
@@ -26,6 +22,7 @@ class LearnActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         val item = intent.getParcelableExtra<Learn>(ITEM_SELECTED)
+        supportActionBar?.title=item?.name
         model.apply {
             setLearn(item!!)
             setTts(this@LearnActivity)
@@ -45,7 +42,7 @@ class LearnActivity : AppCompatActivity() {
                     btnCheck.setOnClickListener {
                         binding.cvCorrectness.backgroundTintList = model.lightBlue(resources)
                         runBlocking {
-                            model.uploadImage(drawView.getBitmap())
+                            model.uploadImage(drawView.getBitmap(),resources=resources)
                             model.setIsStartedTrue()
                         }
 
@@ -57,13 +54,8 @@ class LearnActivity : AppCompatActivity() {
             }
             isStarted.observe(this@LearnActivity) { isStarted ->
                 if (isStarted) {
-                    model.correctness.observe(this@LearnActivity) {
-                        if (it) {
-                            binding.cvCorrectness.backgroundTintList = model.lightGreen(resources)
-                        } else {
-                            binding.cvCorrectness.backgroundTintList =
-                                model.ultraLightPink(resources)
-                        }
+                    model.labelColor.observe(this@LearnActivity) {
+                        binding.cvCorrectness.backgroundTintList = it
                     }
                 }
             }

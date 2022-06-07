@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.latihan.daftar_isi_latihan.DaftarIsiLatihanActivity">
+    tools:context=".ui.latihan.daftar_isi_latihan.DaftarIsiLatihanActivity"
+    tools:keep="@layout/activity_daftar_isi_latihan">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_github"

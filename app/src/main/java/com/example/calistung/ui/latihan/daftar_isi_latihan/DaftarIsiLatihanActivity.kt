@@ -15,10 +15,10 @@ class DaftarIsiLatihanActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDaftarIsiLatihanBinding.inflate(layoutInflater)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true);
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setContentView(binding.root)
         val item =
-            intent.getParcelableExtra<TrainCourse>(DaftarIsiLatihanActivity.TRAIN_COURSE_SELECTED)
+            intent.getParcelableExtra<TrainCourse>(TRAIN_COURSE_SELECTED)
         if (item != null)
             model.setTrainCourses(item)
         model.trainCourses.observe(this) {
@@ -26,6 +26,7 @@ class DaftarIsiLatihanActivity : AppCompatActivity() {
                 layoutManager = LinearLayoutManager(this@DaftarIsiLatihanActivity)
                 adapter = ListTrainCourseAdapter(it.trainQuestion!!)
             }
+            supportActionBar?.title=it.name
         }
 
     }

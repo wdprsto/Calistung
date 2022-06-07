@@ -15,7 +15,7 @@ class DaftarIsiBelajarActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityDaftarBelajarBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true);
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setContentView(binding.root)
         val item = intent.getParcelableExtra<LearnCourse>(LEARN_COURSE_SELECTED)
         if(item!=null)
@@ -25,6 +25,7 @@ class DaftarIsiBelajarActivity : AppCompatActivity() {
                 layoutManager = LinearLayoutManager(this@DaftarIsiBelajarActivity)
                 adapter = ListLearnCourseAdapter(it.learns!!)
             }
+            supportActionBar?.title=it.name
         }
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -36,20 +37,6 @@ class DaftarIsiBelajarActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-    /*private fun setUserData(userData: List<ItemsItem>) {
-        val listReview = ArrayList<ItemsItem>()
-        for (review in userData) {
-            listReview.add(review)
-        }
-        val adapter = ListUserAdapter(listReview)
-        activityMainBinding.rvGithub.adapter = adapter
-
-
-    }*/
-
-    /*private fun showRecycleView() {
-        activityMainBinding.rvGithub.layoutManager = LinearLayoutManager(this)
-    }*/
     companion object {
         const val LEARN_COURSE_SELECTED = "learn_course_selected"
     }

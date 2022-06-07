@@ -4,8 +4,6 @@ import android.content.Context
 import android.content.res.ColorStateList
 import android.content.res.Resources
 import android.graphics.Bitmap
-import android.graphics.Paint
-import android.graphics.Path
 import android.os.Environment
 import android.speech.tts.TextToSpeech
 import android.util.Log
@@ -13,16 +11,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.divyanshu.draw.widget.MyPath
-import com.divyanshu.draw.widget.PaintOptions
 import com.example.calistung.R
 import com.example.calistung.model.Predict
 import com.example.calistung.model.Train
 import com.example.calistung.model.TrainQuestion
 import com.example.calistung.service.ApiConfig
-import com.google.mlkit.vision.common.InputImage
-import com.google.mlkit.vision.text.TextRecognition
-import com.google.mlkit.vision.text.latin.TextRecognizerOptions
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -35,25 +28,15 @@ import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
 import java.util.*
-import kotlin.collections.LinkedHashMap
 
 class TrainViewModel : ViewModel() {
     private val _trainQuestion = MutableLiveData<TrainQuestion>()
-    val trainQuestion
-        get() = _trainQuestion
     private val _trainSelected = MutableLiveData<Train>()
     val trainSelected
         get() = _trainSelected
-//    private val _bitmapSelected = MutableLiveData<Path>()
-//    val bitmapSelected
-//        get() = _bitmapSelected
     private val _correctness = MutableLiveData<String>()
     val correctness
         get() = _correctness
-//
-//    private val _isStarted = MutableLiveData<Boolean>()
-//    val isStarted
-//        get() = _isStarted
 
     private val _correctnessText = MutableLiveData<String>()
     val correctnessText
@@ -64,28 +47,20 @@ class TrainViewModel : ViewModel() {
         get() = _tts
 
     private val _number = MutableLiveData<Int>()
-    val number
-        get() = _number
 
     private val _score = MutableLiveData<Int>()
-    val score
-        get() = _score
 
-    private val _keepBitmaps = MutableLiveData<Bitmap>()
-    val keepBitmaps
-        get() = _keepBitmaps
-//
-//    private val _points = MutableLiveData<String>()
-//    val points: LiveData<String> = _points
+    private val _labelColor = MutableLiveData<ColorStateList>()
+    val labelColor
+        get() = _labelColor
     private val _finish = MutableLiveData<Boolean>()
     val finish: LiveData<Boolean> = _finish
 
     private val _next = MutableLiveData<Boolean>()
     val next: LiveData<Boolean> = _next
-    var map = mutableMapOf<Int, Train>()
-    var a = mutableMapOf<Int, String>()
+    private var map = mutableMapOf<Int, Train>()
+    private var a = mutableMapOf<Int, String>()
     var myA = mutableMapOf<Int, String>()
-//    val point = mutableMapOf<Int, Int>()
 
 
     init {
@@ -110,7 +85,7 @@ class TrainViewModel : ViewModel() {
         }
     }
 
-    fun setTrainSelected(trainSelected: Train) {
+    private fun setTrainSelected(trainSelected: Train) {
         _trainSelected.value = trainSelected
     }
 
@@ -124,7 +99,7 @@ class TrainViewModel : ViewModel() {
         }
     }
 
-    fun setNumber(number: Int) {
+    private fun setNumber(number: Int) {
         _number.value = number
         _correctnessText.value = "SOAL $number DARI ${map.size} SOAL"
     }
@@ -137,26 +112,12 @@ class TrainViewModel : ViewModel() {
         }
         if (_number.value!! >= map.size) {
             _finish.value = true
-//            point.values.sum()
-//            _points.value = point.values.sum().toString()
-//            Log.e("TEMPIK", "POINT : ${point.values.sum()}")
         }
     }
 
-//    fun updateScore(isTrue: Boolean, position: Int) {
-//
-//        if (isTrue) {
-//            point[position] = 1
-//        } else {
-//            point[position] = 0
-//        }
-//        _score.value = point[position]
-//        Log.e("TEMPIK", "TEMP : ${_score.value}")
-//    }
-
-
-    fun uploadImage(bitmap: Bitmap, fileNameToSave: String = "image") {
+    fun uploadImage(bitmap: Bitmap, fileNameToSave: String = "image", resources: Resources) {
         _correctness.value = "PROCESSING..."
+        setLightBlue(resources)
         viewModelScope.launch(Dispatchers.IO) {
 
             val file: File?
@@ -195,17 +156,17 @@ class TrainViewModel : ViewModel() {
                     if (response.isSuccessful) {
                         val responseBody = response.body()
                         if (responseBody?.resultPredict == trainSelected.value?.answer) {
-//                            updateScore(true, _number.value!!)
-                            Log.e("TEMPIK", "onResponse: BNEAER")
+                            Log.e("ERROR_LOG", "onResponse: BNEAER")
                             _next.value = true
                             _correctness.value = "BENAR"
                             myA[_number.value!!] = responseBody?.resultPredict.toString()
+                            setLightGreen(resources)
                         } else {
-//                            updateScore(false, _number.value!!)
-                            Log.e("TEMPIK", "onResponse: SALAH")
+                            Log.e("ERROR_LOG", "onResponse: SALAH")
                             _next.value = false
                             _correctness.value = "SALAH"
                             myA[_number.value!!] = responseBody?.resultPredict.toString()
+                            setUltraLightPink(resources)
                         }
                     }
                 }
@@ -225,7 +186,15 @@ class TrainViewModel : ViewModel() {
     fun ultraLightPink(resources: Resources): ColorStateList =
         ColorStateList.valueOf(resources.getColor(R.color.ultra_light_pink))
 
-    fun lightBlue(resources: Resources): ColorStateList =
-        ColorStateList.valueOf(resources.getColor(R.color.light_blue))
+    fun setLightGreen(resources: Resources) {
+        _labelColor.value = ColorStateList.valueOf(resources.getColor(R.color.light_green))
+    }
 
+    fun setUltraLightPink(resources: Resources) {
+        _labelColor.value = ColorStateList.valueOf(resources.getColor(R.color.ultra_light_pink))
+    }
+
+    fun setLightBlue(resources: Resources) {
+        _labelColor.value = ColorStateList.valueOf(resources.getColor(R.color.light_blue))
+    }
 }

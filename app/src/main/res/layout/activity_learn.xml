@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.belajar.belajar_draw.LearnActivity">
+    tools:context=".ui.belajar.belajar_draw.LearnActivity"
+    tools:keep="@layout/activity_learn">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,14 +22,16 @@
             android:layout_gravity="center"
             android:layout_weight="1"
 
-            android:backgroundTint="@color/light_yellow">
+            android:backgroundTint="@color/light_yellow"
+            tools:ignore="NestedWeights">
 
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                tools:src="@tools:sample/backgrounds/scenic" />
+                tools:src="@tools:sample/backgrounds/scenic"
+                android:contentDescription="@string/gif_image" />
         </androidx.cardview.widget.CardView>
 
         <ImageButton
@@ -39,7 +42,8 @@
             android:layout_marginStart="24dp"
             android:background="@color/white"
             android:src="@drawable/ic_outline_record_voice_over_24"
-            android:text="TextView" />
+            android:text="@string/speak_button"
+            android:contentDescription="@string/speak_button" />
     </LinearLayout>
 
     <androidx.cardview.widget.CardView

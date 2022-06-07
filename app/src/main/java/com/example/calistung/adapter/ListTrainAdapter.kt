@@ -3,7 +3,6 @@ package com.example.calistung.adapter
 import android.content.Context
 import android.content.Intent
 import com.example.calistung.model.TrainCourse
-import com.example.calistung.ui.daftarisibelajar.ListAdapter
 import com.example.calistung.ui.latihan.daftar_isi_latihan.DaftarIsiLatihanActivity
 
 class ListTrainAdapter(items: ArrayList<TrainCourse>) : ListAdapter<TrainCourse>(items) {

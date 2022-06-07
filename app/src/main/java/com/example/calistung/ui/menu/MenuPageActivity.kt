@@ -1,15 +1,14 @@
+@file:Suppress("PrivatePropertyName")
+
 package com.example.calistung.ui.menu
 
 import android.Manifest
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.Toast
-import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.ViewModelProvider
 import com.example.calistung.databinding.ActivityMenuBinding
@@ -17,9 +16,7 @@ import com.example.calistung.repository.ResponseRepository
 import com.example.calistung.service.ApiConfig
 import com.example.calistung.ui.belajarlatihan.BelajarLatihanActivity
 import com.example.calistung.ui.splashscreen.SplashScreenActivity
-import com.example.calistung.utils.Dummy
 import com.example.calistung.utils.ViewModelFactory
-import com.google.gson.Gson
 import kotlinx.coroutines.runBlocking
 
 class MenuPageActivity : AppCompatActivity() {
@@ -67,7 +64,6 @@ class MenuPageActivity : AppCompatActivity() {
         } catch (e: Exception) {
             binding.llButtons.visibility = View.GONE
             binding.llNoInternet.visibility = View.VISIBLE
-//            Toast.makeText(this, "$e", Toast.LENGTH_SHORT).show()
             binding.btnReopen.setOnClickListener {
                 val thisActivity = Intent(this, SplashScreenActivity::class.java)
                 thisActivity.flags = Intent.FLAG_ACTIVITY_REORDER_TO_FRONT
@@ -82,7 +78,7 @@ class MenuPageActivity : AppCompatActivity() {
         Manifest.permission.WRITE_EXTERNAL_STORAGE
     )
 
-    fun verifyStoragePermission(activity: Activity?) {
+    private fun verifyStoragePermission(activity: Activity?) {
         val permission = ActivityCompat.checkSelfPermission(
             activity!!,
             Manifest.permission.WRITE_EXTERNAL_STORAGE

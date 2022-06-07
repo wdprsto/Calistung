@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import com.example.calistung.model.LearnCourse
 import com.example.calistung.ui.belajar.daftar_isi_belajar.DaftarIsiBelajarActivity
-import com.example.calistung.ui.daftarisibelajar.ListAdapter
 import com.example.calistung.ui.belajar.daftar_isi_belajar_grid.DaftarIsiBelajarGridActivity
 
 class ListLearnAdapter(items: ArrayList<LearnCourse>) : ListAdapter<LearnCourse>(items) {

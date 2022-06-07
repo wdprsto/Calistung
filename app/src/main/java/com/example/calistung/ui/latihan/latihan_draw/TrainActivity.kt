@@ -1,23 +1,15 @@
 package com.example.calistung.ui.latihan.latihan_draw
 
-import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.speech.tts.TextToSpeech
 import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.divyanshu.draw.widget.MyPath
-import com.divyanshu.draw.widget.PaintOptions
 import com.example.calistung.R
 import com.example.calistung.databinding.ActivityTrainBinding
 import com.example.calistung.model.TrainQuestion
-import com.example.calistung.ui.menu.MenuPageActivity
-import com.example.calistung.ui.score.ScoreActivity
-import java.util.*
 
 class TrainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityTrainBinding
@@ -29,6 +21,7 @@ class TrainActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         val item = intent.getParcelableExtra<TrainQuestion>(ITEM_SELECTED)
+        supportActionBar?.title = item?.name
         model.apply {
             setTrainQuestion(item!!)
             setTts(this@TrainActivity)
@@ -53,17 +46,19 @@ class TrainActivity : AppCompatActivity() {
                     }
 
                     btnCheck.setOnClickListener {
-                        model.uploadImage(drawView.getBitmap())
+                        model.uploadImage(drawView.getBitmap(), resources = resources)
                     }
                     btnNext.setOnClickListener {
                         drawView.clearCanvas()
                         binding.tvCorrect.text = ""
-                        binding.cvCorrect.backgroundTintList = model.ultraLightPink(resources)
+                        setLightBlue(resources)
                         next()
                     }
                 }
             }
-
+            model.labelColor.observe(this@TrainActivity) {
+                binding.cvCorrect.backgroundTintList = it
+            }
             model.finish.observe(this@TrainActivity) {
                 finish(it)
             }
@@ -79,7 +74,6 @@ class TrainActivity : AppCompatActivity() {
             model.correctness.observe(this@TrainActivity) {
                 binding.tvCorrect.text = it
             }
-
 
         }
     }
@@ -107,16 +101,14 @@ class TrainActivity : AppCompatActivity() {
     private fun finish(finish: Boolean) {
         if (finish) {
             binding.apply {
-                btnNext.setText(getString(R.string.selesai))
+                btnNext.text = getString(R.string.selesai)
                 binding.btnNext.setBackgroundColor(Color.parseColor("#FFFFB2A6"))
                 btnNext.setOnClickListener {
                     AlertDialog.Builder(it.context)
                         .setTitle("Akhiri")
                         .setMessage("Apakah anda ingin mengakhiri latihan?")
                         .setPositiveButton("Ya") { _, i ->
-                            val intent = Intent(this@TrainActivity, MenuPageActivity::class.java)
-                            /*intent.putExtra(ScoreActivity.SCORE, point)*/
-                            startActivity(intent)
+                            onBackPressed()
                             finish()
                         }
                         .setNegativeButton("No") { _, i ->
@@ -124,7 +116,7 @@ class TrainActivity : AppCompatActivity() {
                 }
             }
         } else {
-            binding.btnNext.setText(getString(R.string.lanjut))
+            binding.btnNext.text = getString(R.string.lanjut)
             binding.btnNext.setBackgroundColor(Color.parseColor("#FF6EE1AB"))
         }
     }

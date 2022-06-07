@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.belajar.daftar_isi_belajar_grid.DaftarIsiBelajarGridActivity">
+    tools:context=".ui.belajar.daftar_isi_belajar_grid.DaftarIsiBelajarGridActivity"
+    tools:keep="@layout/activity_daftar_isi_belajar_grid">
 
     <androidx.recyclerview.widget.RecyclerView
         android:padding="8dp"

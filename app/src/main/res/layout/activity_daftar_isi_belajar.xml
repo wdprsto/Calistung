@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.belajar.daftar_belajar.DaftarBelajarActivity">
+    tools:context=".ui.belajar.daftar_belajar.DaftarBelajarActivity"
+    tools:keep="@layout/activity_daftar_isi_belajar">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_github"

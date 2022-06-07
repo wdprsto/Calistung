@@ -110,5 +110,11 @@
     <string name="nilai_skor_nya_adalah">Nilai Skor nya Adalah :</string>
     <string name="_80">80</string>
     <string name="kembali_ke_halaman_menu">Kembali Ke halaman Menu</string>
+    <string name="speak_button">Speak Button</string>
+    <string name="gif_image">Gif Image</string>
+    <string name="please_connect_to_the_internet_n_then_reopen">PLEASE CONNECT TO THE INTERNET!\n THEN REOPEN</string>
+    <string name="reopen">REOPEN</string>
+    <string name="no_connection_logo">No Connection Logo</string>
+    <string name="logo">Logo</string>
 
 </resources>
