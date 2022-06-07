@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="IconLocation">
+        <ignore path="src/main/res/drawable/belajar.png" />
+        <ignore path="src/main/res/drawable/huruf.png" />
+        <ignore path="src/main/res/drawable/latihan.png" />
+        <ignore path="src/main/res/drawable/logo.png" />
+        <ignore path="src/main/res/drawable/menghitung.png" />
+    </issue>
+    <issue id="UnusedResources">
+        <ignore path="src/main/res/drawable/angka.png" />
+    </issue>
+</lint>
