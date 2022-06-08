@@ -1,5 +1,13 @@
 # Calistung
 Applications that provide educational features such as writing, reading and counting.
+<br />
+<p align="center">
+  <a href="#">
+    <img src="app/src/main/res/drawable/logo.png">
+  </a>
+</p>
+<br>
+
 
 ## Developed by
 - (ML) M2189F1802- Wahyu Dwi Prasetio - Universitas Bengkulu
