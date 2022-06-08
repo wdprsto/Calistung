@@ -44,3 +44,10 @@ Applications that provide educational features such as writing, reading and coun
 - [GSON Converter](https://github.com/square/retrofit/tree/master/retrofit-converters/gson) - A Converter which uses Gson for serialization to and from JSON.
 - [OkHttp3](https://github.com/square/okhttp) -  For implementing interceptor, logging and mocking web server.
 - [Glide](https://github.com/bumptech/glide) - Glide is a fast and efficient open source media management and image loading framework for Android that wraps media decoding, memory and disk caching, and resource pooling into a simple and easy to use interface.
+
+
+# Resources
+Our project divided into 3 different path resources.
+1. [android-development](https://github.com/chino-ai/calistung)
+2. [cloud-computing](https://github.com/wdprsto/Calistung_processing)
+3. [machine-learning](https://github.com/jundi77/c22-ps283-backend)
