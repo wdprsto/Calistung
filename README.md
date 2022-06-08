@@ -1,5 +1,3 @@
-# Calistung
-Applications that provide educational features such as writing, reading and counting.
 <br />
 <p align="center">
   <a href="#">
@@ -9,13 +7,28 @@ Applications that provide educational features such as writing, reading and coun
 <br>
 
 
-## Developed by
-- (ML) M2189F1802- Wahyu Dwi Prasetio - Universitas Bengkulu
-- (ML) M7315G2758 - Kurnia Oktaviani - Universitas Sriwijaya
-- (MD) A2006F0587 - Muhammad Ziyad Al Maududi - Universitas Brawijaya
-- (MD) A2152G1662 - Ilham Maulana - Sekolah Tinggi Teknologi Bandung
-- (CC) C2004F0325 - Jundullah Hanif Robbani - ITS
-- (CC) C7152G1671 - Sani Hamdhani  - Sekolah Tinggi Teknologi Bandung
+# Calistung
+Calistung : Baca Tulis Hitung GitHub Repositories of Bangkit Academy 2022 Capstone Project from 3 learning path. Machine Learning, Mobile development, Cloud Computing from team C22-PS283.
+
+
+# About The Project
+Applications that provide educational features such as writing, reading and counting.
+
+
+# Team Members
+## Team ID : C22-PS283
+<br>
+
+| Name                      | Student ID   | Path                |
+| ------------------------- | ------------ | ------------------- |
+| Wahyu Dwi Prasetio        | M2189F1802   | Machine Learning    |
+| Kurnia Oktaviani          | M7315G2758   | Machine Learning    |
+| Muhammad Ziyad Al Maududi | A2006F0587   | Android Development |
+| Ilham Maulana             | A2152G1662   | Android Development |
+| Jundullah Hanif Robbani   | C2004F0325   | Cloud Computing     |
+| Sani Hamdhani             | C7152G1671   | Cloud Computing     |
+
+<br>
 
 
 ## Built With
