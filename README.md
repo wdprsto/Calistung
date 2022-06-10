@@ -1,16 +1,38 @@
+<br />
+<p align="center">
+  <a href="#">
+    <img src="app/src/main/res/drawable/logo.png">
+  </a>
+</p>
+<br>
+
+
 # Calistung
+Calistung : Baca Tulis Hitung GitHub Repositories of Bangkit Academy 2022 Capstone Project from 3 learning path. Machine Learning, Mobile development, Cloud Computing from team C22-PS283.
+
+
+# About The Project
 Applications that provide educational features such as writing, reading and counting.
 
-## Developed by
-- (ML) M2189F1802- Wahyu Dwi Prasetio - Universitas Bengkulu
-- (ML) M7315G2758 - Kurnia Oktaviani - Universitas Sriwijaya
-- (MD) A2006F0587 - Muhammad Ziyad Al Maududi - Universitas Brawijaya
-- (MD) A2152G1662 - Ilham Maulana - Sekolah Tinggi Teknologi Bandung
-- (CC) C2004F0325 - Jundullah Hanif Robbani - ITS
-- (CC) C7152G1671 - Sani Hamdhani  - Sekolah Tinggi Teknologi Bandung
+
+# Team Members
+
+## Team ID : C22-PS283
+<br>
+
+| Name                      | Student ID   | Path                |
+| ------------------------- | ------------ | ------------------- |
+| Wahyu Dwi Prasetio        | M2189F1802   | Machine Learning    |
+| Kurnia Oktaviani          | M7315G2758   | Machine Learning    |
+| Muhammad Ziyad Al Maududi | A2006F0587   | Android Development |
+| Ilham Maulana             | A2152G1662   | Android Development |
+| Jundullah Hanif Robbani   | C2004F0325   | Cloud Computing     |
+| Sani Hamdhani             | C7152G1671   | Cloud Computing     |
+
+<br>
 
 
-## Built With
+# Built With
 - [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android development.
 - [Android Architecture Components](https://developer.android.com/topic/libraries/architecture) - Collection of libraries that help you design robust, testable, and maintainable apps.
   - [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) - Data objects that notify views when the underlying database changes.
@@ -22,3 +44,10 @@ Applications that provide educational features such as writing, reading and coun
 - [GSON Converter](https://github.com/square/retrofit/tree/master/retrofit-converters/gson) - A Converter which uses Gson for serialization to and from JSON.
 - [OkHttp3](https://github.com/square/okhttp) -  For implementing interceptor, logging and mocking web server.
 - [Glide](https://github.com/bumptech/glide) - Glide is a fast and efficient open source media management and image loading framework for Android that wraps media decoding, memory and disk caching, and resource pooling into a simple and easy to use interface.
+
+
+# Resources
+Our project divided into 3 different path resources.
+1. [android-development](https://github.com/chino-ai/calistung)
+2. [cloud-computing](https://github.com/wdprsto/Calistung_processing)
+3. [machine-learning](https://github.com/jundi77/c22-ps283-backend)
