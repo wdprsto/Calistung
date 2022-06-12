@@ -13,14 +13,19 @@ Calistung : Baca Tulis Hitung GitHub Repositories of Bangkit Academy 2022 Capsto
 
 # About The Project
 Applications that provide educational features such as writing, reading and counting.
-<br><br>
-![image](https://user-images.githubusercontent.com/64635497/173224973-a3225ff5-fafc-4694-982a-4c7235c4ee12.png)
-![image](https://user-images.githubusercontent.com/64635497/173224977-92068277-4201-4d2e-b52f-9c7f00e413dd.png)
-![image](https://user-images.githubusercontent.com/64635497/173224980-0e2f782b-129e-4a9d-a62a-6205723c4eca.png)
-![image](https://user-images.githubusercontent.com/64635497/173224985-f5fdd560-af70-480e-b00d-a7e76aa7f2f8.png)
-![image](https://user-images.githubusercontent.com/64635497/173224989-f680d44e-57ea-4004-84c0-9e136660ed18.png)
-![image](https://user-images.githubusercontent.com/64635497/173224998-0d122566-780b-43bb-9d66-f1b3e850550d.png)
-![image](https://user-images.githubusercontent.com/64635497/173225002-d04c3ab8-8d4b-4c62-9ca4-257a8d98ea68.png)
+## Menu
+![image](https://user-images.githubusercontent.com/64635497/173225281-2d5faedb-905a-48cf-b62b-ca8d99a5985a.png)
+![image](https://user-images.githubusercontent.com/64635497/173225285-355623d8-69ca-4918-9857-34adb12de9be.png)
+![image](https://user-images.githubusercontent.com/64635497/173225286-9a3c72e9-843f-4f95-9ddc-f5f81fce758b.png)
+## Belajar Feature
+![image](https://user-images.githubusercontent.com/64635497/173225292-e3cb07c8-97fa-4f46-b943-22ead0d1e890.png)
+![image](https://user-images.githubusercontent.com/64635497/173225296-12bb3f8a-52db-48e1-a522-c10c0a61760d.png)
+![image](https://user-images.githubusercontent.com/64635497/173225298-71edcf5a-8628-46a8-8f29-de0a1f70765c.png)
+## Latihan Feature
+![image](https://user-images.githubusercontent.com/64635497/173225301-50264edc-ea8a-4557-9504-cc8d2916ad37.png)
+![image](https://user-images.githubusercontent.com/64635497/173225304-beb2f9b3-5926-4a19-9ae7-955b717f6f7f.png)
+![image](https://user-images.githubusercontent.com/64635497/173225308-17878f81-03c4-4c9e-840c-d25321319a31.png)
+
 
 
 # Team Members
