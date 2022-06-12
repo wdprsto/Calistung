@@ -55,12 +55,12 @@ Our project divided into 3 different path resources.
 3. [machine-learning](https://github.com/jundi77/c22-ps283-backend)
 
 # Prerequisites
-	1. Android 
-	2. Internet connection
+1. Android 
+2. Internet connection
   
 # Installation
-	1. Download the APK 
-	2. Install the APK
+1. Download the APK 
+2. Install the APK
 
 # Usage
 ## How to Use Latihan Feature
