@@ -46,7 +46,11 @@ class TrainActivity : AppCompatActivity() {
                     }
 
                     btnCheck.setOnClickListener {
-                        model.uploadImage(drawView.getBitmap(), resources = resources, context = this@TrainActivity)
+                        model.uploadImage(
+                            drawView.getBitmap(),
+                            resources = resources,
+                            context = this@TrainActivity
+                        )
                     }
                     btnNext.setOnClickListener {
                         drawView.clearCanvas()

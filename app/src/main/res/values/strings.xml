@@ -1,15 +1,15 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Calistung</string>
 
-    <string name="calistung">CALISTUNG</string>
+    <string name="calistung" tools:keep="@string/calistung">CALISTUNG</string>
     <string name="belajar_nulis_alfabet">Belajar Menulis Alfabet</string>
     <string name="huruf">Huruf</string>
     <string name="angka">ANGKA</string>
     <string name="menghitung">Menghitung</string>
     <string name="belajar">BELAJAR</string>
     <string name="latihan">LATIHAN</string>
-    <string name="title_activity_grid">GridActivity</string>
-    <string name="large_text">
+    <string name="title_activity_grid" tools:keep="@string/title_activity_grid">GridActivity</string>
+    <string name="large_text" tools:keep="@string/large_text">
         "Material is the metaphor.\n\n"
 
         "A material metaphor is the unifying theory of a rationalized space and a system of motion."
@@ -98,18 +98,18 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings" tools:keep="@string/action_settings">Settings</string>
     <string name="coba">COBA</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" tools:keep="@string/hello_blank_fragment">Hello blank fragment</string>
     <string name="cek">Cek</string>
     <string name="clear">Bersihkan</string>
     <string name="lanjut">LANJUT</string>
-    <string name="sebelumnya">SEBELUMNYA</string>
+    <string name="sebelumnya" tools:keep="@string/sebelumnya">SEBELUMNYA</string>
     <string name="selesai">Selesai</string>
-    <string name="nilai_skor_nya_adalah">Nilai Skor nya Adalah :</string>
-    <string name="_80">80</string>
-    <string name="kembali_ke_halaman_menu">Kembali Ke halaman Menu</string>
+    <string name="nilai_skor_nya_adalah" tools:keep="@string/nilai_skor_nya_adalah">Nilai Skor nya Adalah :</string>
+    <string name="_80" tools:keep="@string/_80">80</string>
+    <string name="kembali_ke_halaman_menu" tools:keep="@string/kembali_ke_halaman_menu">Kembali Ke halaman Menu</string>
     <string name="speak_button">Speak Button</string>
     <string name="gif_image">Gif Image</string>
     <string name="please_connect_to_the_internet_n_then_reopen">PLEASE CONNECT TO THE INTERNET!\n THEN REOPEN</string>

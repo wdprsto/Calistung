@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.res.ColorStateList
 import android.content.res.Resources
 import android.graphics.Bitmap
-import android.os.Environment
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -115,7 +114,12 @@ class TrainViewModel : ViewModel() {
         }
     }
 
-    fun uploadImage(bitmap: Bitmap, fileNameToSave: String = "image", resources: Resources,context: Context) {
+    fun uploadImage(
+        bitmap: Bitmap,
+        fileNameToSave: String = "image",
+        resources: Resources,
+        context: Context
+    ) {
         _correctness.value = "PROCESSING..."
         setLightBlue(resources)
         viewModelScope.launch(Dispatchers.IO) {

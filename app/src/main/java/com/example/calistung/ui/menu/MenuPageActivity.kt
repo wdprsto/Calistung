@@ -5,9 +5,10 @@ package com.example.calistung.ui.menu
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.net.Uri
-import android.os.*
-import android.provider.Settings
+import android.os.Build
+import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -31,15 +32,12 @@ class MenuPageActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-         if(!allPermissionsGranted()){
-             ActivityCompat.requestPermissions(
-                 this,
-                 PERMISSION_STORAGE,
-                 REQUEST_EXTERNAL_STORAGE
-             )
-         }
-        if(Environment.isExternalStorageManager()){
-
+        if (!allPermissionsGranted()) {
+            ActivityCompat.requestPermissions(
+                this,
+                PERMISSION_STORAGE,
+                REQUEST_EXTERNAL_STORAGE
+            )
         }
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -109,8 +107,6 @@ class MenuPageActivity : AppCompatActivity() {
 
         }
     }
-
-
 
 
     @RequiresApi(Build.VERSION_CODES.R)

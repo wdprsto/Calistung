@@ -4,31 +4,36 @@
     package="com.example.calistung">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
 
-
-
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
+    </queries>
 
     <application
         android:allowBackup="true"
-        android:requestLegacyExternalStorage="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Calistung">
         <activity
             android:name=".ui.latihan.daftar_isi_latihan.DaftarIsiLatihanActivity"
-            android:label="latihan"
-            android:exported="false" />
+            android:exported="false"
+            android:label="latihan" />
         <activity
             android:name=".ui.latihan.daftar_latihan.DaftarLatihanActivity"
-            android:label="Daftar Jenis latihan"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Daftar Jenis latihan" />
         <activity
             android:name=".ui.belajar.daftar_isi_belajar.DaftarIsiBelajarActivity"
             android:exported="false" />
@@ -37,8 +42,8 @@
             android:exported="false" />
         <activity
             android:name=".ui.belajar.daftar_belajar.DaftarBelajarActivity"
-            android:label="Belajar"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Belajar" />
         <activity
             android:name=".ui.menu.MenuPageActivity"
             android:exported="false" />
@@ -47,8 +52,8 @@
             android:exported="false" />
         <activity
             android:name=".ui.belajar.daftar_isi_belajar_grid.DaftarIsiBelajarGridActivity"
-            android:label="Belajar"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Belajar" />
         <activity
             android:name=".ui.belajar.belajar_draw.LearnActivity"
             android:exported="false" />
@@ -69,5 +74,4 @@
             android:name="com.google.mlkit.vision.DEPENDENCIES"
             android:value="ocr" />
     </application>
-
 </manifest>

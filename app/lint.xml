@@ -9,5 +9,6 @@
     </issue>
     <issue id="UnusedResources">
         <ignore path="src/main/res/drawable/angka.png" />
+        <ignore path="src/main/res/drawable/huruf.png" />
     </issue>
 </lint>

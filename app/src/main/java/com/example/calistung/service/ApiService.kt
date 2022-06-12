@@ -2,7 +2,6 @@ package com.example.calistung.service
 
 import com.example.calistung.model.Predict
 import com.example.calistung.model.ResponseCategory
-import kotlinx.parcelize.RawValue
 import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.Response
@@ -13,8 +12,6 @@ interface ApiService {
     suspend fun getAllData(): Response<ResponseCategory>
 
 
-
-    
     @Multipart
     @Headers("Authorization: bearer bmMMM8iHjrexZYCwJg0FF0z3jQlhuk4I7UYoGEAOcSDkkOLeBMw8cy2z9uhegn82NqAAKzwoLtWTGbizxmIWEYjigP")
     @POST("predict")
