@@ -115,14 +115,14 @@ class TrainViewModel : ViewModel() {
         }
     }
 
-    fun uploadImage(bitmap: Bitmap, fileNameToSave: String = "image", resources: Resources) {
+    fun uploadImage(bitmap: Bitmap, fileNameToSave: String = "image", resources: Resources,context: Context) {
         _correctness.value = "PROCESSING..."
         setLightBlue(resources)
         viewModelScope.launch(Dispatchers.IO) {
 
             val file: File?
             file = File(
-                Environment.getExternalStorageDirectory()
+                context.filesDir
                     .toString() + File.separator + fileNameToSave
             )
             file.createNewFile()

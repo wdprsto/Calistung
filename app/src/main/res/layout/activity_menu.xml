@@ -83,7 +83,7 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/huruf"
                 android:layout_width="160dp"
-                android:layout_height="160dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/biruMuda"
@@ -99,7 +99,7 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/angka"
                 android:layout_width="160dp"
-                android:layout_height="160dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/biruMuda"
@@ -117,7 +117,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/menghitung"
             android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
             android:backgroundTint="@color/biruMuda"
             android:drawableTop="@drawable/ic_plus_minus"

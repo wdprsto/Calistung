@@ -38,6 +38,9 @@ class MenuPageActivity : AppCompatActivity() {
                  REQUEST_EXTERNAL_STORAGE
              )
          }
+        if(Environment.isExternalStorageManager()){
+
+        }
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
         model = ViewModelProvider(

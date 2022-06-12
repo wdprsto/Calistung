@@ -27,8 +27,8 @@
         <com.google.android.material.button.MaterialButton
             app:cornerRadius="0dp"
             android:id="@+id/btn_to_belajar"
-            android:layout_width="160dp"
-            android:layout_height="160dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:layout_weight="1"
             android:backgroundTint="@color/biruMuda"
@@ -44,8 +44,8 @@
         <com.google.android.material.button.MaterialButton
             app:cornerRadius="0dp"
             android:id="@+id/btn_to_latihan"
-            android:layout_width="160dp"
-            android:layout_height="160dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:layout_weight="1"
             android:backgroundTint="@color/biruMuda"

@@ -7,6 +7,7 @@ import android.graphics.Bitmap
 import android.os.Environment
 import android.speech.tts.TextToSpeech
 import android.util.Log
+import androidx.core.content.ContextCompat.getExternalFilesDirs
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -56,13 +57,13 @@ class LearnViewModel : ViewModel() {
         _isStarted.value = false
     }
 
-    fun uploadImage(bitmap: Bitmap, fileNameToSave: String = "image",resources: Resources) {
+    fun uploadImage(bitmap: Bitmap, fileNameToSave: String = "image",resources: Resources,context: Context) {
         _correctnessText.value = "PROCESSING..."
         setLightBlue(resources)
         viewModelScope.launch(Dispatchers.IO) {
             val file: File?
             file = File(
-                Environment.getExternalStorageDirectory()
+                context.filesDir
                     .toString() + File.separator + fileNameToSave
             )
             file.createNewFile()

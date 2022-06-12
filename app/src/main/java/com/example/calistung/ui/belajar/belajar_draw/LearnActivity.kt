@@ -42,7 +42,7 @@ class LearnActivity : AppCompatActivity() {
                     btnCheck.setOnClickListener {
                         binding.cvCorrectness.backgroundTintList = model.lightBlue(resources)
                         runBlocking {
-                            model.uploadImage(drawView.getBitmap(),resources=resources)
+                            model.uploadImage(drawView.getBitmap(),resources=resources,context=this@LearnActivity)
                             model.setIsStartedTrue()
                         }
 
