@@ -53,3 +53,32 @@ Our project divided into 3 different path resources.
 1. [android-development](https://github.com/chino-ai/calistung)
 2. [cloud-computing](https://github.com/wdprsto/Calistung_processing)
 3. [machine-learning](https://github.com/jundi77/c22-ps283-backend)
+
+# Prerequisites
+	1. Android 
+	2. Internet connection
+  
+# Installation
+	1. Download the APK 
+	2. Install the APK
+
+# Usage
+## How to Use Latihan Feature
+1. Choose category (Alfabet/Huruf/Menghitung)
+2. Choose Latihan
+3. Choose Daftar Latihan item
+4. Choose Daftar Isi Latihan item
+5. Draw your answer
+6. Check the answer
+7. If it’s true, then will show the “BENAR” message and can go to the next question, but if false it will show the “SALAH” message
+8. If it’s the end of those questions, it will back to the Daftar Isi Latihan
+
+## How to Use Belajar Feature
+1. Choose category (Alfabet/Huruf/Menghitung)
+2. Choose Belajar
+3. Choose Daftar Belajar item
+4. Choose Daftar Isi Belajar item
+5. Draw your answer
+6. Check the answer
+7. If it’s true, then will show the “BENAR” message, if else then will show the “SALAH” message
+
