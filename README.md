@@ -13,8 +13,8 @@ Calistung : Baca Tulis Hitung GitHub Repositories of Bangkit Academy 2022 Capsto
 
 # About The Project
 Applications that provide educational features such as writing, reading and counting.
-<br>
-![image](https://user-images.githubusercontent.com/64635497/173224973-a3225ff5-fafc-4694-982a-4c7235c4ee12.png)
+<br><br>
+![image](https://user-images.githubusercontent.com/64635497/173224973-a3225ff5-fafc-4694-982a-4c7235c4ee12.png = 300x618)
 ![image](https://user-images.githubusercontent.com/64635497/173224977-92068277-4201-4d2e-b52f-9c7f00e413dd.png)
 ![image](https://user-images.githubusercontent.com/64635497/173224980-0e2f782b-129e-4a9d-a62a-6205723c4eca.png)
 ![image](https://user-images.githubusercontent.com/64635497/173224985-f5fdd560-af70-480e-b00d-a7e76aa7f2f8.png)
