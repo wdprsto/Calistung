@@ -13,6 +13,19 @@ Calistung : Baca Tulis Hitung GitHub Repositories of Bangkit Academy 2022 Capsto
 
 # About The Project
 Applications that provide educational features such as writing, reading and counting.
+## Menu
+![image](https://user-images.githubusercontent.com/64635497/173225281-2d5faedb-905a-48cf-b62b-ca8d99a5985a.png)
+![image](https://user-images.githubusercontent.com/64635497/173225285-355623d8-69ca-4918-9857-34adb12de9be.png)
+![image](https://user-images.githubusercontent.com/64635497/173225286-9a3c72e9-843f-4f95-9ddc-f5f81fce758b.png)
+## Belajar Feature
+![image](https://user-images.githubusercontent.com/64635497/173225292-e3cb07c8-97fa-4f46-b943-22ead0d1e890.png)
+![image](https://user-images.githubusercontent.com/64635497/173225296-12bb3f8a-52db-48e1-a522-c10c0a61760d.png)
+![image](https://user-images.githubusercontent.com/64635497/173225298-71edcf5a-8628-46a8-8f29-de0a1f70765c.png)
+## Latihan Feature
+![image](https://user-images.githubusercontent.com/64635497/173225301-50264edc-ea8a-4557-9504-cc8d2916ad37.png)
+![image](https://user-images.githubusercontent.com/64635497/173225304-beb2f9b3-5926-4a19-9ae7-955b717f6f7f.png)
+![image](https://user-images.githubusercontent.com/64635497/173225308-17878f81-03c4-4c9e-840c-d25321319a31.png)
+
 
 
 # Team Members
@@ -32,6 +45,37 @@ Applications that provide educational features such as writing, reading and coun
 <br>
 
 
+# Prerequisites
+1. Android 
+2. Internet connection
+  
+  
+# Installation
+1. Download the APK 
+2. Install the APK
+
+
+# Usage
+## How to Use Latihan Feature
+1. Choose category (Alfabet/Huruf/Menghitung)
+2. Choose Latihan
+3. Choose Daftar Latihan item
+4. Choose Daftar Isi Latihan item
+5. Draw your answer
+6. Check the answer
+7. If it’s true, then will show the “BENAR” message and can go to the next question, but if false it will show the “SALAH” message
+8. If it’s the end of those questions, it will back to the Daftar Isi Latihan
+
+## How to Use Belajar Feature
+1. Choose category (Alfabet/Huruf/Menghitung)
+2. Choose Belajar
+3. Choose Daftar Belajar item
+4. Choose Daftar Isi Belajar item
+5. Draw your answer
+6. Check the answer
+7. If it’s true, then will show the “BENAR” message, if else then will show the “SALAH” message
+
+
 # Built With
 - [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android development.
 - [Android Architecture Components](https://developer.android.com/topic/libraries/architecture) - Collection of libraries that help you design robust, testable, and maintainable apps.
@@ -45,6 +89,7 @@ Applications that provide educational features such as writing, reading and coun
 - [OkHttp3](https://github.com/square/okhttp) -  For implementing interceptor, logging and mocking web server.
 - [Glide](https://github.com/bumptech/glide) - Glide is a fast and efficient open source media management and image loading framework for Android that wraps media decoding, memory and disk caching, and resource pooling into a simple and easy to use interface.
 - [makeagif](https://makeagif.com/user/SeijiKun/popular/1) - a website that can be used to search for funny and interesting GIFs, this website also offers a feature to create your own version of GIFs.
+- [TextToSpeech](https://developer.android.com/reference/android/speech/tts/TextToSpeech) - Synthesizes speech from text for immediate playback or to create a sound file.
 
 
 # Resources
