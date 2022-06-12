@@ -32,35 +32,15 @@ Applications that provide educational features such as writing, reading and coun
 <br>
 
 
-# Built With
-- [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android development.
-- [Android Architecture Components](https://developer.android.com/topic/libraries/architecture) - Collection of libraries that help you design robust, testable, and maintainable apps.
-  - [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) - Data objects that notify views when the underlying database changes.
-  - [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) - Stores UI-related data that isn't destroyed on UI changes.
-<!--   - [Room](https://developer.android.com/jetpack/androidx/releases/room) - The Room persistence library provides an abstraction layer over SQLite to allow for more robust database access while harnessing the full power of SQLite.  -->
-  - [ViewBinding](https://developer.android.com/topic/libraries/view-binding) - Generates a binding class for each XML layout file present in that module and allows you to more easily write code that interacts with views.
-- [Retrofit](https://square.github.io/retrofit/) - A type-safe HTTP client for Android and Java.
-- [GSON](https://github.com/google/gson) - A Java serialization/deserialization library to convert Java Objects into JSON and back.
-- [GSON Converter](https://github.com/square/retrofit/tree/master/retrofit-converters/gson) - A Converter which uses Gson for serialization to and from JSON.
-- [OkHttp3](https://github.com/square/okhttp) -  For implementing interceptor, logging and mocking web server.
-- [Glide](https://github.com/bumptech/glide) - Glide is a fast and efficient open source media management and image loading framework for Android that wraps media decoding, memory and disk caching, and resource pooling into a simple and easy to use interface.
-- [makeagif](https://makeagif.com/user/SeijiKun/popular/1) - a website that can be used to search for funny and interesting GIFs, this website also offers a feature to create your own version of GIFs.
-- [TextToSpeech](https://developer.android.com/reference/android/speech/tts/TextToSpeech) - Synthesizes speech from text for immediate playback or to create a sound file.
-
-
-# Resources
-Our project divided into 3 different path resources.
-1. [android-development](https://github.com/chino-ai/calistung)
-2. [cloud-computing](https://github.com/wdprsto/Calistung_processing)
-3. [machine-learning](https://github.com/jundi77/c22-ps283-backend)
-
 # Prerequisites
 1. Android 
 2. Internet connection
   
+  
 # Installation
 1. Download the APK 
 2. Install the APK
+
 
 # Usage
 ## How to Use Latihan Feature
@@ -82,3 +62,25 @@ Our project divided into 3 different path resources.
 6. Check the answer
 7. If it’s true, then will show the “BENAR” message, if else then will show the “SALAH” message
 
+
+# Built With
+- [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android development.
+- [Android Architecture Components](https://developer.android.com/topic/libraries/architecture) - Collection of libraries that help you design robust, testable, and maintainable apps.
+  - [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) - Data objects that notify views when the underlying database changes.
+  - [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) - Stores UI-related data that isn't destroyed on UI changes.
+<!--   - [Room](https://developer.android.com/jetpack/androidx/releases/room) - The Room persistence library provides an abstraction layer over SQLite to allow for more robust database access while harnessing the full power of SQLite.  -->
+  - [ViewBinding](https://developer.android.com/topic/libraries/view-binding) - Generates a binding class for each XML layout file present in that module and allows you to more easily write code that interacts with views.
+- [Retrofit](https://square.github.io/retrofit/) - A type-safe HTTP client for Android and Java.
+- [GSON](https://github.com/google/gson) - A Java serialization/deserialization library to convert Java Objects into JSON and back.
+- [GSON Converter](https://github.com/square/retrofit/tree/master/retrofit-converters/gson) - A Converter which uses Gson for serialization to and from JSON.
+- [OkHttp3](https://github.com/square/okhttp) -  For implementing interceptor, logging and mocking web server.
+- [Glide](https://github.com/bumptech/glide) - Glide is a fast and efficient open source media management and image loading framework for Android that wraps media decoding, memory and disk caching, and resource pooling into a simple and easy to use interface.
+- [makeagif](https://makeagif.com/user/SeijiKun/popular/1) - a website that can be used to search for funny and interesting GIFs, this website also offers a feature to create your own version of GIFs.
+- [TextToSpeech](https://developer.android.com/reference/android/speech/tts/TextToSpeech) - Synthesizes speech from text for immediate playback or to create a sound file.
+
+
+# Resources
+Our project divided into 3 different path resources.
+1. [android-development](https://github.com/chino-ai/calistung)
+2. [cloud-computing](https://github.com/wdprsto/Calistung_processing)
+3. [machine-learning](https://github.com/jundi77/c22-ps283-backend)
