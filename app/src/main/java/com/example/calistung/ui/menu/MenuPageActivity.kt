@@ -3,13 +3,17 @@
 package com.example.calistung.ui.menu
 
 import android.Manifest
-import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.os.Bundle
+import android.net.Uri
+import android.os.*
+import android.provider.Settings
 import android.view.View
+import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import com.example.calistung.databinding.ActivityMenuBinding
 import com.example.calistung.repository.ResponseRepository
@@ -19,15 +23,23 @@ import com.example.calistung.ui.splashscreen.SplashScreenActivity
 import com.example.calistung.utils.ViewModelFactory
 import kotlinx.coroutines.runBlocking
 
+
 class MenuPageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMenuBinding
     private lateinit var model: MenuPageViewModel
+
+    @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+         if(!allPermissionsGranted()){
+             ActivityCompat.requestPermissions(
+                 this,
+                 PERMISSION_STORAGE,
+                 REQUEST_EXTERNAL_STORAGE
+             )
+         }
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        verifyStoragePermission(this)
         model = ViewModelProvider(
             this,
             ViewModelFactory(
@@ -72,27 +84,48 @@ class MenuPageActivity : AppCompatActivity() {
         }
     }
 
-    private val REQUEST_EXTERNAL_STORAGE = 1
-    private val PERMISSION_STORAGE = arrayOf(
-        Manifest.permission.READ_EXTERNAL_STORAGE,
-        Manifest.permission.WRITE_EXTERNAL_STORAGE
-    )
 
-    private fun verifyStoragePermission(activity: Activity?) {
-        val permission = ActivityCompat.checkSelfPermission(
-            activity!!,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE
-        )
-        if (permission != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                activity,
-                PERMISSION_STORAGE,
-                REQUEST_EXTERNAL_STORAGE
-            )
+    @RequiresApi(Build.VERSION_CODES.R)
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == REQUEST_EXTERNAL_STORAGE) {
+            if (!allPermissionsGranted()) {
+                Toast.makeText(
+                    this,
+                    "Tidak mendapatkan permission.",
+                    Toast.LENGTH_SHORT
+                ).show()
+                Handler(Looper.getMainLooper()).postDelayed({
+                    finish()
+                }, 500)
+            }
+
         }
     }
 
+
+
+
+    @RequiresApi(Build.VERSION_CODES.R)
+    private fun allPermissionsGranted() = PERMISSION_STORAGE.all {
+        ContextCompat.checkSelfPermission(baseContext, it) == PackageManager.PERMISSION_GRANTED
+    }
+
+
     companion object {
+        private const val REQUEST_EXTERNAL_STORAGE = 1
+
+        @RequiresApi(Build.VERSION_CODES.R)
+        private val PERMISSION_STORAGE = arrayOf(
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+
+
+            )
         const val CATEGORY_SELECTED = "category_selected"
     }
 }
