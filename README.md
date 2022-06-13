@@ -85,9 +85,9 @@ or if illustrated similar, like these steps:
 
 3. Select Talkback<br>![image](https://user-images.githubusercontent.com/64635497/173274505-b95d5c73-6406-45e0-b2c4-29327dd9c8b7.png)
 
-4. Select Go to Talkback Settings<br>![image](https://user-images.githubusercontent.com/64635497/173274530-ea99354e-6a63-4e51-9c5c-7da34f7b99c7.png)
+4. Select to Talkback Settings<br>![image](https://user-images.githubusercontent.com/64635497/173274530-ea99354e-6a63-4e51-9c5c-7da34f7b99c7.png)
 
-5. Text-to-Speech Settings<br>![image](https://user-images.githubusercontent.com/64635497/173274538-a1813952-0a16-4fbc-beb6-1a281f52b625.png)
+5. Select Text-to-Speech Settings<br>![image](https://user-images.githubusercontent.com/64635497/173274538-a1813952-0a16-4fbc-beb6-1a281f52b625.png)
 
 6. Select Preferred engine<br>![image](https://user-images.githubusercontent.com/64635497/173274547-ca676fc9-653a-4687-8414-8f996f28e575.png)
 
