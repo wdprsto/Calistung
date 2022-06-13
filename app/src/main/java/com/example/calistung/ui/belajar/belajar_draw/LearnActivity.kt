@@ -1,5 +1,6 @@
 package com.example.calistung.ui.belajar.belajar_draw
 
+import android.os.Build
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.view.MenuItem
@@ -12,6 +13,7 @@ import kotlinx.coroutines.runBlocking
 
 
 class LearnActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityLearnBinding
     private val model: LearnViewModel by viewModels()
 
@@ -33,7 +35,12 @@ class LearnActivity : AppCompatActivity() {
                     imageView.loadImage(mLearn.gifLink)
                     btnSpeak.setOnClickListener {
                         model.tts.observe(this@LearnActivity) {
-                            it.speak(mLearn.answer, TextToSpeech.QUEUE_FLUSH, null)
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                                it.speak(mLearn.answer, TextToSpeech.QUEUE_FLUSH, null,null)
+                            } else {
+                                it.speak(mLearn.answer, TextToSpeech.QUEUE_FLUSH, null,null)
+                            }
+
                         }
                     }
                     btnClear.setOnClickListener {
@@ -76,4 +83,6 @@ class LearnActivity : AppCompatActivity() {
     companion object {
         const val ITEM_SELECTED = "item_selected"
     }
+
+
 }

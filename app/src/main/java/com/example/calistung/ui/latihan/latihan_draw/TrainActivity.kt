@@ -1,6 +1,7 @@
 package com.example.calistung.ui.latihan.latihan_draw
 
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.view.MenuItem
@@ -38,7 +39,11 @@ class TrainActivity : AppCompatActivity() {
                     tvQuestion.text = mTrain.question
                     btnSpeak.setOnClickListener {
                         model.tts.observe(this@TrainActivity) {
-                            it.speak(mTrain.question, TextToSpeech.QUEUE_FLUSH, null)
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                                it.speak(mTrain.question, TextToSpeech.QUEUE_FLUSH, null, null)
+                            } else {
+                                it.speak(mTrain.question, TextToSpeech.QUEUE_FLUSH, null, null)
+                            }
                         }
                     }
                     btnClear.setOnClickListener {
