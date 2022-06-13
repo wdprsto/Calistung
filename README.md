@@ -76,13 +76,22 @@ Applications that provide educational features such as writing, reading and coun
 7. If it’s true, then will show the “BENAR” message, if else then will show the “SALAH” message
 
 ## Note
-If Text-to-Speech doesn't speak, make sure that you have choosen the right speech engine. You can go to Setting -> Accessibility-> Talkback -> Talkback Setting -> Text-to-Speech Setting -> Preffered machine -> Speech Services by Google
-![image](https://user-images.githubusercontent.com/64635497/173271676-9d504cbc-dc48-49f1-8e79-43928ee612ed.png)
+If Text-to-Speech doesn't speak, make sure that you have choosen the right speech engine. You can go to Setting -> Accessibility-> Talkback -> Talkback Setting -> Text-to-Speech Setting -> Preferred engine -> Speech Services by Google
+![image](https://user-images.githubusercontent.com/64635497/173274680-0ad98397-6224-4522-95ff-137d51d94663.png)
 or if illustrated similar, like these steps:
-1. Go to Setting
-2. Select Accessibility<br>![image](https://user-images.githubusercontent.com/64635497/173272030-27fb4bbc-ba12-4f40-b8ff-aa38b2cec996.png)
-3. Scroll down to the Screen readers section, then select Text-to-speech output<br>![image](https://user-images.githubusercontent.com/64635497/173272188-147f21ba-42ba-4ac4-8709-4aa3b6fc100d.png)
-4. Make sure the preffered engine is the Google Text-to-Speech<br>![tts](https://user-images.githubusercontent.com/64635497/173272543-ae0781fd-0ab7-4d9c-b5eb-ca1760e80c5d.png)
+1. Go to Settings
+2. Select Accessibility<br>![image](https://user-images.githubusercontent.com/64635497/173274501-1eeb7a0c-7ec7-4f76-a082-d2c5b0265abb.png)
+
+3. Select Talkback<br>![image](https://user-images.githubusercontent.com/64635497/173274505-b95d5c73-6406-45e0-b2c4-29327dd9c8b7.png)
+
+4. Select Go to Talkback Settings<br>![image](https://user-images.githubusercontent.com/64635497/173274530-ea99354e-6a63-4e51-9c5c-7da34f7b99c7.png)
+
+5. Text-to-Speech Settings<br>![image](https://user-images.githubusercontent.com/64635497/173274538-a1813952-0a16-4fbc-beb6-1a281f52b625.png)
+
+6. Select Preferred engine<br>![image](https://user-images.githubusercontent.com/64635497/173274547-ca676fc9-653a-4687-8414-8f996f28e575.png)
+
+7. Make sure the preferred engine is the Speech Services by Google<br>![image](https://user-images.githubusercontent.com/64635497/173274563-df5fd0d5-5929-4413-8698-30623122ec60.png)
+
 
 
 
