@@ -75,6 +75,16 @@ Applications that provide educational features such as writing, reading and coun
 6. Check the answer
 7. If it’s true, then will show the “BENAR” message, if else then will show the “SALAH” message
 
+## Note
+If Text-to-Speech doesn't speak, make sure that you have choosen the right speech engine. You can go to Setting -> Accessibility-> Talkback -> Talkback Setting -> Text-to-Speech Setting -> Preffered machine -> Speech Services by Google
+![image](https://user-images.githubusercontent.com/64635497/173271676-9d504cbc-dc48-49f1-8e79-43928ee612ed.png)
+or if illustrated similar, like these steps:
+1. Go to Setting
+2. Select Accessibility<br>![image](https://user-images.githubusercontent.com/64635497/173272030-27fb4bbc-ba12-4f40-b8ff-aa38b2cec996.png)
+3. Scroll down to the Screen readers section, then select Text-to-speech output<br>![image](https://user-images.githubusercontent.com/64635497/173272188-147f21ba-42ba-4ac4-8709-4aa3b6fc100d.png)
+4. Make sure the preffered engine is the Google Text-to-Speech<br>![tts](https://user-images.githubusercontent.com/64635497/173272543-ae0781fd-0ab7-4d9c-b5eb-ca1760e80c5d.png)
+
+
 
 # Built With
 - [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android development.
