@@ -76,7 +76,7 @@ Applications that provide educational features such as writing, reading and coun
 7. If it’s true, then will show the “BENAR” message, if else then will show the “SALAH” message
 
 ## Note
-If Text-to-Speech doesn't speak, make sure that you have choosen the right speech engine. You can go to Setting -> Accessibility-> Talkback -> Talkback Setting -> Text-to-Speech Setting -> Preferred engine -> Speech Services by Google. If illustrated similar, like these steps:
+If Text-to-Speech doesn't speak, make sure that you have choosen the right speech engine. You can go to Settings -> Accessibility-> Talkback -> Talkback Setting -> Text-to-Speech Setting -> Preferred engine -> Speech Services by Google. If illustrated similar, like these steps:
 1. Go to Settings
 2. Select Accessibility<br>![image](https://user-images.githubusercontent.com/64635497/173274501-1eeb7a0c-7ec7-4f76-a082-d2c5b0265abb.png)
 
