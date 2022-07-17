@@ -1,11 +1,10 @@
 <br />
 <p align="center">
   <a href="#">
-    <img src="app/src/main/res/drawable/logo.png">
+    <img src="https://user-images.githubusercontent.com/64635497/179383549-5726e3d3-1f29-4483-8e50-07dde79c8704.png">
   </a>
 </p>
 <br>
-
 
 # Calistung
 Calistung : Baca Tulis Hitung GitHub Repositories of Bangkit Academy 2022 Capstone Project from 3 learning path. Machine Learning, Mobile development, Cloud Computing from team C22-PS283.
