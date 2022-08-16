@@ -121,11 +121,66 @@
                   "question": "9"
                 }
               ]
+            },
+            {
+              "name": "Latihan 2",
+              "trains": [
+                {
+                  "answer": "10",
+                  "name": "latihan angka 10",
+                  "question": "10"
+                },
+                {
+                  "answer": "11",
+                  "name": "latihan angka 11",
+                  "question": "11"
+                },
+                {
+                  "answer": "12",
+                  "name": "latihan angka 12",
+                  "question": "12"
+                },
+                {
+                  "answer": "13",
+                  "name": "latihan angka 13",
+                  "question": "13"
+                },
+                {
+                  "answer": "14",
+                  "name": "latihan angka 14",
+                  "question": "14"
+                },
+                {
+                  "answer": "15",
+                  "name": "latihan angka 15",
+                  "question": "15"
+                },
+                {
+                  "answer": "16",
+                  "name": "latihan angka 16",
+                  "question": "16"
+                },
+                {
+                  "answer": "17",
+                  "name": "latihan angka 17",
+                  "question": "17"
+                },
+                {
+                  "answer": "18",
+                  "name": "latihan angka 18",
+                  "question": "18"
+                },
+                {
+                  "answer": "19",
+                  "name": "latihan angka 19",
+                  "question": "19"
+                }
+              ]
             }
           ]
         },
         {
-          "name": "Latihan Angka Puluhan",
+          "name": "Latihan Angka Lanjut",
           "trainQuestion": [
             {
               "name": "Latihan 1",
@@ -174,6 +229,56 @@
                   "answer": "90",
                   "name": "latihan angka 90",
                   "question": "90"
+                }
+              ]
+            },
+            {
+              "name": "Latihan 2",
+              "trains": [
+                {
+                  "answer": "100",
+                  "name": "latihan angka 100",
+                  "question": "100"
+                },
+                {
+                  "answer": "200",
+                  "name": "latihan angka 200",
+                  "question": "200"
+                },
+                {
+                  "answer": "300",
+                  "name": "latihan angka 300",
+                  "question": "300"
+                },
+                {
+                  "answer": "400",
+                  "name": "latihan angka 400",
+                  "question": "400"
+                },
+                {
+                  "answer": "500",
+                  "name": "latihan angka 500",
+                  "question": "500"
+                },
+                {
+                  "answer": "600",
+                  "name": "latihan angka 600",
+                  "question": "600"
+                },
+                {
+                  "answer": "700",
+                  "name": "latihan angka 700",
+                  "question": "700"
+                },
+                {
+                  "answer": "800",
+                  "name": "latihan angka 800",
+                  "question": "800"
+                },
+                {
+                  "answer": "900",
+                  "name": "latihan angka 900",
+                  "question": "900"
                 }
               ]
             }
@@ -471,7 +576,7 @@
       "name": "Latihan Huruf",
       "trainCourse": [
         {
-          "name": "Latihan Alphabet",
+          "name": "Latihan Alfabet",
           "trainQuestion": [
             {
               "name": "Latihan 1",
@@ -540,7 +645,12 @@
                   "answer": "M",
                   "name": "latihan huruf M",
                   "question": "M"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Latihan 2",
+              "trains": [
                 {
                   "answer": "N",
                   "name": "latihan huruf N",
@@ -660,6 +770,56 @@
                   "answer": "TANTE",
                   "name": "latihan menulis kata TANTE",
                   "question": "TANTE"
+                }
+              ]
+            },
+            {
+              "name": "Latihan 2",
+              "trains": [
+                {
+                  "answer": "KAKAK",
+                  "name": "latihan menulis kata KAKAK",
+                  "question": "KAKAK"
+                },
+                {
+                  "answer": "NENEK",
+                  "name": "latihan menulis kata NENEK",
+                  "question": "NENEK"
+                },
+                {
+                  "answer": "ABANG",
+                  "name": "latihan menulis kata ABANG",
+                  "question": "ABANG"
+                },
+                {
+                  "answer": "MBAK",
+                  "name": "latihan menulis kata MBAK",
+                  "question": "MBAK"
+                },
+                {
+                  "answer": "DATUK",
+                  "name": "latihan menulis kata DATUK",
+                  "question": "DATUK"
+                },
+                {
+                  "answer": "UWAK",
+                  "name": "latihan menulis kata UWAK",
+                  "question": "UWAK"
+                },
+                {
+                  "answer": "DANG",
+                  "name": "latihan menulis kata DANG",
+                  "question": "DANG"
+                },
+                {
+                  "answer": "ADING",
+                  "name": "latihan menulis kata ADING",
+                  "question": "ADING"
+                },
+                {
+                  "answer": "UNCU",
+                  "name": "latihan menulis kata UNCU",
+                  "question": "UNCU"
                 }
               ]
             }
