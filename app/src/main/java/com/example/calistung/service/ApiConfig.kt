@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit
 
 object ApiConfig {
 
-    private var BASE_URL = "https://calistung.uc.r.appspot.com/md/"
+    private var BASE_URL = "https://raw.githubusercontent.com/Chino-ai/Calistung/main/api/"
     fun getApiService(): ApiService {
         val loggingInterceptor = if (BuildConfig.DEBUG) {
             HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
