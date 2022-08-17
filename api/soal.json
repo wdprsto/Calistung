@@ -66,6 +66,35 @@
             }
           ],
           "name": "Belajar Angka Dasar"
+        },
+        {
+          "learns": [
+            {
+              "answer": "2",
+              "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/banyak_2_apel.jpg",
+              "name": "2 Buah Apel",
+              "vo": "2 Buah Apel"
+            },
+            {
+              "answer": "3",
+              "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/banyak_3_apel.jpg",
+              "name": "3 Buah Apel",
+              "vo": "3 Buah Apel"
+            },
+            {
+              "answer": "4",
+              "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/banyak_4_apel.jpg",
+              "name": "4 Buah Apel",
+              "vo": "4 Buah Apel"
+            },
+            {
+              "answer": "6",
+              "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/banyak_6_mangga.jpg",
+              "name": "6 Buah Mangga",
+              "vo": "6 Buah Mangga"
+            }
+          ],
+          "name": "Belajar Jumlah Benda"
         }
       ],
       "name": "Belajar Angka"
