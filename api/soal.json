@@ -7,52 +7,62 @@
             {
               "answer": "0",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/cwMkQo.gif",
-              "name": "Belajar Angka 0"
+              "name": "Belajar Angka 0",
+              "vo": "0"
             },
             {
               "answer": "1",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/KyAufF.gif",
-              "name": "Belajar Angka 1"
+              "name": "Belajar Angka 1",
+              "vo": "1"
             },
             {
               "answer": "2",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/qtesC6.gif",
-              "name": "Belajar Angka 2"
+              "name": "Belajar Angka 2",
+              "vo": "2"
             },
             {
               "answer": "3",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/KKEUBV.gif",
-              "name": "Belajar Angka 3"
+              "name": "Belajar Angka 3",
+              "vo": "3"
             },
             {
               "answer": "4",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/qvAioX.gif",
-              "name": "Belajar Angka 4"
+              "name": "Belajar Angka 4",
+              "vo": "4"
             },
             {
               "answer": "5",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/_K_AIY.gif",
-              "name": "Belajar Angka 5"
+              "name": "Belajar Angka 5",
+              "vo": "5"
             },
             {
               "answer": "6",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/5KZCnR.gif",
-              "name": "Belajar Angka 6"
+              "name": "Belajar Angka 6",
+              "vo": "6"
             },
             {
               "answer": "7",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/FlbeZl.gif",
-              "name": "Belajar Angka 7"
+              "name": "Belajar Angka 7",
+              "vo": "7"
             },
             {
               "answer": "8",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/TnILa8.gif",
-              "name": "Belajar Angka 8"
+              "name": "Belajar Angka 8",
+              "vo": "8"
             },
             {
               "answer": "9",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/taJzbW.gif",
-              "name": "Belajar Angka 9"
+              "name": "Belajar Angka 9",
+              "vo": "9"
             }
           ],
           "name": "Belajar Angka Dasar"
@@ -73,52 +83,62 @@
                 {
                   "answer": "0",
                   "name": "latihan angka 0",
-                  "question": "0"
+                  "question": "0",
+                  "vo": "0"
                 },
                 {
                   "answer": "1",
                   "name": "latihan angka 1",
-                  "question": "1"
+                  "question": "1",
+                  "vo": "1"
                 },
                 {
                   "answer": "2",
                   "name": "latihan angka 2",
-                  "question": "2"
+                  "question": "2",
+                  "vo": "2"
                 },
                 {
                   "answer": "3",
                   "name": "latihan angka 3",
-                  "question": "3"
+                  "question": "3",
+                  "vo": "3"
                 },
                 {
                   "answer": "4",
                   "name": "latihan angka 4",
-                  "question": "4"
+                  "question": "4",
+                  "vo": "4"
                 },
                 {
                   "answer": "5",
                   "name": "latihan angka 5",
-                  "question": "5"
+                  "question": "5",
+                  "vo": "5"
                 },
                 {
                   "answer": "6",
                   "name": "latihan angka 6",
-                  "question": "6"
+                  "question": "6",
+                  "vo": "6"
                 },
                 {
                   "answer": "7",
                   "name": "latihan angka 7",
-                  "question": "7"
+                  "question": "7",
+                  "vo": "7"
                 },
                 {
                   "answer": "8",
                   "name": "latihan angka 8",
-                  "question": "8"
+                  "question": "8",
+                  "vo": "8"
                 },
                 {
                   "answer": "9",
                   "name": "latihan angka 9",
-                  "question": "9"
+                  "question": "9",
+                  "vo": "9"
                 }
               ]
             },
@@ -128,52 +148,62 @@
                 {
                   "answer": "10",
                   "name": "latihan angka 10",
-                  "question": "10"
+                  "question": "10",
+                  "vo": "10"
                 },
                 {
                   "answer": "11",
                   "name": "latihan angka 11",
-                  "question": "11"
+                  "question": "11",
+                  "vo": "11"
                 },
                 {
                   "answer": "12",
                   "name": "latihan angka 12",
-                  "question": "12"
+                  "question": "12",
+                  "vo": "12"
                 },
                 {
                   "answer": "13",
                   "name": "latihan angka 13",
-                  "question": "13"
+                  "question": "13",
+                  "vo": "13"
                 },
                 {
                   "answer": "14",
                   "name": "latihan angka 14",
-                  "question": "14"
+                  "question": "14",
+                  "vo": "14"
                 },
                 {
                   "answer": "15",
                   "name": "latihan angka 15",
-                  "question": "15"
+                  "question": "15",
+                  "vo": "15"
                 },
                 {
                   "answer": "16",
                   "name": "latihan angka 16",
-                  "question": "16"
+                  "question": "16",
+                  "vo": "16"
                 },
                 {
                   "answer": "17",
                   "name": "latihan angka 17",
-                  "question": "17"
+                  "question": "17",
+                  "vo": "17"
                 },
                 {
                   "answer": "18",
                   "name": "latihan angka 18",
-                  "question": "18"
+                  "question": "18",
+                  "vo": "18"
                 },
                 {
                   "answer": "19",
                   "name": "latihan angka 19",
-                  "question": "19"
+                  "question": "19",
+                  "vo": "19"
                 }
               ]
             }
@@ -188,47 +218,56 @@
                 {
                   "answer": "10",
                   "name": "latihan angka 10",
-                  "question": "10"
+                  "question": "10",
+                  "vo": "10"
                 },
                 {
                   "answer": "20",
                   "name": "latihan angka 20",
-                  "question": "20"
+                  "question": "20",
+                  "vo": "20"
                 },
                 {
                   "answer": "30",
                   "name": "latihan angka 30",
-                  "question": "30"
+                  "question": "30",
+                  "vo": "30"
                 },
                 {
                   "answer": "40",
                   "name": "latihan angka 40",
-                  "question": "40"
+                  "question": "40",
+                  "vo": "40"
                 },
                 {
                   "answer": "50",
                   "name": "latihan angka 50",
-                  "question": "50"
+                  "question": "50",
+                  "vo": "50"
                 },
                 {
                   "answer": "60",
                   "name": "latihan angka 60",
-                  "question": "60"
+                  "question": "60",
+                  "vo": "60"
                 },
                 {
                   "answer": "70",
                   "name": "latihan angka 70",
-                  "question": "70"
+                  "question": "70",
+                  "vo": "70"
                 },
                 {
                   "answer": "80",
                   "name": "latihan angka 80",
-                  "question": "80"
+                  "question": "80",
+                  "vo": "80"
                 },
                 {
                   "answer": "90",
                   "name": "latihan angka 90",
-                  "question": "90"
+                  "question": "90",
+                  "vo": "90"
                 }
               ]
             },
@@ -238,47 +277,56 @@
                 {
                   "answer": "100",
                   "name": "latihan angka 100",
-                  "question": "100"
+                  "question": "100",
+                  "vo": "100"
                 },
                 {
                   "answer": "200",
                   "name": "latihan angka 200",
-                  "question": "200"
+                  "question": "200",
+                  "vo": "200"
                 },
                 {
                   "answer": "300",
                   "name": "latihan angka 300",
-                  "question": "300"
+                  "question": "300",
+                  "vo": "300"
                 },
                 {
                   "answer": "400",
                   "name": "latihan angka 400",
-                  "question": "400"
+                  "question": "400",
+                  "vo": "400"
                 },
                 {
                   "answer": "500",
                   "name": "latihan angka 500",
-                  "question": "500"
+                  "question": "500",
+                  "vo": "500"
                 },
                 {
                   "answer": "600",
                   "name": "latihan angka 600",
-                  "question": "600"
+                  "question": "600",
+                  "vo": "600"
                 },
                 {
                   "answer": "700",
                   "name": "latihan angka 700",
-                  "question": "700"
+                  "question": "700",
+                  "vo": "700"
                 },
                 {
                   "answer": "800",
                   "name": "latihan angka 800",
-                  "question": "800"
+                  "question": "800",
+                  "vo": "800"
                 },
                 {
                   "answer": "900",
                   "name": "latihan angka 900",
-                  "question": "900"
+                  "question": "900",
+                  "vo": "900"
                 }
               ]
             }
@@ -295,17 +343,20 @@
             {
               "answer": "2",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/qtesC6.gif",
-              "name": "belajar 1+1"
+              "name": "belajar 1+1",
+              "vo": "1 ditambah 1=?"
             },
             {
               "answer": "3",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/KKEUBV.gif",
-              "name": "belajar 1+2"
+              "name": "belajar 1+2",
+              "vo": "1 ditambah 2=?"
             },
             {
               "answer": "4",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/qvAioX.gif",
-              "name": "belajar 2+2"
+              "name": "belajar 2+2",
+              "vo": "2 ditambah 2=?"
             }
           ],
           "name": "Belajar Penjumlahan Dasar"
@@ -315,17 +366,20 @@
             {
               "answer": "2",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/qtesC6.gif",
-              "name": "belajar 4−2"
+              "name": "belajar 4−2",
+              "vo": "4 dikurang 2=?"
             },
             {
               "answer": "3",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/KKEUBV.gif",
-              "name": "belajar 5−2"
+              "name": "belajar 5−2",
+              "vo": "5 dikurang 2=?"
             },
             {
               "answer": "4",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/qvAioX.gif",
-              "name": "belajar 10−6"
+              "name": "belajar 10−6",
+              "vo": "10 dikurang 6=?"
             }
           ],
           "name": "Belajar Pengurangan Dasar"
@@ -346,37 +400,44 @@
                 {
                   "answer": "2",
                   "name": "latihan 1+1",
-                  "question": "1+1"
+                  "question": "1+1",
+                  "vo": "1 ditambah 1=?"
                 },
                 {
                   "answer": "3",
                   "name": "latihan 2+1",
-                  "question": "2+1"
+                  "question": "2+1",
+                  "vo": "2 ditambah 1=?"
                 },
                 {
                   "answer": "4",
                   "name": "latihan 2+2",
-                  "question": "2+2"
+                  "question": "2+2",
+                  "vo": "2 ditambah 2=?"
                 },
                 {
                   "answer": "6",
                   "name": "latihan 3+3",
-                  "question": "3+3"
+                  "question": "3+3",
+                  "vo": "3 ditambah 3=?"
                 },
                 {
                   "answer": "8",
                   "name": "latihan 3+5",
-                  "question": "3+5"
+                  "question": "3+5",
+                  "vo": "3 ditambah 5=?"
                 },
                 {
                   "answer": "9",
                   "name": "latihan 8+1",
-                  "question": "8+1"
+                  "question": "8+1",
+                  "vo": "8 ditambah 1=?"
                 },
                 {
                   "answer": "10",
                   "name": "latihan 6+4",
-                  "question": "6+4"
+                  "question": "6+4",
+                  "vo": "6 ditambah 4=?"
                 }
               ]
             }
@@ -391,37 +452,44 @@
                 {
                   "answer": "2",
                   "name": "latihan 5−3",
-                  "question": "5−3"
+                  "question": "5−3",
+                  "vo": "5 dikurang 3=?"
                 },
                 {
                   "answer": "3",
                   "name": "latihan 6−3",
-                  "question": "6−3"
+                  "question": "6−3",
+                  "vo": "6 dikurang 3=?"
                 },
                 {
                   "answer": "4",
                   "name": "latihan 10−6",
-                  "question": "10−6"
+                  "question": "10−6",
+                  "vo": "10 dikurang 6=?"
                 },
                 {
                   "answer": "6",
                   "name": "latihan 8−2",
-                  "question": "8−2"
+                  "question": "8−2",
+                  "vo": "8 dikurang 2=?"
                 },
                 {
                   "answer": "8",
                   "name": "latihan 9−1",
-                  "question": "9−1"
+                  "question": "9−1",
+                  "vo": "9 dikurang 1=?"
                 },
                 {
                   "answer": "9",
                   "name": "latihan 10−1",
-                  "question": "10−1"
+                  "question": "10−1",
+                  "vo": "10 dikurang 1=?"
                 },
                 {
                   "answer": "10",
                   "name": "latihan 10−0",
-                  "question": "10−0"
+                  "question": "10−0",
+                  "vo": "10 dikurang 0=?"
                 }
               ]
             }
@@ -438,132 +506,158 @@
             {
               "answer": "A",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/mDO6C4.gif",
-              "name": "Belajar Huruf A"
+              "name": "Belajar Huruf A",
+              "vo": "A"
             },
             {
               "answer": "B",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/wFpIjL.gif",
-              "name": "Belajar Huruf B"
+              "name": "Belajar Huruf B",
+              "vo": "B"
             },
             {
               "answer": "C",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/jbWU5c.gif",
-              "name": "Belajar Huruf C"
+              "name": "Belajar Huruf C",
+              "vo": "C"
             },
             {
               "answer": "D",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/NkDVgE.gif",
-              "name": "Belajar Huruf D"
+              "name": "Belajar Huruf D",
+              "vo": "D"
             },
             {
               "answer": "E",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/-YL5Qw.gif",
-              "name": "Belajar Huruf E"
+              "name": "Belajar Huruf E",
+              "vo": "E"
             },
             {
               "answer": "F",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/yW0_Cc.gif",
-              "name": "Belajar Huruf F"
+              "name": "Belajar Huruf F",
+              "vo": "F"
             },
             {
               "answer": "G",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/audR-q.gif",
-              "name": "Belajar Huruf G"
+              "name": "Belajar Huruf G",
+              "vo": "G"
             },
             {
               "answer": "H",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/6x4hvN.gif",
-              "name": "Belajar Huruf H"
+              "name": "Belajar Huruf H",
+              "vo": "H"
             },
             {
               "answer": "I",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/PCZ0Wm.gif",
-              "name": "Belajar Huruf I"
+              "name": "Belajar Huruf I",
+              "vo": "I"
             },
             {
               "answer": "J",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/FPommW.gif",
-              "name": "Belajar Huruf J"
+              "name": "Belajar Huruf J",
+              "vo": "J"
             },
             {
               "answer": "K",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/HLKM3Y.gif",
-              "name": "Belajar Huruf K"
+              "name": "Belajar Huruf K",
+              "vo": "K"
             },
             {
               "answer": "L",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/WTb06j.gif",
-              "name": "Belajar Huruf L"
+              "name": "Belajar Huruf L",
+              "vo": "L"
             },
             {
               "answer": "M",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/o81JLN.gif",
-              "name": "Belajar Huruf M"
+              "name": "Belajar Huruf M",
+              "vo": "M"
             },
             {
               "answer": "N",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/SVOWe6.gif",
-              "name": "Belajar Huruf N"
+              "name": "Belajar Huruf N",
+              "vo": "N"
             },
             {
               "answer": "O",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/L3UmCC.gif",
-              "name": "Belajar Huruf O"
+              "name": "Belajar Huruf O",
+              "vo": "O"
             },
             {
               "answer": "P",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/SMswht.gif",
-              "name": "Belajar Huruf P"
+              "name": "Belajar Huruf P",
+              "vo": "P"
             },
             {
               "answer": "Q",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/sR_V2n.gif",
-              "name": "Belajar Huruf Q"
+              "name": "Belajar Huruf Q",
+              "vo": "Q"
             },
             {
               "answer": "R",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/Ylojjb.gif",
-              "name": "Belajar Huruf R"
+              "name": "Belajar Huruf R",
+              "vo": "R"
             },
             {
               "answer": "S",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/IQULBS.gif",
-              "name": "Belajar Huruf S"
+              "name": "Belajar Huruf S",
+              "vo": "S"
             },
             {
               "answer": "T",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/XDOuSx.gif",
-              "name": "Belajar Huruf T"
+              "name": "Belajar Huruf T",
+              "vo": "T"
             },
             {
               "answer": "U",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/ywoc9I.gif",
-              "name": "Belajar Huruf U"
+              "name": "Belajar Huruf U",
+              "vo": "U"
             },
             {
               "answer": "V",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/An0JS3.gif",
-              "name": "Belajar Huruf V"
+              "name": "Belajar Huruf V",
+              "vo": "V"
             },
             {
               "answer": "W",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/vfTjNK.gif",
-              "name": "Belajar Huruf W"
+              "name": "Belajar Huruf W",
+              "vo": "W"
             },
             {
               "answer": "X",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/huruf/K-eTOA.gif",
-              "name": "Belajar Huruf X"
+              "name": "Belajar Huruf X",
+              "vo": "X"
             },
             {
               "answer": "Y",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/eRVTTQ.gif",
-              "name": "Belajar Huruf Y"
+              "name": "Belajar Huruf Y",
+              "vo": "Y"
             },
             {
               "answer": "Z",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/XrbiDG.gif",
-              "name": "Belajar Huruf Z"
+              "name": "Belajar Huruf Z",
+              "vo": "Z"
             }
           ],
           "name": "Belajar Alfabet"
@@ -584,67 +678,80 @@
                 {
                   "answer": "A",
                   "name": "latihan huruf A",
-                  "question": "A"
+                  "question": "A",
+                  "vo": "A"
                 },
                 {
                   "answer": "B",
                   "name": "latihan huruf B",
-                  "question": "B"
+                  "question": "B",
+                  "vo": "B"
                 },
                 {
                   "answer": "C",
                   "name": "latihan huruf C",
-                  "question": "C"
+                  "question": "C",
+                  "vo": "C"
                 },
                 {
                   "answer": "D",
                   "name": "latihan huruf D",
-                  "question": "D"
+                  "question": "D",
+                  "vo": "D"
                 },
                 {
                   "answer": "E",
                   "name": "latihan huruf E",
-                  "question": "E"
+                  "question": "E",
+                  "vo": "E"
                 },
                 {
                   "answer": "F",
                   "name": "latihan huruf F",
-                  "question": "F"
+                  "question": "F",
+                  "vo": "F"
                 },
                 {
                   "answer": "G",
                   "name": "latihan huruf G",
-                  "question": "G"
+                  "question": "G",
+                  "vo": "G"
                 },
                 {
                   "answer": "H",
                   "name": "latihan huruf H",
-                  "question": "H"
+                  "question": "H",
+                  "vo": "H"
                 },
                 {
                   "answer": "I",
                   "name": "latihan huruf I",
-                  "question": "I"
+                  "question": "I",
+                  "vo": "I"
                 },
                 {
                   "answer": "J",
                   "name": "latihan huruf J",
-                  "question": "J"
+                  "question": "J",
+                  "vo": "J"
                 },
                 {
                   "answer": "K",
                   "name": "latihan huruf K",
-                  "question": "K"
+                  "question": "K",
+                  "vo": "K"
                 },
                 {
                   "answer": "L",
                   "name": "latihan huruf L",
-                  "question": "L"
+                  "question": "L",
+                  "vo": "L"
                 },
                 {
                   "answer": "M",
                   "name": "latihan huruf M",
-                  "question": "M"
+                  "question": "M",
+                  "vo": "M"
                 }
               ]
             },
@@ -654,67 +761,80 @@
                 {
                   "answer": "N",
                   "name": "latihan huruf N",
-                  "question": "N"
+                  "question": "N",
+                  "vo": "N"
                 },
                 {
                   "answer": "O",
                   "name": "latihan huruf O",
-                  "question": "O"
+                  "question": "O",
+                  "vo": "O"
                 },
                 {
                   "answer": "P",
                   "name": "latihan huruf P",
-                  "question": "P"
+                  "question": "P",
+                  "vo": "P"
                 },
                 {
                   "answer": "Q",
                   "name": "latihan huruf Q",
-                  "question": "Q"
+                  "question": "Q",
+                  "vo": "Q"
                 },
                 {
                   "answer": "R",
                   "name": "latihan huruf R",
-                  "question": "R"
+                  "question": "R",
+                  "vo": "R"
                 },
                 {
                   "answer": "S",
                   "name": "latihan huruf S",
-                  "question": "S"
+                  "question": "S",
+                  "vo": "S"
                 },
                 {
                   "answer": "T",
                   "name": "latihan huruf T",
-                  "question": "T"
+                  "question": "T",
+                  "vo": "T"
                 },
                 {
                   "answer": "U",
                   "name": "latihan huruf U",
-                  "question": "U"
+                  "question": "U",
+                  "vo": "U"
                 },
                 {
                   "answer": "V",
                   "name": "latihan huruf V",
-                  "question": "V"
+                  "question": "V",
+                  "vo": "V"
                 },
                 {
                   "answer": "W",
                   "name": "latihan huruf W",
-                  "question": "W"
+                  "question": "W",
+                  "vo": "W"
                 },
                 {
                   "answer": "X",
                   "name": "latihan huruf X",
-                  "question": "X"
+                  "question": "X",
+                  "vo": "X"
                 },
                 {
                   "answer": "Y",
                   "name": "latihan huruf Y",
-                  "question": "Y"
+                  "question": "Y",
+                  "vo": "Y"
                 },
                 {
                   "answer": "Z",
                   "name": "latihan huruf Z",
-                  "question": "Z"
+                  "question": "Z",
+                  "vo": "Z"
                 }
               ]
             }
@@ -729,47 +849,56 @@
                 {
                   "answer": "KAKEK",
                   "name": "latihan menulis kata KAKEK",
-                  "question": "KAKEK"
+                  "question": "KAKEK",
+                  "vo": "KAKEK"
                 },
                 {
                   "answer": "NENEK",
                   "name": "latihan menulis kata NENEK",
-                  "question": "NENEK"
+                  "question": "NENEK",
+                  "vo": "NENEK"
                 },
                 {
                   "answer": "PAMAN",
                   "name": "latihan menulis kata PAMAN",
-                  "question": "PAMAN"
+                  "question": "PAMAN",
+                  "vo": "PAMAN"
                 },
                 {
                   "answer": "BIBI",
                   "name": "latihan menulis kata BIBI",
-                  "question": "BIBI"
+                  "question": "BIBI",
+                  "vo": "BIBI"
                 },
                 {
                   "answer": "IBU",
                   "name": "latihan menulis kata IBU",
-                  "question": "IBU"
+                  "question": "IBU",
+                  "vo": "IBU"
                 },
                 {
                   "answer": "AYAH",
                   "name": "latihan menulis kata AYAH",
-                  "question": "AYAH"
+                  "question": "AYAH",
+                  "vo": "AYAH"
                 },
                 {
                   "answer": "ADIK",
                   "name": "latihan menulis kata ADIK",
-                  "question": "ADIK"
+                  "question": "ADIK",
+                  "vo": "ADIK"
                 },
                 {
                   "answer": "OM",
                   "name": "latihan menulis kata OM",
-                  "question": "OM"
+                  "question": "OM",
+                  "vo": "OM"
                 },
                 {
                   "answer": "TANTE",
                   "name": "latihan menulis kata TANTE",
-                  "question": "TANTE"
+                  "question": "TANTE",
+                  "vo": "TANTE"
                 }
               ]
             },
@@ -779,47 +908,56 @@
                 {
                   "answer": "KAKAK",
                   "name": "latihan menulis kata KAKAK",
-                  "question": "KAKAK"
+                  "question": "KAKAK",
+                  "vo": "KAKAK"
                 },
                 {
                   "answer": "NENEK",
                   "name": "latihan menulis kata NENEK",
-                  "question": "NENEK"
+                  "question": "NENEK",
+                  "vo": "NENEK"
                 },
                 {
                   "answer": "ABANG",
                   "name": "latihan menulis kata ABANG",
-                  "question": "ABANG"
+                  "question": "ABANG",
+                  "vo": "ABANG"
                 },
                 {
                   "answer": "MBAK",
                   "name": "latihan menulis kata MBAK",
-                  "question": "MBAK"
+                  "question": "MBAK",
+                  "vo": "MBAK"
                 },
                 {
                   "answer": "DATUK",
                   "name": "latihan menulis kata DATUK",
-                  "question": "DATUK"
+                  "question": "DATUK",
+                  "vo": "DATUK"
                 },
                 {
                   "answer": "UWAK",
                   "name": "latihan menulis kata UWAK",
-                  "question": "UWAK"
+                  "question": "UWAK",
+                  "vo": "UWAK"
                 },
                 {
                   "answer": "DANG",
                   "name": "latihan menulis kata DANG",
-                  "question": "DANG"
+                  "question": "DANG",
+                  "vo": "DANG"
                 },
                 {
                   "answer": "ADING",
                   "name": "latihan menulis kata ADING",
-                  "question": "ADING"
+                  "question": "ADING",
+                  "vo": "ADING"
                 },
                 {
                   "answer": "UNCU",
                   "name": "latihan menulis kata UNCU",
-                  "question": "UNCU"
+                  "question": "UNCU",
+                  "vo": "UNCU"
                 }
               ]
             }
