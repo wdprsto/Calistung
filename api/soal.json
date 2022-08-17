@@ -315,17 +315,17 @@
             {
               "answer": "2",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/qtesC6.gif",
-              "name": "belajar 4-2"
+              "name": "belajar 4−2"
             },
             {
               "answer": "3",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/KKEUBV.gif",
-              "name": "belajar 5-2"
+              "name": "belajar 5−2"
             },
             {
               "answer": "4",
               "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/qvAioX.gif",
-              "name": "belajar 10-6"
+              "name": "belajar 10−6"
             }
           ],
           "name": "Belajar Pengurangan Dasar"
@@ -390,38 +390,38 @@
               "trains": [
                 {
                   "answer": "2",
-                  "name": "latihan 5-3",
-                  "question": "5-3"
+                  "name": "latihan 5−3",
+                  "question": "5−3"
                 },
                 {
                   "answer": "3",
-                  "name": "latihan 6-3",
-                  "question": "6-3"
+                  "name": "latihan 6−3",
+                  "question": "6−3"
                 },
                 {
                   "answer": "4",
-                  "name": "latihan 10-6",
-                  "question": "10-6"
+                  "name": "latihan 10−6",
+                  "question": "10−6"
                 },
                 {
                   "answer": "6",
-                  "name": "latihan 8-2",
-                  "question": "8-2"
+                  "name": "latihan 8−2",
+                  "question": "8−2"
                 },
                 {
                   "answer": "8",
-                  "name": "latihan 9-1",
-                  "question": "9-1"
+                  "name": "latihan 9−1",
+                  "question": "9−1"
                 },
                 {
                   "answer": "9",
-                  "name": "latihan 10-1",
-                  "question": "10-1"
+                  "name": "latihan 10−1",
+                  "question": "10−1"
                 },
                 {
                   "answer": "10",
-                  "name": "latihan 10-0",
-                  "question": "10-0"
+                  "name": "latihan 10−0",
+                  "question": "10−0"
                 }
               ]
             }
