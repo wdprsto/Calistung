@@ -661,6 +661,41 @@
             }
           ],
           "name": "Belajar Alfabet"
+        },
+        {
+          "learns": [
+            {
+              "answer": "TELINGA",
+              "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/telinga.jpg",
+              "name": "Belajar Kata TELINGA",
+              "vo": "TELINGA"
+            },
+            {
+              "answer": "MUKA",
+              "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/muka.jpg",
+              "name": "Belajar Kata MUKA",
+              "vo": "MUKA"
+            },
+            {
+              "answer": "RAMBUT",
+              "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/rambut.jpg",
+              "name": "Belajar Kata RAMBUT",
+              "vo": "RAMBUT"
+            },
+            {
+              "answer": "TANGAN",
+              "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/tangan.jpg",
+              "name": "Belajar Kata TANGAN",
+              "vo": "TANGAN"
+            },
+            {
+              "answer": "KAKI",
+              "gifLink": "https://github.com/wdprsto/Calistung-assets/raw/main/media/kaki.jpg",
+              "name": "Belajar Kata KAKI",
+              "vo": "KAKI"
+            }
+          ],
+          "name": "Belajar Anggota Tubuh"
         }
       ],
       "name": "Belajar Huruf"
