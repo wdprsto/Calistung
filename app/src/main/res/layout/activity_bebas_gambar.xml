@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.bebas_gambar.bebasGambarActivity"
+    tools:keep="@layout/activity_learn">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:layout_weight="5"
+        android:backgroundTint="@color/ultra_light_yellow">
+
+        <com.divyanshu.draw.widget.DrawView
+            android:id="@+id/draw_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_correctness"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="16dp"
+        android:backgroundTint="@color/light_blue">
+
+        <TextView
+            android:id="@+id/tv_correctness"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            tools:text="BENAR/SALAH">
+
+        </TextView>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textSize="12sp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/ultra_light_pink"
+            android:text="@string/clear"
+            android:textColor="@color/black"
+            app:cornerRadius="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/draw_view"
+            app:layout_constraintVertical_bias="0.103" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:textSize="12sp"
+            android:backgroundTint="@color/light_blue"
+            android:text="@string/cek"
+            android:textColor="@color/black"
+            app:cornerRadius="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_clear"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_clear"
+            app:layout_constraintTop_toTopOf="@+id/btn_clear" />
+    </LinearLayout>
+
+</LinearLayout>

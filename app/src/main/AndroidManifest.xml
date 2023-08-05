@@ -27,6 +27,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Calistung">
         <activity
+            android:name=".ui.bebas_gambar.bebasGambarActivity"
+            android:exported="false"
+            android:label="Bebas Gambar"
+            />
+        <activity
             android:name=".ui.latihan.daftar_isi_latihan.DaftarIsiLatihanActivity"
             android:exported="false"
             android:label="latihan" />
@@ -74,4 +79,5 @@
             android:name="com.google.mlkit.vision.DEPENDENCIES"
             android:value="ocr" />
     </application>
+
 </manifest>

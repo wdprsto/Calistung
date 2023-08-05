@@ -6,6 +6,7 @@
 </p>
 <br>
 
+
 # Calistung
 Calistung : Baca Tulis Hitung GitHub Repositories of Bangkit Academy 2022 Capstone Project from 3 learning path. Machine Learning, Mobile development, Cloud Computing from team C22-PS283.
 
@@ -74,23 +75,6 @@ Applications that provide educational features such as writing, reading and coun
 6. Check the answer
 7. If it’s true, then will show the “BENAR” message, if else then will show the “SALAH” message
 
-## Note
-If Text-to-Speech doesn't speak, make sure that you have choosen the right speech engine. You can go to Settings -> Accessibility-> Talkback -> Talkback Setting -> Text-to-Speech Setting -> Preferred engine -> Speech Services by Google. There may be slight differences in the steps on different brands, be sure to find the preferred engine setting. If illustrated similar, like these steps:
-1. Go to Settings
-2. Select Accessibility<br>![image](https://user-images.githubusercontent.com/64635497/173274501-1eeb7a0c-7ec7-4f76-a082-d2c5b0265abb.png)
-
-3. Select Talkback<br>![image](https://user-images.githubusercontent.com/64635497/173274505-b95d5c73-6406-45e0-b2c4-29327dd9c8b7.png)
-
-4. Select to Talkback Settings<br>![image](https://user-images.githubusercontent.com/64635497/173274530-ea99354e-6a63-4e51-9c5c-7da34f7b99c7.png)
-
-5. Select Text-to-Speech Settings<br>![image](https://user-images.githubusercontent.com/64635497/173274538-a1813952-0a16-4fbc-beb6-1a281f52b625.png)
-
-6. Select Preferred engine<br>![image](https://user-images.githubusercontent.com/64635497/173274547-ca676fc9-653a-4687-8414-8f996f28e575.png)
-
-7. Make sure the preferred engine is the Speech Services by Google<br>![image](https://user-images.githubusercontent.com/64635497/173274563-df5fd0d5-5929-4413-8698-30623122ec60.png)
-
-
-
 
 # Built With
 - [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android development.
@@ -106,7 +90,7 @@ If Text-to-Speech doesn't speak, make sure that you have choosen the right speec
 - [Glide](https://github.com/bumptech/glide) - Glide is a fast and efficient open source media management and image loading framework for Android that wraps media decoding, memory and disk caching, and resource pooling into a simple and easy to use interface.
 - [makeagif](https://makeagif.com/user/SeijiKun/popular/1) - a website that can be used to search for funny and interesting GIFs, this website also offers a feature to create your own version of GIFs.
 - [TextToSpeech](https://developer.android.com/reference/android/speech/tts/TextToSpeech) - Synthesizes speech from text for immediate playback or to create a sound file.
-- [AndroidDraw](https://github.com/divyanshub024/AndroidDraw) - A drawing view for your android application.
+
 
 # Resources
 Our project divided into 3 different path resources.

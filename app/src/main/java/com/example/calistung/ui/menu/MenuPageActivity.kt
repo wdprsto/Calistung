@@ -19,6 +19,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.calistung.databinding.ActivityMenuBinding
 import com.example.calistung.repository.ResponseRepository
 import com.example.calistung.service.ApiConfig
+import com.example.calistung.ui.bebas_gambar.bebasGambarActivity
 import com.example.calistung.ui.belajarlatihan.BelajarLatihanActivity
 import com.example.calistung.ui.splashscreen.SplashScreenActivity
 import com.example.calistung.utils.ViewModelFactory
@@ -68,6 +69,13 @@ class MenuPageActivity : AppCompatActivity() {
                         menghitung.setOnClickListener {
                             val intent =
                                 Intent(this@MenuPageActivity, BelajarLatihanActivity::class.java)
+                            intent.putExtra(CATEGORY_SELECTED, response.hitung)
+                            startActivity(intent)
+                        }
+
+                        bebasGambar.setOnClickListener {
+                            val intent =
+                                Intent(this@MenuPageActivity, bebasGambarActivity::class.java)
                             intent.putExtra(CATEGORY_SELECTED, response.hitung)
                             startActivity(intent)
                         }

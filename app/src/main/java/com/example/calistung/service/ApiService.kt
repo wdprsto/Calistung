@@ -8,8 +8,10 @@ import retrofit2.Response
 import retrofit2.http.*
 
 interface ApiService {
+//    @GET("dummy")
     @GET("soal.json")
     suspend fun getAllData(): Response<ResponseCategory>
+
 
     @Multipart
     @Headers("Authorization: bearer bmMMM8iHjrexZYCwJg0FF0z3jQlhuk4I7UYoGEAOcSDkkOLeBMw8cy2z9uhegn82NqAAKzwoLtWTGbizxmIWEYjigP")

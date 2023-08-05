@@ -40,9 +40,9 @@ class TrainActivity : AppCompatActivity() {
                     btnSpeak.setOnClickListener {
                         model.tts.observe(this@TrainActivity) {
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                                it.speak(mTrain.question, TextToSpeech.QUEUE_FLUSH, null, null)
+                                it.speak(mTrain.vo, TextToSpeech.QUEUE_FLUSH, null, null)
                             } else {
-                                it.speak(mTrain.question, TextToSpeech.QUEUE_FLUSH, null, null)
+                                it.speak(mTrain.vo, TextToSpeech.QUEUE_FLUSH, null, null)
                             }
                         }
                     }

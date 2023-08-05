@@ -11,5 +11,7 @@ data class Learn(
     @field:SerializedName("gifLink")
     val gifLink: String? = null,
     @field:SerializedName("answer")
-    val answer: String? = null
+    val answer: String? = null,
+    @field:SerializedName("vo")
+    val vo: String? = null
 ):Parcelable

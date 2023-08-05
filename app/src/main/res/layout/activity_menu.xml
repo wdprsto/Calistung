@@ -128,6 +128,21 @@
             android:textColor="@color/black"
             android:textSize="24sp"
             app:cornerRadius="0dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bebas_gambar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:backgroundTint="@color/biruMuda"
+            android:drawableTop="@drawable/ic_cruelty_free"
+            android:elevation="2dp"
+            android:fontFamily="@font/ubuntu"
+            android:padding="16dp"
+            android:text="@string/bebas_gambar"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:cornerRadius="0dp" />
     </LinearLayout>
 
 </LinearLayout>

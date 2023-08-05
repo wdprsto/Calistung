@@ -11,5 +11,7 @@ data class Train(
     @field:SerializedName("question")
     val question:String?=null,
     @field:SerializedName("answer")
-    val answer:String?=null
+    val answer:String?=null,
+    @field:SerializedName("vo")
+    val vo: String? = null
 ): Parcelable
